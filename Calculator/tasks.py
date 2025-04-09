@@ -54,8 +54,9 @@ def run_simulation_simple(pk):
     template_folder_path_base = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")
     template_folder_path_base = str(Path(template_folder_path_base))
     print(f'template_folder_path_base: {template_folder_path_base}')
-    ENERGYPLUS_PATH = "energyplus"
-    command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,base_path]
+    
+    command_line_base = ["energyplus","-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,base_path]
+        
     print("command_line after")
     print(command_line_base)
     # Running energy plus
@@ -68,7 +69,8 @@ def run_simulation_simple(pk):
     template_folder_path_proposed = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"proposed")
     template_folder_path_proposed = str(Path(template_folder_path_proposed)) 
     #ENERGYPLUS_PATH = r"C:/EnergyPlusV8-9-0/energyplus.exe"
-    command_line_proposed = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed"  ,proposed_path]
+    command_line_proposed = ["energyplus","-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,proposed_path]
+
     print(command_line_proposed)
     proposed_process = subprocess.Popen(command_line_proposed)
     proposed_process_pid =  proposed_process.pid
@@ -489,7 +491,7 @@ def run_simulation(pk):
 
     template_folder_path_base = str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")))
     ENERGYPLUS_PATH = "energyplus"
-    command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,base_path]
+    command_line_base = ["energyplus","-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,base_path]
     print("command_line after")
     print(command_line_base)
     base_process = subprocess.Popen(command_line_base)
@@ -502,7 +504,7 @@ def run_simulation(pk):
 
     print('running proposed')
     #ENERGYPLUS_PATH = "C:\\EnergyPlusV8-9-0\\energyplus.exe"
-    command_line_proposed = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed"  ,proposed_path]
+    command_line_proposed = ["energyplus","-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,proposed_path]
     print(command_line_proposed)
     proposed_process = subprocess.Popen(command_line_proposed)
  
@@ -893,7 +895,7 @@ def run_simulation_parametric(pk):
 
     template_folder_path_base = str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")))
     ENERGYPLUS_PATH = "energyplus"
-    command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base"  ,base_path]
+    command_line_base = ["energyplus","-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,base_path]
     print("command_line after")
     print(command_line_base)
     base_process = subprocess.Popen(command_line_base)
@@ -906,7 +908,7 @@ def run_simulation_parametric(pk):
 
     print('running proposed')
     #ENERGYPLUS_PATH = r"C:/EnergyPlusV8-9-0/energyplus.exe"
-    command_line_proposed = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed"  ,proposed_path]
+    command_line_proposed = ["energyplus","-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,proposed_path]
     print(command_line_proposed)
     proposed_process = subprocess.Popen(command_line_proposed)
     
