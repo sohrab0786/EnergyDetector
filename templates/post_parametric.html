@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChartCooling);
+    google.charts.setOnLoadCallback(drawChartHeating);
+
+    function drawChartCooling() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Month');
+      data.addColumn('number', 'Normal Roof');
+      data.addColumn('number', 'Cool Roof');
+
+      data.addRows([
+        {% for item in heating_compare %}
+          ['{{item.0}}',{{item.1}},{{item.2}}],
+        {% endfor %}
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Monthly Heating Electricity Consumption (kWh)',
+          
+        },
+        width: 1000,
+        height: 500,
+        colors: ['#EA0B0B','#F09A9A']
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material1'));
+
+      chart.draw(data, options);
+    }
+    
+    
+
+    function drawChartHeating() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Month');
+      data.addColumn('number', 'Normal Roof');
+      data.addColumn('number', 'Cool Roof');
+
+      data.addRows([
+        {% for item in cooling_compare %}
+          ['{{item.0}}',{{item.1}},{{item.2}}],
+        {% endfor %}
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Monthly Cooling Electricity Consumption (kWh)',
+          
+        },
+        width: 1000,
+        height: 500,
+        colors: ['#2170A2','#90BBD7']
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material2'));
+
+      chart.draw(data,options);
+    }
+    </script>
+
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+						<ul>
+							
+							{% if user.is_authenticated %}	
+					<li><a href="#"><div>Hi, {{user}}</div></a></li>{% endif %}
+							<li><a href="/"><div>Home</div></a></li>
+							<li><a href="/index_page"><div>About</div></a></li>
+							<li><a href="/glossary"><div>Glossary</div></a></li>
+							{% if user.is_authenticated %}
+							<li><a href="/projects_page"><div>Your projects</div></a></li>	
+							<li><a href="/logout_user"><div>Logout</div></a></li>
+							{% endif %}
+							
+								
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Parametric Input Results</h1>
+            
+            </div>
+
+        </section>
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="postcontent nobottommargin clearfix" style="margin-left: 100px;">
+						<div class="title-block">
+						<h2 style="font-family: 'Lato', sans-serif;">Annual Savings</h2>
+						<span> The Annual savings achieved due to cool roof <b>(Reflectivity {{Reflectivity_proposed}}, Emmissivity {{Emissivity_proposed}})</b> as compared to normal roof <b>(Reflectivity {{Reflectivity_base}}, Emissivity {{Emissivity_base}})</b> specified by you is <b>{{Total_Savings}} kWh</b> , which results in an annual savings of <b>Rs. {{Annual_Savings}}</span>
+					</div>
+
+
+                        <div class="divider"><i class="icon-circle"></i></div>
+                        <table class="table table-hover">
+						  <thead>
+							<tr>
+							  <th></th>
+							  <th>Total savings (kWh/year)</th>
+							  <th>Savings per unit area (kWh/m<sup>2</sup> per annum)</th>
+							  <th>Saving in cost (INR/year)</th>
+							</tr>
+						  </thead>
+						  <tbody>
+						        <tr>
+						            <td >Savings in cooling</td>
+						            <td>{{cool_save}}</td>
+						            <td>{{cool_save_area}}</td>
+						            <td>{{cool_save_cost}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Savings in heating</td>
+						            <td>{{heat_save}}</td>
+						            <td>{{heat_save_area}}</td>
+						            <td>{{heat_save_cost}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Overall Savings</td>
+						            <td>{{total_save}}</td>
+						            <td>{{total_save_area}}</td>
+						            <td>{{total_save_cost}}</td>
+						            
+						        </tr>
+						        
+						    </tbody>
+						</table>
+						<div class="divider"><i class="icon-circle"></i></div>
+						<table class="table table-hover">
+						  <thead>
+							<tr>
+							  <th>End Use Category</th>
+							  <th>Normal Roof (kWh)</th>
+							  <th>Cool Roof (kWh)</th>
+							  <th>% Savings</th>
+							</tr>
+						  </thead>
+						  <tbody>
+						        <tr>
+						            <td >Heating</td>
+						            <td>{{Heating_Base}}</td>
+						            <td>{{Heating_Proposed}}</td>
+						            <td>{{Heating_Savings}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Cooling</td>
+						            <td>{{Cooling_Base}}</td>
+						            <td>{{Cooling_Proposed}}</td>
+						            <td>{{Cooling_Savings}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Interior Lighting</td>
+						            <td>{{Interior_Lighting_Base}}</td>
+						            <td>{{Interior_Lighting_Proposed}}</td>
+						            <td>{{Interior_Lighting_Savings}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Interior Equipment</td>
+						            <td>{{Interior_Equipment_Base}}</td>
+						            <td>{{Interior_Equipment_Proposed}}</td>
+						            <td>{{Interior_Equipment_Savings}}</td>
+						            
+						        </tr>
+						        
+						        <tr>
+						            <td >Fans</td>
+						            <td>{{Fans_Base}}</td>
+						            <td>{{Fans_Proposed}}</td>
+						            <td>{{Fans_Savings}}</td>
+						            
+						        </tr>
+						        
+						        <tr>
+						            <td >Pumps</td>
+						            <td>{{Pumps_Base}}</td>
+						            <td>{{Pumps_Proposed}}</td>
+						            <td>{{Pumps_Savings}}</td>
+						            
+						        
+						        </tr>
+						        <tr>
+						            <td >Heat Rejection</td>
+						            <td>{{Heat_Rejection_Base}}</td>
+						            <td>{{Heat_Rejection_Proposed}}</td>
+						            <td>{{Heat_Rejection_Savings}}</td>
+						            
+						        </tr>
+						        <tr>
+						            <td >Total</td>
+						            <td>{{Total_Base}}</td>
+						            <td>{{Total_Proposed}}</td>
+						            <td>{{Total_Savings_Percent}}</td>
+						            
+						        </tr>
+						    </tbody>
+						</table>
+						
+						
+						<div class="divider"><i class="icon-circle"></i></div>
+					<div class="container clearfix">
+							<div id="linechart_material2"></div>
+							
+						</div>
+						<div class="divider"><i class="icon-circle"></i></div>
+						
+						<div class="container clearfix" style="margin-top: 50px;">
+							<div id="linechart_material1"></div>	
+						</div>
+						
+					
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	
+<div id="page-title" class="icon-angle-up"></div>
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
+	
+
+</body>
+</html>

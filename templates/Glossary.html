@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+						<ul>
+                            
+							<li><a href="/CoolRoof" ><div>Home</div></a>
+                            <li><a href="/index_page"><div>About</div></a>
+                            {% if  user.is_anonymous %}
+                            <li><a href="/login_register"><div>login/Register</div></a>    
+                            {%endif%}    
+                                {% if user.is_authenticated %}
+                            <li><a href="/projects_page" ><div>Your projects</div></a>
+                            <li><a href="/logout_user"><div>Logout</div></a>                                
+								{%endif%}
+                                <li><a href="#">External links</a><ul>
+                                    <li><a href="https://rsc.ornl.gov/" target="_blank"><div> Roof Savings Calculator </div></a></li>
+                                    <li><a href="https://heatisland.lbl.gov/" target="_blank"><div> Heat Island group </div></a></li>
+                                    <li><a href="https://coolcolors.lbl.gov/" target="_blank"><div> Cool Colours Project</div></a></li>
+                                    <li><a href="https://coolroofs.org/" target="_blank"><div> Cool Roof Rating Council</div></a></li>
+                                    
+                                </ul></li>
+							</li>
+							<li>
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Glossary</h1>
+            
+            </div>
+
+        </section>
+         <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+
+		                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <h3>Location</h3>
+
+                        <blockquote>
+                            <p>This depicts the city in which the performance of the roof is being calculated. The appropriate city is to be selected from the dropdown that is displayed for this field. Weather files in .epw format from the EnergyPlus website shall be used for the simulations. (Note: In-case the required city is not specified in the list of the cities; select the closest city or a city with similar climate.)
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+
+                        <h3>Building type</h3>
+                        <blockquote>
+                            <p> There are five building types specified in this drop down. They are:
+                            </p>
+                            <ul style="margin-left: 30px;">
+                            	<li>Office: A 9 hours office schedule, from 9 am – 6 pm</li>
+                            	<li>Retail: A schedule for 13 hours, from 9 am – 10 pm</li>
+                            	<li>Institutional: A schedule for 10 hours, from 8 am – 6 pm</li>
+                            	<li>Residential (AC only in night): A typical home with AC running only during the nights</li>
+                            	<li>Residential (AC all day): As the name suggests, a residence in which the AC is ON throughout a typical home with AC running only during the nightsday</li>
+                            </ul>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Roof area</h3>
+                        <blockquote>
+                            <p> For a conditioned building, please input the total roof area over conditioned spaces and for unconditioned building (that is considered for simulation only in the DETAILED FORM), input the total roof area over the occupied spaces.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Roof type (SIMPLE FORM)</h3>
+                        <blockquote>
+                            <p>The roof construction type of the building is to be selected in this field. There are five roof types specified in the drop down box. All the roofs are of mass construction with varying roof insulation and external finish.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Roof type (DETAILED FORM)</h3>
+                        <blockquote>
+                            <p>A layer by layer construction can be defined in this roof type of detailed form. A list of various materials is displayed from which the appropriate roof layer can be selected. Further, for a roof with an insulation layer, the R value of the insulation can be defined.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Roof external finish (SIMPLE FORM)</h3>
+                        <blockquote>
+                            <p>This specifies the roof external finish properties for the normal roof and the cool roof. Solar reflectance, Infrared Emittance and SRI values that are specified along with the material names help you to select the appropriate or the closest material.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Roof external finish (DETAILED FORM)</h3>
+                        <blockquote>
+                            <p>This specifies the roof external finish properties for the normal roof and the proposed case. Solar reflectance, Infrared Emittance that shall be input, defines the roof coating property. Along with the thermal properties of the roof finish, the cost and life of both the normal roof and the proposed case material are to be input in this form. This help in calculating the simple payback of the proposed case cool roof material.
+
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>HVAC System (SIMPLE FORM)</h3>
+                        <blockquote>
+                            <p> For a conditioned building, the HVAC system that has been designed can be selected here. This drop down provides four HVAC system types. They are - 
+                            </p>
+                            <ul style="margin-left: 30px;">
+                            	<li>Window/Split air conditioner, Heating source: Electric Heat Pump</li>
+                            	<li>Packaged rooftop air conditioner with constant air volume air supply, Heating source: Electric Heat Pump</li>
+                            	<li>Central VAV system with water cooled screw chiller, Heating Source : Electric Resistance</li>
+                            	<li>Central VAV system with air cooled chiller, Heating Source : Electric Resistance</li>
+                            	
+                            </ul>
+                            <p>The system that has been considered in the design or the closest map to that system is to be selected.</p>
+                        </blockquote>
+                        <div class="line"></div>
+                        
+                        <h3>HVAC Details (DETAILED FORM)</h3>
+                        <blockquote>
+                            <p>For a conditioned building, the HVAC system that has been designed can be selected here. This drop down provides four HVAC system types. They are - 
+                            </p>
+                            <ul style="margin-left: 30px;">
+                            	<li>Window/Split air conditioner, Heating source: Electric Heat Pump</li>
+                            	<li>Packaged rooftop air conditioner with constant air volume air supply, Heating source: Electric Heat Pump</li>
+                            	<li>Central VAV system with water cooled screw chiller, Heating Source : Electric Resistance</li>
+                            	<li>Central VAV system with air cooled chiller, Heating Source : Electric Resistance</li>
+                            	<li>Unconditioned: No system</li>
+                            	
+                            </ul>
+                            <p>
+                            	The system that has been considered in the design or the closest map to that system is to be selected. If the designed building is an unconditioned building, Unconditioned: No system option is to be selected in the dropdown.<br>
+                            	The performance of the selected HVAC system can also be assigned by specifying an appropriate COP (coefficient of performance) value.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Internal loads</h3>
+                        <blockquote>
+                            <p>Lighting power density and equipment power density are two inputs in this field that define the lighting and equipment wattage. Total lighting wattage and total equipment wattage divided by the area of the conditioned space provides values of LPD and EPD of that conditioned building. For an unconditioned building divide the total wattages by the total occupied area.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Window area</h3>
+                        <blockquote>
+                            <p>The area of fenestration on the external wall in all the four orientations is to be specified in these fields.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Electricity rate</h3>
+                        <blockquote>
+                            <p> Is the cost of electricity in the city that is selected for simulation.
+                            </p>
+                        </blockquote>
+
+                        <div class="line"></div>
+                        
+                        <h3>Parametric Fields</h3>
+                        <blockquote>
+                            <p>The thermal resistance is calculated using K-Value of insulation and insulation thickness ranging from 0.1 to 250.1.
+                            </p>
+                        </blockquote>
+
+
+                    </div><!-- .postcontent end -->
+
+                </div>
+            </div>
+        </section>
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+
+</body>
+</html>

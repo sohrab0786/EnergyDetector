@@ -1,0 +1,39 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Month');
+      data.addColumn('number', 'Cooling');
+      data.addColumn('number', 'Heating');
+
+      data.addRows([
+        {% for item in mylist %}
+          ['{{item.0}}',{{item.2}},{{item.1}}],
+        {% endfor %}
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Monthly Cooling, Heating Electricity Consumption (kWh)',
+          
+        },
+        width: 800,
+        height: 300,
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+    </script>
+  </head>
+  <body>
+    <div id="linechart_material"></div>
+  </body>
+</html>

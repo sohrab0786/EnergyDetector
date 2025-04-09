@@ -1,0 +1,15 @@
+Program Version,EnergyPlus, Version 8.9.0-40101eaafd, YMD=2018.10.12 16:35,
+   ** Severe  ** <root>[People][ZN_1_FLR_1_SEC_1 People][thermal_comfort_model_1_type] - "CLOTHING_SCH" - Failed to match against any enum values.
+   ** Severe  ** <root>[People][ZN_1_FLR_1_SEC_1 People][thermal_comfort_model_2_type] - "AIR_VELO_SCH" - Failed to match against any enum values.
+   ** Severe  ** <root>[ShadowCalculation][ShadowCalculation 1][calculation_frequency] - Value type not permitted by 'type' constraint.
+   ** Severe  ** <root>[ShadowCalculation][ShadowCalculation 1][maximum_figures_in_shadow_overlap_calculations] - "30" - Expected number greater than or equal to 200.000000
+   ** Severe  ** <root>[ShadowCalculation][ShadowCalculation 1][polygon_clipping_algorithm] - "15000" - Failed to match against any enum values.
+   **  Fatal  ** Errors occurred on processing input file. Preceding condition(s) cause termination.
+   ...Summary of Errors that led to program termination:
+   ..... Reference severe error count=5
+   ..... Last severe error=<root>[ShadowCalculation][ShadowCalculation 1][polygon_clipping_algorithm] - "15000" - Failed to match against any enum values.
+   ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).
+   ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 0 Warning; 5 Severe Errors; Elapsed Time=00hr 00min  0.25sec

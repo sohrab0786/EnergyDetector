@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+						<ul>
+							<li><a href="/"><div>Home</div></a>
+								<li><a href="/index_page"><div>About</div></a>
+							<li><a href="/glossary"><div>Glossary</div></a>
+								<li><a href="#">External links</a><ul>
+                                    <li><a href="https://rsc.ornl.gov/" target="_blank"><div> Roof Savings Calculator </div></a></li>
+                                    <li><a href="https://heatisland.lbl.gov/" target="_blank"><div> Heat Island group </div></a></li>
+                                    <li><a href="https://coolcolors.lbl.gov/" target="_blank"><div> Cool Colours Project</div></a></li>
+                                    <li><a href="https://coolroofs.org/" target="_blank"><div> Cool Roof Rating Council</div></a></li>
+                                    
+                                </ul></li>
+							</li>
+							{%if user.is_authenticated%}
+
+							
+							<li><a href="/logout_user"> Logout</a></li>
+							{%endif%}
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Cool Roof Calculator</h1>
+                {%if user.is_anonymous%}
+                {{error}}
+                {%endif%}
+            
+            </div>
+
+        </section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+                        <ul class="tab-nav tab-nav2 center clearfix">
+                            <li class="inline-block"><a href="#tab-login">Login</a></li>
+                            <li class="inline-block"><a href="#tab-register">Register</a></li>
+                        </ul>
+
+                        <div class="tab-container">
+
+                            <div class="tab-content clearfix" id="tab-login">
+                                <div class="panel panel-default nobottommargin">
+                                	<div class="panel-body" style="padding: 40px;">
+                                		<form id="login-form" name="login-form" class="nobottommargin" action="/login_user/" method="post">
+                                			{% csrf_token %}
+			                                <h3>Login to your Account</h3>
+
+			                                <div class="col_full">
+			                                    <label for="login-form-email">Username:</label>
+			                                    <input type="text" id="login-form-email" name="login-form-email" value="" class="form-control" />
+			                                </div>
+
+			                                <div class="col_full">
+			                                    <label for="login-form-password">Password:</label>
+			                                    <input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
+			                                </div>
+
+			                                <div class="col_full nobottommargin">
+			                                    <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+			                                    <a href="/password_reset" class="fright" target="_blank">Forgot Password?</a>
+			                                </div>
+
+			                            </form>
+                                	</div>
+                                </div>
+                            </div>
+
+                            <div class="tab-content clearfix" id="tab-register">
+                                <div class="panel panel-default nobottommargin">
+                                	<div class="panel-body" style="padding: 40px;">
+                                		<h3>Register for an Account</h3>
+                                		
+                                		<form id="register-form" name="register-form" class="nobottommargin" action="/create_user/" method="post">
+                                			{% csrf_token %}
+				                            <div class="col_full">
+				                                <label for="register-form-name">Name:</label>
+				                                <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control" required />
+				                            </div>
+
+				                            <div class="col_full">
+				                                <label for="register-form-email">Email Address:</label>
+				                                <input type="text" id="register-form-email" name="register-form-email" value="" class="form-control" required />
+				                            </div>
+
+				                            <div class="col_full">
+				                                <label for="register-form-username">Choose a Username:</label>
+				                                <input type="text" id="register-form-username" name="register-form-username" value="" class="form-control" required />
+				                            </div>
+
+				                            <div class="col_full">
+				                                <label for="register-form-phone">Mobile:</label>
+				                                <input type="text" id="register-form-phone" name="register-form-phone" value="" class="form-control" required />
+				                            </div>
+
+				                            <div class="col_full">
+				                                <label for="register-form-password">Choose Password:</label>
+				                                <input type="password" id="register-form-password" name="register-form-password" value="" class="form-control" required />
+				                            </div>
+
+				                            
+
+				                            <div class="col_full nobottommargin">
+				                                <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register" required>Register Now</button>
+				                            </div>
+
+				                        </form>
+                                	</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+Program Version,EnergyPlus, Version 8.9.0-40101eaafd, YMD=2025.03.13 13:02
+! <Version>, Version ID
+ Version, 8.9
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  4, 15
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 5, 25, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, Yes, No, Yes, No
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.200, 0.200, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00,  25.00
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,  16.18,  15.36,  16.81,  19.06,  24.96,  29.51,  32.59,  33.52,  31.93,  28.39,  23.67,  19.29
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,NEW DELHI - IND IWEC Data WMO#=421820,28.58,77.20,5.50,216.00,98757,1.1738
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,Coolroof_IDF,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,DOE-2
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, AnalyticalSolution
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,5,39,4
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, ZN_1_FLR_1_SEC_1,0.0,0.00,0.00,0.00,7.70,1.81,1.75,1,1,1,0.00,15.39,0.00,4.57,0.00,3.50,3.50,173.14,TARP,DOE-2,49.47,53.88,37.72,16.17,6,1,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_2,0.0,15.39,0.00,0.00,13.59,7.70,1.75,1,1,1,10.82,15.39,0.00,15.39,0.00,3.50,3.50,173.14,TARP,DOE-2,49.47,53.88,37.72,16.17,6,1,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_3,0.0,4.57,10.82,0.00,7.70,13.59,1.75,1,1,1,0.00,15.39,10.82,15.39,0.00,3.50,3.50,173.14,TARP,DOE-2,49.47,53.88,37.72,16.17,6,1,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_4,0.0,0.00,0.00,0.00,1.81,7.70,1.75,1,1,1,0.00,4.57,0.00,15.39,0.00,3.50,3.50,173.14,TARP,DOE-2,49.47,53.88,37.72,16.17,6,1,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_5,0.0,4.57,4.57,0.00,7.70,7.70,1.75,1,1,1,4.57,10.82,4.57,10.82,0.00,3.50,3.50,136.93,TARP,DOE-2,39.12,0.00,0.00,0.00,6,0,0,Yes
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, ZN_1_FLR_1_SEC_1,49.47,5.3,9.290,0.108,10.800,16.150,0.000,0.000,0.000,0.000,26.950,No
+ Zone Internal Gains Nominal, ZN_1_FLR_1_SEC_2,49.47,5.3,9.290,0.108,10.800,16.150,0.000,0.000,0.000,0.000,26.950,No
+ Zone Internal Gains Nominal, ZN_1_FLR_1_SEC_3,49.47,5.3,9.290,0.108,10.800,16.150,0.000,0.000,0.000,0.000,26.950,No
+ Zone Internal Gains Nominal, ZN_1_FLR_1_SEC_4,49.47,5.3,9.290,0.108,10.800,16.150,0.000,0.000,0.000,0.000,26.950,No
+ Zone Internal Gains Nominal, ZN_1_FLR_1_SEC_5,39.12,4.2,9.290,0.108,10.800,16.150,0.000,0.000,0.000,0.000,26.950,No
+! <People Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People,MRT Calculation Type,Work Efficiency, Clothing Insulation Calculation Method,Clothing Insulation Calculation Method Schedule,Clothing,Air Velocity,Fanger Calculation,Pierce Calculation,KSU Calculation
+ People Internal Gains Nominal, ZN_1_FLR_1_SEC_1 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_1,49.47,5.3,5.3,0.108,9.290,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,5,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains Nominal, ZN_1_FLR_1_SEC_2 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_2,49.47,5.3,5.3,0.108,9.290,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,5,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains Nominal, ZN_1_FLR_1_SEC_3 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_3,49.47,5.3,5.3,0.108,9.290,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,5,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains Nominal, ZN_1_FLR_1_SEC_4 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_4,49.47,5.3,5.3,0.108,9.290,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,5,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains Nominal, ZN_1_FLR_1_SEC_5 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_5,39.12,4.2,4.2,0.108,9.290,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,4,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, ZN_1_FLR_1_SEC_1_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_1,49.47,5.3,534.269,10.800,100.332,0.000,0.700,0.200,0.100,1.000,General,0.000,534.269
+ Lights Internal Gains Nominal, ZN_1_FLR_1_SEC_2_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_2,49.47,5.3,534.269,10.800,100.332,0.000,0.700,0.200,0.100,1.000,General,0.000,534.269
+ Lights Internal Gains Nominal, ZN_1_FLR_1_SEC_3_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_3,49.47,5.3,534.269,10.800,100.332,0.000,0.700,0.200,0.100,1.000,General,0.000,534.269
+ Lights Internal Gains Nominal, ZN_1_FLR_1_SEC_4_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_4,49.47,5.3,534.269,10.800,100.332,0.000,0.700,0.200,0.100,1.000,General,0.000,534.269
+ Lights Internal Gains Nominal, ZN_1_FLR_1_SEC_5_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_5,39.12,4.2,422.523,10.800,100.332,0.000,0.700,0.200,0.100,1.000,General,0.000,422.523
+! <ElectricEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains Nominal, ZN_1_FLR_1_SEC_1_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_1,49.47,5.3,798.930,16.150,150.034,0.000,0.500,0.000,0.500,General,0.000,798.930
+ ElectricEquipment Internal Gains Nominal, ZN_1_FLR_1_SEC_2_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_2,49.47,5.3,798.930,16.150,150.034,0.000,0.500,0.000,0.500,General,0.000,798.930
+ ElectricEquipment Internal Gains Nominal, ZN_1_FLR_1_SEC_3_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_3,49.47,5.3,798.930,16.150,150.034,0.000,0.500,0.000,0.500,General,0.000,798.930
+ ElectricEquipment Internal Gains Nominal, ZN_1_FLR_1_SEC_4_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_4,49.47,5.3,798.930,16.150,150.034,0.000,0.500,0.000,0.500,General,0.000,798.930
+ ElectricEquipment Internal Gains Nominal, ZN_1_FLR_1_SEC_5_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_5,39.12,4.2,631.829,16.150,150.034,0.000,0.500,0.000,0.500,General,0.000,631.829
+! <Shadowing/Sun Position Calculations Annual Simulations>, Calculation Method, Value {days}, Allowable Number Figures in Shadow Overlap {}, Polygon Clipping Algorithm, Sky Diffuse Modeling Algorithm, External Shading Calculation Method, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,AverageOverDaysInFrequency,30,15000,SutherlandHodgman,SimpleSkyDiffuseModeling,InternalCalculation,No,No,No
+! <ZoneInfiltration Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s/m2},Volume Flow Rate/Exterior Surface Area {m3/s/m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats Nominal, ZN_1_FLR_1_SEC_1_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_1,49.47,5.3,5.127E-002,1.036E-003,4.961E-004,1.066,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, ZN_1_FLR_1_SEC_2_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_2,49.47,5.3,5.127E-002,1.036E-003,4.961E-004,1.066,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, ZN_1_FLR_1_SEC_3_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_3,49.47,5.3,5.127E-002,1.036E-003,4.961E-004,1.066,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, ZN_1_FLR_1_SEC_4_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_4,49.47,5.3,5.127E-002,1.036E-003,4.961E-004,1.066,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, ZN_1_FLR_1_SEC_5_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_5,39.12,4.2,0.302,7.708E-003,7.708E-003,7.929,1.000,0.000,0.000,0.000
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,ZN_1_FLR_1_SEC_1,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_2,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_3,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_4,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_5,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    4
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_1,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_2,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_3,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_4,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_5,   1.2000    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_1,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_2,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_3,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_4,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_5,   1.2000    
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, ZN_1_FLR_1_SEC_1, Cooling, 9378.70170, 11254.44204, 0.77881, 0.93458, SUMMERDESIGNPERIOD, 6/5 09:15:00, 30.42500, 1.66876E-002, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_1, Heating, 2188.78155, 2626.53786, 9.62148E-002, 0.11546, WINTERDESIGNPERIOD, 1/2 06:00:00, 4.20000, 4.53762E-003, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_2, Cooling, 10796.27776, 12955.53332, 0.89486, 1.07383, SUMMERDESIGNPERIOD, 6/5 09:15:00, 30.42500, 1.66876E-002, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_2, Heating, 2593.99544, 3112.79452, 0.11403, 0.13683, WINTERDESIGNPERIOD, 1/2 06:00:00, 4.20000, 4.53762E-003, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_3, Cooling, 9625.00846, 11550.01015, 0.79858, 0.95830, SUMMERDESIGNPERIOD, 6/5 09:15:00, 30.42500, 1.66876E-002, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_3, Heating, 2730.70197, 3276.84236, 0.12004, 0.14405, WINTERDESIGNPERIOD, 1/2 06:00:00, 4.20000, 4.53762E-003, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_4, Cooling, 9720.46582, 11664.55898, 0.81151, 0.97381, SUMMERDESIGNPERIOD, 5/29 16:00:00, 41.90000, 9.05796E-003, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_4, Heating, 2521.63952, 3025.96742, 0.11085, 0.13302, WINTERDESIGNPERIOD, 1/2 06:00:00, 4.20000, 4.53762E-003, 49.46934, 5.32501, 6.44017E-002, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_5, Cooling, 15982.80948, 19179.37137, 1.32681, 1.59217, SUMMERDESIGNPERIOD, 6/5 09:15:00, 30.42500, 1.66876E-002, 39.12252, 4.21125, 0.37879, 0.00000
+ Zone Sizing Information, ZN_1_FLR_1_SEC_5, Heating, 6824.26127, 8189.11352, 0.29989, 0.37879, WINTERDESIGNPERIOD, 1/2 06:00:00, 4.20000, 4.53762E-003, 39.12252, 4.21125, 0.37879, 0.00000
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_1 PTHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.93458
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_1 PTHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.93458
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_1 PTHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.93458
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_1 PTHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP DX COIL, Design Size Rated Air Flow Rate [m3/s], 0.93458
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP DX COIL, Design Size Gross Rated Total Cooling Capacity [W], 15470.54777
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP DX COIL, Design Size Gross Rated Sensible Heat Ratio, 0.80066
+! <DX Cooling Coil Standard Rating Information>, Component Type, Component Name, Standard Rating (Net) Cooling Capacity {W}, Standard Rated Net COP {W/W}, EER {Btu/W-h}, SEER {Btu/W-h}, IEER {Btu/W-h}
+ DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP DX COIL, 21523.1, 2.48, 8.47, 8.49, 8.92
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP HEAT PUMP, Design Size Rated Air Flow Rate [m3/s], 0.93458
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP HEAT PUMP, Design Size Gross Rated Heating Capacity [W], 15470.54777
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP HEAT PUMP, Design Size Resistive Defrost Heater Capacity [W], 15470.54777
+! <DX Heating Coil Standard Rating Information>, Component Type, Component Name, High Temperature Heating (net) Rating Capacity {W}, Low Temperature Heating (net) Rating Capacity {W}, HSPF {Btu/W-h}, Region Number
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_1 PTHP HEAT PUMP, 16212.0, 9029.1, 6.53, 4
+ Component Sizing Information, Fan:OnOff, ZN_1_FLR_1_SEC_1 PTHPFAN, Design Size Maximum Flow Rate [m3/s], 0.93458
+ Component Sizing Information, Coil:Heating:Electric, ZN_1_FLR_1_SEC_1 PTHP SUPPLMNT HTG COIL, Design Size Nominal Capacity [W], 3921.07689
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_2 PTHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.07383
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_2 PTHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.07383
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_2 PTHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.07383
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_2 PTHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP DX COIL, Design Size Rated Air Flow Rate [m3/s], 1.07383
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP DX COIL, Design Size Gross Rated Total Cooling Capacity [W], 17775.77365
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP DX COIL, Design Size Gross Rated Sensible Heat Ratio, 0.80066
+ DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP DX COIL, 24730.2, 2.48, 8.47, 8.49, 8.92
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP HEAT PUMP, Design Size Rated Air Flow Rate [m3/s], 1.07383
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP HEAT PUMP, Design Size Gross Rated Heating Capacity [W], 17775.77365
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP HEAT PUMP, Design Size Resistive Defrost Heater Capacity [W], 17775.77365
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_2 PTHP HEAT PUMP, 18627.7, 10374.5, 6.52, 4
+ Component Sizing Information, Fan:OnOff, ZN_1_FLR_1_SEC_2 PTHPFAN, Design Size Maximum Flow Rate [m3/s], 1.07383
+ Component Sizing Information, Coil:Heating:Electric, ZN_1_FLR_1_SEC_2 PTHP SUPPLMNT HTG COIL, Design Size Nominal Capacity [W], 4407.35403
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_3 PTHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.95830
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_3 PTHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.95830
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_3 PTHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.95830
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_3 PTHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP DX COIL, Design Size Rated Air Flow Rate [m3/s], 0.95830
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP DX COIL, Design Size Gross Rated Total Cooling Capacity [W], 15863.27166
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP DX COIL, Design Size Gross Rated Sensible Heat Ratio, 0.80066
+ DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP DX COIL, 22069.5, 2.48, 8.47, 8.49, 8.92
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP HEAT PUMP, Design Size Rated Air Flow Rate [m3/s], 0.95830
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP HEAT PUMP, Design Size Gross Rated Heating Capacity [W], 15863.27166
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP HEAT PUMP, Design Size Resistive Defrost Heater Capacity [W], 15863.27166
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_3 PTHP HEAT PUMP, 16623.6, 9258.3, 6.53, 4
+ Component Sizing Information, Fan:OnOff, ZN_1_FLR_1_SEC_3 PTHPFAN, Design Size Maximum Flow Rate [m3/s], 0.95830
+ Component Sizing Information, Coil:Heating:Electric, ZN_1_FLR_1_SEC_3 PTHP SUPPLMNT HTG COIL, Design Size Nominal Capacity [W], 4571.40490
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_4 PTHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.97381
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_4 PTHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.97381
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_4 PTHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.97381
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_4 PTHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP DX COIL, Design Size Rated Air Flow Rate [m3/s], 0.97381
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP DX COIL, Design Size Gross Rated Total Cooling Capacity [W], 16119.96935
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP DX COIL, Design Size Gross Rated Sensible Heat Ratio, 0.80066
+ DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP DX COIL, 22426.6, 2.48, 8.47, 8.49, 8.92
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP HEAT PUMP, Design Size Rated Air Flow Rate [m3/s], 0.97381
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP HEAT PUMP, Design Size Gross Rated Heating Capacity [W], 16119.96935
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP HEAT PUMP, Design Size Resistive Defrost Heater Capacity [W], 16119.96935
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_4 PTHP HEAT PUMP, 16892.6, 9408.1, 6.53, 4
+ Component Sizing Information, Fan:OnOff, ZN_1_FLR_1_SEC_4 PTHPFAN, Design Size Maximum Flow Rate [m3/s], 0.97381
+ Component Sizing Information, Coil:Heating:Electric, ZN_1_FLR_1_SEC_4 PTHP SUPPLMNT HTG COIL, Design Size Nominal Capacity [W], 4320.52304
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_5 PTHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.59217
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_5 PTHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.59217
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_5 PTHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.59217
+ Component Sizing Information, ZoneHVAC:PackagedTerminalHeatPump, ZN_1_FLR_1_SEC_5 PTHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP DX COIL, Design Size Rated Air Flow Rate [m3/s], 1.59217
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP DX COIL, Design Size Gross Rated Total Cooling Capacity [W], 26356.11193
+ Component Sizing Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP DX COIL, Design Size Gross Rated Sensible Heat Ratio, 0.80066
+ DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP DX COIL, 36667.5, 2.48, 8.47, 8.49, 8.92
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP HEAT PUMP, Design Size Rated Air Flow Rate [m3/s], 1.59217
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP HEAT PUMP, Design Size Gross Rated Heating Capacity [W], 26356.11193
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP HEAT PUMP, Design Size Resistive Defrost Heater Capacity [W], 26356.11193
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, ZN_1_FLR_1_SEC_5 PTHP HEAT PUMP, 27619.3, 15382.3, 6.52, 4
+ Component Sizing Information, Fan:OnOff, ZN_1_FLR_1_SEC_5 PTHPFAN, Design Size Maximum Flow Rate [m3/s], 1.59217
+ Component Sizing Information, Coil:Heating:Electric, ZN_1_FLR_1_SEC_5 PTHP SUPPLMNT HTG COIL, Design Size Nominal Capacity [W], 16231.21923
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,FULLYEAR,WeatherFileRunPeriod,01/01,12/31,Sunday,365,UseWeatherFile,No,No,No,Yes,Yes
+Environment:Daylight Saving,No,RunPeriod Object
+Environment:WarmupDays,  7
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_1,RunPeriod: FULLYEAR,0.1028957785,5.5124272102E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_2,RunPeriod: FULLYEAR,8.2851750759E-002,4.0768129826E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_3,RunPeriod: FULLYEAR,7.7231871863E-002,4.3251004082E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_4,RunPeriod: FULLYEAR,9.3753257905E-002,6.3354538249E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_5,RunPeriod: FULLYEAR,5.6582190981E-002,4.2065281012E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data

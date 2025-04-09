@@ -1,0 +1,1114 @@
+!-   ===========  ALL OBJECTS IN CLASS: SIZING:SYSTEM ===========
+
+Sizing:System,
+    VAV_PFP-BOXES_1,         !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    0.3000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    16.7000,                 !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SIZING:PLANT ===========
+
+Sizing:Plant,
+    CoolSys1,                !- Plant or Condenser Loop Name
+    Cooling,                 !- Loop Type
+    6.67,                    !- Design Loop Exit Temperature {C}
+    6.67;                    !- Loop Design Temperature Difference {deltaC}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONECONTROL:THERMOSTAT ===========
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_1 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_1,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_1 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_2 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_2,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_2 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_3 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_3,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_3 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_4 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_4,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_4 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_5 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_5,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_5 DualSPSched;  !- Control 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: THERMOSTATSETPOINT:DUALSETPOINT ===========
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_1 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_2 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_3 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_4 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_5 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRTERMINAL:SINGLEDUCT:PARALLELPIU:REHEAT ===========
+
+AirTerminal:SingleDuct:ParallelPIU:Reheat,
+    ZN_1_FLR_1_SEC_1 PFP Component,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Maximum Primary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Secondary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Minimum Primary Air Flow Fraction
+    AUTOSIZE,                !- Fan On Flow Fraction
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Inlet Node,  !- Supply Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPSecondary Air Inlet Node,  !- Secondary Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPreheat air inlet node,  !- Reheat Coil Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFP zone mixer,  !- Zone Mixer Name
+    ZN_1_FLR_1_SEC_1 PFP fan,!- Fan Name
+    Coil:Heating:Electric,   !- Reheat Coil Object Type
+    ZN_1_FLR_1_SEC_1 PFP reheat coil,  !- Reheat Coil Name
+    AUTOSIZE,                !- Maximum Hot Water or Steam Flow Rate {m3/s}
+    0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
+    ,                        !- Hot Water or Steam Inlet Node Name
+    0.0005;                  !- Convergence Tolerance
+
+AirTerminal:SingleDuct:ParallelPIU:Reheat,
+    ZN_1_FLR_1_SEC_2 PFP Component,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Maximum Primary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Secondary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Minimum Primary Air Flow Fraction
+    AUTOSIZE,                !- Fan On Flow Fraction
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Inlet Node,  !- Supply Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPSecondary Air Inlet Node,  !- Secondary Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPreheat air inlet node,  !- Reheat Coil Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PFP zone mixer,  !- Zone Mixer Name
+    ZN_1_FLR_1_SEC_2 PFP fan,!- Fan Name
+    Coil:Heating:Electric,   !- Reheat Coil Object Type
+    ZN_1_FLR_1_SEC_2 PFP reheat coil,  !- Reheat Coil Name
+    AUTOSIZE,                !- Maximum Hot Water or Steam Flow Rate {m3/s}
+    0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
+    ,                        !- Hot Water or Steam Inlet Node Name
+    0.0005;                  !- Convergence Tolerance
+
+AirTerminal:SingleDuct:ParallelPIU:Reheat,
+    ZN_1_FLR_1_SEC_3 PFP Component,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Maximum Primary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Secondary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Minimum Primary Air Flow Fraction
+    AUTOSIZE,                !- Fan On Flow Fraction
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Inlet Node,  !- Supply Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPSecondary Air Inlet Node,  !- Secondary Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPreheat air inlet node,  !- Reheat Coil Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PFP zone mixer,  !- Zone Mixer Name
+    ZN_1_FLR_1_SEC_3 PFP fan,!- Fan Name
+    Coil:Heating:Electric,   !- Reheat Coil Object Type
+    ZN_1_FLR_1_SEC_3 PFP reheat coil,  !- Reheat Coil Name
+    AUTOSIZE,                !- Maximum Hot Water or Steam Flow Rate {m3/s}
+    0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
+    ,                        !- Hot Water or Steam Inlet Node Name
+    0.0005;                  !- Convergence Tolerance
+
+AirTerminal:SingleDuct:ParallelPIU:Reheat,
+    ZN_1_FLR_1_SEC_4 PFP Component,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Maximum Primary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Secondary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Minimum Primary Air Flow Fraction
+    AUTOSIZE,                !- Fan On Flow Fraction
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Inlet Node,  !- Supply Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPSecondary Air Inlet Node,  !- Secondary Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPreheat air inlet node,  !- Reheat Coil Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PFP zone mixer,  !- Zone Mixer Name
+    ZN_1_FLR_1_SEC_4 PFP fan,!- Fan Name
+    Coil:Heating:Electric,   !- Reheat Coil Object Type
+    ZN_1_FLR_1_SEC_4 PFP reheat coil,  !- Reheat Coil Name
+    AUTOSIZE,                !- Maximum Hot Water or Steam Flow Rate {m3/s}
+    0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
+    ,                        !- Hot Water or Steam Inlet Node Name
+    0.0005;                  !- Convergence Tolerance
+
+AirTerminal:SingleDuct:ParallelPIU:Reheat,
+    ZN_1_FLR_1_SEC_5 PFP Component,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Maximum Primary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Secondary Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Minimum Primary Air Flow Fraction
+    AUTOSIZE,                !- Fan On Flow Fraction
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Inlet Node,  !- Supply Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPSecondary Air Inlet Node,  !- Secondary Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPreheat air inlet node,  !- Reheat Coil Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PFP zone mixer,  !- Zone Mixer Name
+    ZN_1_FLR_1_SEC_5 PFP fan,!- Fan Name
+    Coil:Heating:Electric,   !- Reheat Coil Object Type
+    ZN_1_FLR_1_SEC_5 PFP reheat coil,  !- Reheat Coil Name
+    AUTOSIZE,                !- Maximum Hot Water or Steam Flow Rate {m3/s}
+    0.0,                     !- Minimum Hot Water or Steam Flow Rate {m3/s}
+    ,                        !- Hot Water or Steam Inlet Node Name
+    0.0005;                  !- Convergence Tolerance
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:AIRDISTRIBUTIONUNIT ===========
+
+ZoneHVAC:AirDistributionUnit,
+    ZN_1_FLR_1_SEC_1 PFP,    !- Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Outlet Node,  !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:ParallelPIU:Reheat,  !- Air Terminal Object Type
+    ZN_1_FLR_1_SEC_1 PFP Component;  !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ZN_1_FLR_1_SEC_2 PFP,    !- Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Outlet Node,  !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:ParallelPIU:Reheat,  !- Air Terminal Object Type
+    ZN_1_FLR_1_SEC_2 PFP Component;  !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ZN_1_FLR_1_SEC_3 PFP,    !- Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Outlet Node,  !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:ParallelPIU:Reheat,  !- Air Terminal Object Type
+    ZN_1_FLR_1_SEC_3 PFP Component;  !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ZN_1_FLR_1_SEC_4 PFP,    !- Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Outlet Node,  !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:ParallelPIU:Reheat,  !- Air Terminal Object Type
+    ZN_1_FLR_1_SEC_4 PFP Component;  !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ZN_1_FLR_1_SEC_5 PFP,    !- Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Outlet Node,  !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:ParallelPIU:Reheat,  !- Air Terminal Object Type
+    ZN_1_FLR_1_SEC_5 PFP Component;  !- Air Terminal Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTLIST ===========
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Name
+    ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_1 PFP,    !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Name
+    ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_2 PFP,    !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Name
+    ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_3 PFP,    !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Name
+    ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_4 PFP,    !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Name
+    ZoneHVAC:AirDistributionUnit,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_5 PFP,    !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTCONNECTIONS ===========
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_1,        !- Zone Name
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_1 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_1 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_1 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_2,        !- Zone Name
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_2 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_2 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_2 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_3,        !- Zone Name
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_3 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_3 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_3 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_4,        !- Zone Name
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_4 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_4 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_4 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_5,        !- Zone Name
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_5 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_5 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_5 Return Air Node Name;  !- Zone Return Air Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FAN:CONSTANTVOLUME ===========
+
+Fan:ConstantVolume,
+    ZN_1_FLR_1_SEC_1 PFP fan,!- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    0.6,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_1 PFPSecondary Air Inlet Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPfan outlet node,  !- Air Outlet Node Name
+    Fan-Powered Terminal Fan;!- End-Use Subcategory
+
+Fan:ConstantVolume,
+    ZN_1_FLR_1_SEC_2 PFP fan,!- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    0.6,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_2 PFPSecondary Air Inlet Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPfan outlet node,  !- Air Outlet Node Name
+    Fan-Powered Terminal Fan;!- End-Use Subcategory
+
+Fan:ConstantVolume,
+    ZN_1_FLR_1_SEC_3 PFP fan,!- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    0.6,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_3 PFPSecondary Air Inlet Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPfan outlet node,  !- Air Outlet Node Name
+    Fan-Powered Terminal Fan;!- End-Use Subcategory
+
+Fan:ConstantVolume,
+    ZN_1_FLR_1_SEC_4 PFP fan,!- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    0.6,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_4 PFPSecondary Air Inlet Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPfan outlet node,  !- Air Outlet Node Name
+    Fan-Powered Terminal Fan;!- End-Use Subcategory
+
+Fan:ConstantVolume,
+    ZN_1_FLR_1_SEC_5 PFP fan,!- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    0.6,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_5 PFPSecondary Air Inlet Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPfan outlet node,  !- Air Outlet Node Name
+    Fan-Powered Terminal Fan;!- End-Use Subcategory
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FAN:VARIABLEVOLUME ===========
+
+Fan:VariableVolume,
+    VAV_PFP-BOXES_1_Fan,     !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    Fraction,                !- Fan Power Minimum Flow Rate Input Method
+    0.6000,                  !- Fan Power Minimum Flow Fraction
+    ,                        !- Fan Power Minimum Air Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0000,                  !- Motor In Airstream Fraction
+    0.0407598940,            !- Fan Power Coefficient 1
+    0.08804497,              !- Fan Power Coefficient 2
+    -0.072926120,            !- Fan Power Coefficient 3
+    0.9437398230,            !- Fan Power Coefficient 4
+    0,                       !- Fan Power Coefficient 5
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Air Inlet Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    Fan Energy;              !- End-Use Subcategory
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:COOLING:WATER ===========
+
+Coil:Cooling:Water,
+    VAV_PFP-BOXES_1_CoolC 1, !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Design Water Flow Rate {m3/s}
+    AUTOSIZE,                !- Design Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Design Inlet Water Temperature {C}
+    AUTOSIZE,                !- Design Inlet Air Temperature {C}
+    AUTOSIZE,                !- Design Outlet Air Temperature {C}
+    AUTOSIZE,                !- Design Inlet Air Humidity Ratio {kgWater/kgDryAir}
+    AUTOSIZE,                !- Design Outlet Air Humidity Ratio {kgWater/kgDryAir}
+    VAV_PFP-BOXES_1_CoolC 1 Demand Inlet Node,  !- Water Inlet Node Name
+    VAV_PFP-BOXES_1_CoolC 1 Demand Outlet Node,  !- Water Outlet Node Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node,  !- Air Inlet Node Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Air Outlet Node Name
+    SimpleAnalysis,          !- Type of Analysis
+    CrossFlow;               !- Heat Exchanger Configuration
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:ELECTRIC ===========
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_1 PFP reheat coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1,                       !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_1 PFPreheat air inlet node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_2 PFP reheat coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1,                       !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_2 PFPreheat air inlet node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_3 PFP reheat coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1,                       !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_3 PFPreheat air inlet node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_4 PFP reheat coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1,                       !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_4 PFPreheat air inlet node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_5 PFP reheat coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1,                       !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_5 PFPreheat air inlet node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Outlet Node;  !- Air Outlet Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONTROLLER:WATERCOIL ===========
+
+Controller:WaterCoil,
+    VAV_PFP-BOXES_1_CoolC 1_Controller,  !- Name
+    Temperature,             !- Control Variable
+    Reverse,                 !- Action
+    Flow,                    !- Actuator Variable
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Sensor Node Name
+    VAV_PFP-BOXES_1_CoolC 1 Demand Inlet Node,  !- Actuator Node Name
+    ,                        !- Controller Convergence Tolerance {deltaC}
+    AUTOSIZE,                !- Maximum Actuated Flow {m3/s}
+    0.0;                     !- Minimum Actuated Flow {m3/s}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONTROLLER:OUTDOORAIR ===========
+
+Controller:OutdoorAir,
+    VAV_PFP-BOXES_1_OA_Controller,  !- Name
+    VAV_PFP-BOXES_1_OARelief Node,  !- Relief Air Outlet Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Inlet Node,  !- Return Air Node Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node,  !- Mixed Air Node Name
+    VAV_PFP-BOXES_1_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:CONTROLLERLIST ===========
+
+AirLoopHVAC:ControllerList,
+    VAV_PFP-BOXES_1_Controllers,  !- Name
+    Controller:WaterCoil,    !- Controller 1 Object Type
+    VAV_PFP-BOXES_1_CoolC 1_Controller;  !- Controller 1 Name
+
+AirLoopHVAC:ControllerList,
+    VAV_PFP-BOXES_1_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    VAV_PFP-BOXES_1_OA_Controller;  !- Controller 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC ===========
+
+!***** Air Loop: VAV_PFP-BOXES_1 *****
+AirLoopHVAC,
+    VAV_PFP-BOXES_1,         !- Name
+    VAV_PFP-BOXES_1_Controllers,  !- Controller List Name
+    VAV_PFP-BOXES_1 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    VAV_PFP-BOXES_1 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    VAV_PFP-BOXES_1 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    VAV_PFP-BOXES_1 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    VAV_PFP-BOXES_1 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:OUTDOORAIRSYSTEM:EQUIPMENTLIST ===========
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    VAV_PFP-BOXES_1_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    VAV_PFP-BOXES_1_OAMixing Box;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:OUTDOORAIRSYSTEM ===========
+
+AirLoopHVAC:OutdoorAirSystem,
+    VAV_PFP-BOXES_1_OA,      !- Name
+    VAV_PFP-BOXES_1_OA_Controllers,  !- Controller List Name
+    VAV_PFP-BOXES_1_OA_Equipment,  !- Outdoor Air Equipment List Name
+    VAV_PFP-BOXES_1 Availability Manager List;  !- Availability Manager List Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:MIXER ===========
+
+OutdoorAir:Mixer,
+    VAV_PFP-BOXES_1_OAMixing Box,  !- Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node,  !- Mixed Air Node Name
+    VAV_PFP-BOXES_1_OAInlet Node,  !- Outdoor Air Stream Node Name
+    VAV_PFP-BOXES_1_OARelief Node,  !- Relief Air Stream Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONESPLITTER ===========
+
+AirLoopHVAC:ZoneSplitter,
+    VAV_PFP-BOXES_1 Supply Air Splitter,  !- Name
+    VAV_PFP-BOXES_1 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Inlet Node,  !- Outlet 1 Node Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Inlet Node,  !- Outlet 2 Node Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Inlet Node,  !- Outlet 3 Node Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Inlet Node,  !- Outlet 4 Node Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Inlet Node;  !- Outlet 5 Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:SUPPLYPATH ===========
+
+AirLoopHVAC:SupplyPath,
+    VAV_PFP-BOXES_1 Supply Path,  !- Name
+    VAV_PFP-BOXES_1 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    VAV_PFP-BOXES_1 Supply Air Splitter;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONEMIXER ===========
+
+AirLoopHVAC:ZoneMixer,
+    ZN_1_FLR_1_SEC_1 PFP zone mixer,  !- Name
+    ZN_1_FLR_1_SEC_1 PFPreheat air inlet node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Inlet Node,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_1 PFPfan outlet node;  !- Inlet 2 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    ZN_1_FLR_1_SEC_2 PFP zone mixer,  !- Name
+    ZN_1_FLR_1_SEC_2 PFPreheat air inlet node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Inlet Node,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_2 PFPfan outlet node;  !- Inlet 2 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    ZN_1_FLR_1_SEC_3 PFP zone mixer,  !- Name
+    ZN_1_FLR_1_SEC_3 PFPreheat air inlet node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Inlet Node,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_3 PFPfan outlet node;  !- Inlet 2 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    ZN_1_FLR_1_SEC_4 PFP zone mixer,  !- Name
+    ZN_1_FLR_1_SEC_4 PFPreheat air inlet node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Inlet Node,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_4 PFPfan outlet node;  !- Inlet 2 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    ZN_1_FLR_1_SEC_5 PFP zone mixer,  !- Name
+    ZN_1_FLR_1_SEC_5 PFPreheat air inlet node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Inlet Node,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_5 PFPfan outlet node;  !- Inlet 2 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    VAV_PFP-BOXES_1 Return Air Mixer,  !- Name
+    VAV_PFP-BOXES_1 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_1 Return Air Node Name,  !- Inlet 1 Node Name
+    ZN_1_FLR_1_SEC_2 Return Air Node Name,  !- Inlet 2 Node Name
+    ZN_1_FLR_1_SEC_3 Return Air Node Name,  !- Inlet 3 Node Name
+    ZN_1_FLR_1_SEC_4 Return Air Node Name,  !- Inlet 4 Node Name
+    ZN_1_FLR_1_SEC_5 Return Air Node Name;  !- Inlet 5 Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:RETURNPATH ===========
+
+AirLoopHVAC:ReturnPath,
+    VAV_PFP-BOXES_1 Return Air Path,  !- Name
+    VAV_PFP-BOXES_1 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    VAV_PFP-BOXES_1 Return Air Mixer;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BRANCH ===========
+
+Branch,
+    VAV_PFP-BOXES_1 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    VAV_PFP-BOXES_1_OA,      !- Component 1 Name
+    VAV_PFP-BOXES_1 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    Coil:Cooling:Water,      !- Component 2 Object Type
+    VAV_PFP-BOXES_1_CoolC 1, !- Component 2 Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node,  !- Component 2 Inlet Node Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Component 2 Outlet Node Name
+    Passive,                 !- Component 2 Branch Control Type
+    Fan:VariableVolume,      !- Component 3 Object Type
+    VAV_PFP-BOXES_1_Fan,     !- Component 3 Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Component 3 Inlet Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Component 3 Outlet Node Name
+    Active;                  !- Component 3 Branch Control Type
+
+Branch,
+    CoolSys1 Supply Inlet Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pump:VariableSpeed,      !- Component 1 Object Type
+    CoolSys1 Pump,           !- Component 1 Name
+    CoolSys1 Supply Inlet Node,  !- Component 1 Inlet Node Name
+    CoolSys1 Pump-CoolSys1 ChillerNodeviaConnector,  !- Component 1 Outlet Node Name
+    Active;                  !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Supply Equipment Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Chiller:Electric:EIR,    !- Component 1 Object Type
+    CoolSys1 Chiller,        !- Component 1 Name
+    CoolSys1 Pump-CoolSys1 ChillerNode,  !- Component 1 Inlet Node Name
+    CoolSys1 Supply Equipment Outlet Node,  !- Component 1 Outlet Node Name
+    Active;                  !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Supply Equipment Bypass Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CoolSys1 Supply Equipment Bypass Pipe,  !- Component 1 Name
+    CoolSys1 Supply Equip Bypass Inlet Node,  !- Component 1 Inlet Node Name
+    CoolSys1 Supply Equip Bypass Outlet Node,  !- Component 1 Outlet Node Name
+    Bypass;                  !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Supply Outlet Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CoolSys1 Supply Outlet Pipe,  !- Component 1 Name
+    CoolSys1 Supply Mixer-CoolSys1 Supply Outlet Pipe,  !- Component 1 Inlet Node Name
+    CoolSys1 Supply Outlet Node,  !- Component 1 Outlet Node Name
+    Passive;                 !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Demand Inlet Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CoolSys1 Demand Inlet Pipe,  !- Component 1 Name
+    CoolSys1 Demand Inlet Node,  !- Component 1 Inlet Node Name
+    CoolSys1 Demand Inlet Pipe-CoolSys1 Demand Mixer,  !- Component 1 Outlet Node Name
+    Passive;                 !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Demand Load Branch 1,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Coil:Cooling:Water,      !- Component 1 Object Type
+    VAV_PFP-BOXES_1_CoolC 1, !- Component 1 Name
+    VAV_PFP-BOXES_1_CoolC 1 Demand Inlet Node,  !- Component 1 Inlet Node Name
+    VAV_PFP-BOXES_1_CoolC 1 Demand Outlet Node,  !- Component 1 Outlet Node Name
+    Active;                  !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Demand Bypass Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CoolSys1 Demand Bypass Pipe,  !- Component 1 Name
+    CoolSys1 Demand Bypass Pipe Inlet Node,  !- Component 1 Inlet Node Name
+    CoolSys1 Demand Bypass Pipe Outlet Node,  !- Component 1 Outlet Node Name
+    Bypass;                  !- Component 1 Branch Control Type
+
+Branch,
+    CoolSys1 Demand Outlet Branch,  !- Name
+    ,                        !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    Pipe:Adiabatic,          !- Component 1 Object Type
+    CoolSys1 Demand Outlet Pipe,  !- Component 1 Name
+    CoolSys1 Demand Mixer-CoolSys1 Demand Outlet Pipe,  !- Component 1 Inlet Node Name
+    CoolSys1 Demand Outlet Node,  !- Component 1 Outlet Node Name
+    Passive;                 !- Component 1 Branch Control Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BRANCHLIST ===========
+
+BranchList,
+    VAV_PFP-BOXES_1 Air Loop Branches,  !- Name
+    VAV_PFP-BOXES_1 Air Loop Main Branch;  !- Branch 1 Name
+
+BranchList,
+    CoolSys1 Supply Branches,!- Name
+    CoolSys1 Supply Inlet Branch,  !- Branch 1 Name
+    CoolSys1 Supply Equipment Branch,  !- Branch 2 Name
+    CoolSys1 Supply Equipment Bypass Branch,  !- Branch 3 Name
+    CoolSys1 Supply Outlet Branch;  !- Branch 4 Name
+
+BranchList,
+    CoolSys1 Demand Branches,!- Name
+    CoolSys1 Demand Inlet Branch,  !- Branch 1 Name
+    CoolSys1 Demand Load Branch 1,  !- Branch 2 Name
+    CoolSys1 Demand Bypass Branch,  !- Branch 3 Name
+    CoolSys1 Demand Outlet Branch;  !- Branch 4 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONNECTOR:SPLITTER ===========
+
+Connector:Splitter,
+    CoolSys1 Supply Splitter,!- Name
+    CoolSys1 Supply Inlet Branch,  !- Inlet Branch Name
+    CoolSys1 Supply Equipment Branch,  !- Outlet Branch 1 Name
+    CoolSys1 Supply Equipment Bypass Branch;  !- Outlet Branch 2 Name
+
+Connector:Splitter,
+    CoolSys1 Demand Splitter,!- Name
+    CoolSys1 Demand Inlet Branch,  !- Inlet Branch Name
+    CoolSys1 Demand Load Branch 1,  !- Outlet Branch 1 Name
+    CoolSys1 Demand Bypass Branch;  !- Outlet Branch 2 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONNECTOR:MIXER ===========
+
+Connector:Mixer,
+    CoolSys1 Supply Mixer,   !- Name
+    CoolSys1 Supply Outlet Branch,  !- Outlet Branch Name
+    CoolSys1 Supply Equipment Branch,  !- Inlet Branch 1 Name
+    CoolSys1 Supply Equipment Bypass Branch;  !- Inlet Branch 2 Name
+
+Connector:Mixer,
+    CoolSys1 Demand Mixer,   !- Name
+    CoolSys1 Demand Outlet Branch,  !- Outlet Branch Name
+    CoolSys1 Demand Load Branch 1,  !- Inlet Branch 1 Name
+    CoolSys1 Demand Bypass Branch;  !- Inlet Branch 2 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONNECTORLIST ===========
+
+ConnectorList,
+    CoolSys1 Supply Connectors,  !- Name
+    Connector:Splitter,      !- Connector 1 Object Type
+    CoolSys1 Supply Splitter,!- Connector 1 Name
+    Connector:Mixer,         !- Connector 2 Object Type
+    CoolSys1 Supply Mixer;   !- Connector 2 Name
+
+ConnectorList,
+    CoolSys1 Demand Connectors,  !- Name
+    Connector:Splitter,      !- Connector 1 Object Type
+    CoolSys1 Demand Splitter,!- Connector 1 Name
+    Connector:Mixer,         !- Connector 2 Object Type
+    CoolSys1 Demand Mixer;   !- Connector 2 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: NODELIST ===========
+
+NodeList,
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_1 PFPPrimary Air Outlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_1 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_1 PFPSecondary Air Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_2 PFPPrimary Air Outlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_2 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_2 PFPSecondary Air Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_3 PFPPrimary Air Outlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_3 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_3 PFPSecondary Air Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_4 PFPPrimary Air Outlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_4 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_4 PFPSecondary Air Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_5 PFPPrimary Air Outlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_5 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_5 PFPSecondary Air Inlet Node;  !- Node 1 Name
+
+NodeList,
+    VAV_PFP-BOXES_1_OANode List,  !- Name
+    VAV_PFP-BOXES_1_OAInlet Node;  !- Node 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODELIST ===========
+
+OutdoorAir:NodeList,
+    VAV_PFP-BOXES_1_OANode List;  !- Node or NodeList Name 1
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PIPE:ADIABATIC ===========
+
+Pipe:Adiabatic,
+    CoolSys1 Supply Equipment Bypass Pipe,  !- Name
+    CoolSys1 Supply Equip Bypass Inlet Node,  !- Inlet Node Name
+    CoolSys1 Supply Equip Bypass Outlet Node;  !- Outlet Node Name
+
+Pipe:Adiabatic,
+    CoolSys1 Supply Outlet Pipe,  !- Name
+    CoolSys1 Supply Mixer-CoolSys1 Supply Outlet Pipe,  !- Inlet Node Name
+    CoolSys1 Supply Outlet Node;  !- Outlet Node Name
+
+Pipe:Adiabatic,
+    CoolSys1 Demand Inlet Pipe,  !- Name
+    CoolSys1 Demand Inlet Node,  !- Inlet Node Name
+    CoolSys1 Demand Inlet Pipe-CoolSys1 Demand Mixer;  !- Outlet Node Name
+
+Pipe:Adiabatic,
+    CoolSys1 Demand Bypass Pipe,  !- Name
+    CoolSys1 Demand Bypass Pipe Inlet Node,  !- Inlet Node Name
+    CoolSys1 Demand Bypass Pipe Outlet Node;  !- Outlet Node Name
+
+Pipe:Adiabatic,
+    CoolSys1 Demand Outlet Pipe,  !- Name
+    CoolSys1 Demand Mixer-CoolSys1 Demand Outlet Pipe,  !- Inlet Node Name
+    CoolSys1 Demand Outlet Node;  !- Outlet Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PUMP:VARIABLESPEED ===========
+
+Pump:VariableSpeed,
+    CoolSys1 Pump,           !- Name
+    CoolSys1 Supply Inlet Node,  !- Inlet Node Name
+    CoolSys1 Pump-CoolSys1 ChillerNodeviaConnector,  !- Outlet Node Name
+    AUTOSIZE,                !- Rated Flow Rate {m3/s}
+    179352,                  !- Rated Pump Head {Pa}
+    AUTOSIZE,                !- Rated Power Consumption {W}
+    0.9,                     !- Motor Efficiency
+    0.0,                     !- Fraction of Motor Inefficiencies to Fluid Stream
+    0,                       !- Coefficient 1 of the Part Load Performance Curve
+    1,                       !- Coefficient 2 of the Part Load Performance Curve
+    0,                       !- Coefficient 3 of the Part Load Performance Curve
+    0,                       !- Coefficient 4 of the Part Load Performance Curve
+    0.0,                     !- Minimum Flow Rate {m3/s}
+    Intermittent;            !- Pump Control Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CHILLER:ELECTRIC:EIR ===========
+
+!***** Chiller: CoolSys1 Chiller *****
+Chiller:Electric:EIR,
+    CoolSys1 Chiller,        !- Name
+    AUTOSIZE,                !- Reference Capacity {W}
+    3.1,                     !- Reference COP {W/W}
+    6.6700,                  !- Reference Leaving Chilled Water Temperature {C}
+    29.4,                    !- Reference Entering Condenser Fluid Temperature {C}
+    AUTOSIZE,                !- Reference Chilled Water Flow Rate {m3/s}
+    AUTOSIZE,                !- Reference Condenser Fluid Flow Rate {m3/s}
+    CoolSys1 Chiller ClgCapFuncTempCurve,  !- Cooling Capacity Function of Temperature Curve Name
+    CoolSys1 Chiller EirFuncTempCurve,  !- Electric Input to Cooling Output Ratio Function of Temperature Curve Name
+    CoolSys1 Chiller EirFuncPlrCurve,  !- Electric Input to Cooling Output Ratio Function of Part Load Ratio Curve Name
+    0.15,                    !- Minimum Part Load Ratio
+    1.0,                     !- Maximum Part Load Ratio
+    1.0000,                  !- Optimum Part Load Ratio
+    0.2500,                  !- Minimum Unloading Ratio
+    CoolSys1 Pump-CoolSys1 ChillerNode,  !- Chilled Water Inlet Node Name
+    CoolSys1 Supply Equipment Outlet Node,  !- Chilled Water Outlet Node Name
+    CoolSys1 Chiller Water Inlet Node,  !- Condenser Inlet Node Name
+    CoolSys1 Chiller Water Outlet Node,  !- Condenser Outlet Node Name
+    AirCooled,               !- Condenser Type
+    0.0,                     !- Condenser Fan Power Ratio {W/W}
+    ,                        !- Compressor Motor Efficiency
+    2.0,                     !- Leaving Chilled Water Lower Temperature Limit {C}
+    ConstantFlow,            !- Chiller Flow Mode
+    0.0,                     !- Design Heat Recovery Water Flow Rate {m3/s}
+    ,                        !- Heat Recovery Inlet Node Name
+    ,                        !- Heat Recovery Outlet Node Name
+    1.0000;                  !- Sizing Factor
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PLANTLOOP ===========
+
+!***** Plant Loop: CoolSys1 *****
+PlantLoop,
+    CoolSys1,                !- Name
+    Water,                   !- Fluid Type
+    ,                        !- User Defined Fluid Type
+    CoolSys1 Loop Operation Scheme List,  !- Plant Equipment Operation Scheme Name
+    CoolSys1 Supply Outlet Node,  !- Loop Temperature Setpoint Node Name
+    98.0,                    !- Maximum Loop Temperature {C}
+    1.0,                     !- Minimum Loop Temperature {C}
+    AUTOSIZE,                !- Maximum Loop Flow Rate {m3/s}
+    0.0,                     !- Minimum Loop Flow Rate {m3/s}
+    AUTOSIZE,                !- Plant Loop Volume {m3}
+    CoolSys1 Supply Inlet Node,  !- Plant Side Inlet Node Name
+    CoolSys1 Supply Outlet Node,  !- Plant Side Outlet Node Name
+    CoolSys1 Supply Branches,!- Plant Side Branch List Name
+    CoolSys1 Supply Connectors,  !- Plant Side Connector List Name
+    CoolSys1 Demand Inlet Node,  !- Demand Side Inlet Node Name
+    CoolSys1 Demand Outlet Node,  !- Demand Side Outlet Node Name
+    CoolSys1 Demand Branches,!- Demand Side Branch List Name
+    CoolSys1 Demand Connectors,  !- Demand Side Connector List Name
+    Optimal;                 !- Load Distribution Scheme
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PLANTEQUIPMENTLIST ===========
+
+PlantEquipmentList,
+    CoolSys1 Equipment List, !- Name
+    Chiller:Electric:EIR,    !- Equipment 1 Object Type
+    CoolSys1 Chiller;        !- Equipment 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PLANTEQUIPMENTOPERATION:COOLINGLOAD ===========
+
+PlantEquipmentOperation:CoolingLoad,
+    CoolSys1 Operation Scheme,  !- Name
+    0.0,                     !- Load Range 1 Lower Limit {W}
+    100000000000000,         !- Load Range 1 Upper Limit {W}
+    CoolSys1 Equipment List; !- Range 1 Equipment List Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PLANTEQUIPMENTOPERATIONSCHEMES ===========
+
+PlantEquipmentOperationSchemes,
+    CoolSys1 Loop Operation Scheme List,  !- Name
+    PlantEquipmentOperation:CoolingLoad,  !- Control Scheme 1 Object Type
+    CoolSys1 Operation Scheme,  !- Control Scheme 1 Name
+    PlantOnSched;            !- Control Scheme 1 Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGER:NIGHTCYCLE ===========
+
+AvailabilityManager:NightCycle,
+    VAV_PFP-BOXES_1 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGERASSIGNMENTLIST ===========
+
+AvailabilityManagerAssignmentList,
+    VAV_PFP-BOXES_1 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    VAV_PFP-BOXES_1 Availability Manager;  !- Availability Manager 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SCHEDULED ===========
+
+SetpointManager:Scheduled,
+    CoolSys1 Loop Setpoint Manager,  !- Name
+    Temperature,             !- Control Variable
+    CW-Loop-Temp-Schedule,   !- Schedule Name
+    CoolSys1 Supply Outlet Node;  !- Setpoint Node or NodeList Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:OUTDOORAIRRESET ===========
+
+SetpointManager:OutdoorAirReset,
+    VAV_PFP-BOXES_1 SAT Setpoint,  !- Name
+    Temperature,             !- Control Variable
+    15.5000,                 !- Setpoint at Outdoor Low Temperature {C}
+    15.5000,                 !- Outdoor Low Temperature {C}
+    12.8000,                 !- Setpoint at Outdoor High Temperature {C}
+    21.0000,                 !- Outdoor High Temperature {C}
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:MIXEDAIR ===========
+
+SetpointManager:MixedAir,
+    VAV_PFP-BOXES_1_CoolC 1 SAT Manager,  !- Name
+    Temperature,             !- Control Variable
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Fan Inlet Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Fan Outlet Node Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode;  !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+    VAV_PFP-BOXES_1 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    VAV_PFP-BOXES_1_CoolC 1-VAV_PFP-BOXES_1_FanNode,  !- Fan Inlet Node Name
+    VAV_PFP-BOXES_1 Supply Equipment Outlet Node,  !- Fan Outlet Node Name
+    VAV_PFP-BOXES_1_OA-VAV_PFP-BOXES_1_CoolC 1Node;  !- Setpoint Node or NodeList Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:QUADRATIC ===========
+
+!***** Following curve from DOE2.1E HERM-CENT-EIR-FPLR (EIRPLR3) and OPEN-CENT-EIR-FPLR (EIRPLR1) *****
+Curve:Quadratic,
+    CoolSys1 Chiller EirFuncPlrCurve,  !- Name
+    0.222903,                !- Coefficient1 Constant
+    0.313387,                !- Coefficient2 x
+    0.463710,                !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:BIQUADRATIC ===========
+
+!***** Following curve from DOE2.1E HERM-CENT-CAP-FT (CCAPT3) and OPEN-CENT-CAP-FT (CCAPT1) *****
+Curve:Biquadratic,
+    CoolSys1 Chiller ClgCapFuncTempCurve,  !- Name
+    0.257896E+00,            !- Coefficient1 Constant
+    0.389016E-01,            !- Coefficient2 x
+    -0.217080E-03,           !- Coefficient3 x**2
+    0.468684E-01,            !- Coefficient4 y
+    -0.942840E-03,           !- Coefficient5 y**2
+    -0.343440E-03,           !- Coefficient6 x*y
+    5.0,                     !- Minimum Value of x
+    10.0,                    !- Maximum Value of x
+    24.0,                    !- Minimum Value of y
+    35.0;                    !- Maximum Value of y
+
+!***** Following curve from DOE2.1E HERM-CENT-EIR-FPLR (EIRPLR3) and OPEN-CENT-EIR-FPLR (EIRT1) *****
+Curve:Biquadratic,
+    CoolSys1 Chiller EirFuncTempCurve,  !- Name
+    0.933884E+00,            !- Coefficient1 Constant
+    -0.582120E-01,           !- Coefficient2 x
+    0.450036E-02,            !- Coefficient3 x**2
+    0.243000E-02,            !- Coefficient4 y
+    0.486000E-03,            !- Coefficient5 y**2
+    -0.121500E-02,           !- Coefficient6 x*y
+    5.0,                     !- Minimum Value of x
+    10.0,                    !- Maximum Value of x
+    24.0,                    !- Minimum Value of y
+    35.0;                    !- Maximum Value of y
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+Output:Table:SummaryReports,
+    AnnualBuildingUtilityPerformanceSummary,  !- Report 1 Name
+    ComponentCostEconomicsSummary,  !- Report 2 Name
+    InputVerificationandResultsSummary,  !- Report 3 Name
+    ClimaticDataSummary,     !- Report 4 Name
+    EquipmentSummary,        !- Report 5 Name
+    EnvelopeSummary,         !- Report 6 Name
+    AllSummaryAndMonthly;    !- Report 7 Name
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+
+OutputControl:Table:Style,
+    HTML,                    !- Column Separator
+    JtoKWH;                  !- Unit Conversion
+

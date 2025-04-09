@@ -1,0 +1,202 @@
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEVENTILATION:DESIGNFLOWRATE ===========
+
+  ZoneVentilation:DesignFlowRate,
+    Block1:Zone1 Nat Vent,   !- Name
+    ZN_1_FLR_1_SEC_1,        !- Zone or ZoneList Name
+    INFIL_SCH,               !- Schedule Name
+    AirChanges/Hour,         !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    0.5,                     !- Air Changes per Hour {1/hr}
+    NATURAL,                 !- Ventilation Type
+    0,                       !- Fan Pressure Rise {Pa}
+    1,                       !- Fan Total Efficiency
+    1,                       !- Constant Term Coefficient
+    0,                       !- Temperature Term Coefficient
+    0,                       !- Velocity Term Coefficient
+    0,                       !- Velocity Squared Term Coefficient
+    22,                      !- Minimum Indoor Temperature {C}
+    ,                        !- Minimum Indoor Temperature Schedule Name
+    26,                      !- Maximum Indoor Temperature {C}
+    ,                        !- Maximum Indoor Temperature Schedule Name
+    2,                       !- Delta Temperature {deltaC}
+    ,                        !- Delta Temperature Schedule Name
+    22,                      !- Minimum Outdoor Temperature {C}
+    ,                        !- Minimum Outdoor Temperature Schedule Name
+    26,                      !- Maximum Outdoor Temperature {C}
+    ,                        !- Maximum Outdoor Temperature Schedule Name
+    40;                      !- Maximum Wind Speed {m/s}
+
+  ZoneVentilation:DesignFlowRate,
+    Block1:Zone2 Nat Vent,   !- Name
+    ZN_1_FLR_1_SEC_2,        !- Zone or ZoneList Name
+    INFIL_SCH,               !- Schedule Name
+    AirChanges/Hour,         !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    0.5,                     !- Air Changes per Hour {1/hr}
+    NATURAL,                 !- Ventilation Type
+    0,                       !- Fan Pressure Rise {Pa}
+    1,                       !- Fan Total Efficiency
+    1,                       !- Constant Term Coefficient
+    0,                       !- Temperature Term Coefficient
+    0,                       !- Velocity Term Coefficient
+    0,                       !- Velocity Squared Term Coefficient
+    22,                      !- Minimum Indoor Temperature {C}
+    ,                        !- Minimum Indoor Temperature Schedule Name
+    26,                      !- Maximum Indoor Temperature {C}
+    ,                        !- Maximum Indoor Temperature Schedule Name
+    2,                       !- Delta Temperature {deltaC}
+    ,                        !- Delta Temperature Schedule Name
+    22,                      !- Minimum Outdoor Temperature {C}
+    ,                        !- Minimum Outdoor Temperature Schedule Name
+    26,                      !- Maximum Outdoor Temperature {C}
+    ,                        !- Maximum Outdoor Temperature Schedule Name
+    40;                      !- Maximum Wind Speed {m/s}
+
+  ZoneVentilation:DesignFlowRate,
+    Block1:Zone3 Nat Vent,   !- Name
+    ZN_1_FLR_1_SEC_3,        !- Zone or ZoneList Name
+    INFIL_SCH,               !- Schedule Name
+    AirChanges/Hour,         !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    0.5,                     !- Air Changes per Hour {1/hr}
+    NATURAL,                 !- Ventilation Type
+    0,                       !- Fan Pressure Rise {Pa}
+    1,                       !- Fan Total Efficiency
+    1,                       !- Constant Term Coefficient
+    0,                       !- Temperature Term Coefficient
+    0,                       !- Velocity Term Coefficient
+    0,                       !- Velocity Squared Term Coefficient
+    22,                      !- Minimum Indoor Temperature {C}
+    ,                        !- Minimum Indoor Temperature Schedule Name
+    26,                      !- Maximum Indoor Temperature {C}
+    ,                        !- Maximum Indoor Temperature Schedule Name
+    2,                       !- Delta Temperature {deltaC}
+    ,                        !- Delta Temperature Schedule Name
+    22,                      !- Minimum Outdoor Temperature {C}
+    ,                        !- Minimum Outdoor Temperature Schedule Name
+    26,                      !- Maximum Outdoor Temperature {C}
+    ,                        !- Maximum Outdoor Temperature Schedule Name
+    40;                      !- Maximum Wind Speed {m/s}
+
+  ZoneVentilation:DesignFlowRate,
+    Block1:Zone4 Nat Vent,   !- Name
+    ZN_1_FLR_1_SEC_4,        !- Zone or ZoneList Name
+    INFIL_SCH,               !- Schedule Name
+    AirChanges/Hour,         !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    0.5,                     !- Air Changes per Hour {1/hr}
+    NATURAL,                 !- Ventilation Type
+    0,                       !- Fan Pressure Rise {Pa}
+    1,                       !- Fan Total Efficiency
+    1,                       !- Constant Term Coefficient
+    0,                       !- Temperature Term Coefficient
+    0,                       !- Velocity Term Coefficient
+    0,                       !- Velocity Squared Term Coefficient
+    22,                      !- Minimum Indoor Temperature {C}
+    ,                        !- Minimum Indoor Temperature Schedule Name
+    26,                      !- Maximum Indoor Temperature {C}
+    ,                        !- Maximum Indoor Temperature Schedule Name
+    2,                       !- Delta Temperature {deltaC}
+    ,                        !- Delta Temperature Schedule Name
+    22,                      !- Minimum Outdoor Temperature {C}
+    ,                        !- Minimum Outdoor Temperature Schedule Name
+    26,                      !- Maximum Outdoor Temperature {C}
+    ,                        !- Maximum Outdoor Temperature Schedule Name
+    40;                      !- Maximum Wind Speed {m/s}
+
+  ZoneVentilation:DesignFlowRate,
+    Block1:Zone5 Nat Vent,   !- Name
+    ZN_1_FLR_1_SEC_5,        !- Zone or ZoneList Name
+    INFIL_SCH,               !- Schedule Name
+    AirChanges/Hour,         !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    0.5,                     !- Air Changes per Hour {1/hr}
+    NATURAL,                 !- Ventilation Type
+    0,                       !- Fan Pressure Rise {Pa}
+    1,                       !- Fan Total Efficiency
+    1,                       !- Constant Term Coefficient
+    0,                       !- Temperature Term Coefficient
+    0,                       !- Velocity Term Coefficient
+    0,                       !- Velocity Squared Term Coefficient
+    22,                      !- Minimum Indoor Temperature {C}
+    ,                        !- Minimum Indoor Temperature Schedule Name
+    26,                      !- Maximum Indoor Temperature {C}
+    ,                        !- Maximum Indoor Temperature Schedule Name
+    2,                       !- Delta Temperature {deltaC}
+    ,                        !- Delta Temperature Schedule Name
+    22,                      !- Minimum Outdoor Temperature {C}
+    ,                        !- Minimum Outdoor Temperature Schedule Name
+    26,                      !- Maximum Outdoor Temperature {C}
+    ,                        !- Maximum Outdoor Temperature Schedule Name
+    40;                      !- Maximum Wind Speed {m/s}
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
+
+  Output:VariableDictionary,IDF,Name;
+
+  Output:VariableDictionary,Regular;
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:SURFACES:LIST ===========
+
+  Output:Surfaces:List,Details;
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:SURFACES:DRAWING ===========
+
+  Output:Surfaces:Drawing,DXF,Triangulate3DFace;
+
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+  Output:Table:SummaryReports,
+    AnnualBuildingUtilityPerformanceSummary,  !- Report 1 Name
+    InputVerificationandResultsSummary,  !- Report 2 Name
+    ClimaticDataSummary,     !- Report 3 Name
+    OccupantComfortDataSummaryMonthly,  !- Report 4 Name
+    ComfortReportSimple55Monthly,  !- Report 5 Name
+    AdaptiveComfortSummary;  !- Report 6 Name
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+
+  OutputControl:Table:Style,
+    CommaAndHTML,            !- Column Separator
+    JtoKWH;                  !- Unit Conversion
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
+
+  Output:Variable,*,Zone Thermal Comfort Fanger Model PMV,Monthly,On;
+
+  Output:Variable,*,Facility Thermal Comfort ASHRAE 55 Simple Model Summer or Winter Clothes Not Comfortable Time,Monthly;
+
+  Output:Variable,*,Site Outdoor Air Drybulb Temperature,Monthly;
+
+  Output:Variable,*,Zone Mean Air Temperature,Monthly,On;
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
+
+  Output:Meter,ELECTRIC EQUIPMENT#Block1:Zone1#07:InteriorEquipment*,hourly;
+
+  Output:Meter,ELECTRIC EQUIPMENT#Block1:Zone1#07:InteriorEquipment*,daily;
+
+  Output:Meter,ELECTRIC EQUIPMENT#Block1:Zone1#07:InteriorEquipment*,monthly;
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:DIAGNOSTICS ===========
+
+  Output:Diagnostics,
+    DisplayAdvancedReportVariables;  !- Key 1
+
+  Output:Diagnostics,
+    DisplayExtraWarnings;    !- Key 1
+

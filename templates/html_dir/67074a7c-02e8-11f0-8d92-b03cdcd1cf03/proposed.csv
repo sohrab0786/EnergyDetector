@@ -1,0 +1,17 @@
+,Electricity [kWh],Natural Gas [kWh],Additional Fuel [kWh],District Cooling [kWh],District Heating [kWh],Water [m3]
+Heating,1642.23,0.00,0.00,0.00,0.00,0.00
+Cooling,14052.92,0.00,0.00,0.00,0.00,0.00
+Interior Lighting,4914.82,0.00,0.00,0.00,0.00,0.00
+Exterior Lighting,0.00,0.00,0.00,0.00,0.00,0.00
+Interior Equipment,8252.90,0.00,0.00,0.00,0.00,0.00
+Exterior Equipment,0.00,0.00,0.00,0.00,0.00,0.00
+Fans,1061.14,0.00,0.00,0.00,0.00,0.00
+Pumps,0.00,0.00,0.00,0.00,0.00,0.00
+Heat Rejection,0.00,0.00,0.00,0.00,0.00,0.00
+Humidification,0.00,0.00,0.00,0.00,0.00,0.00
+Heat Recovery,0.00,0.00,0.00,0.00,0.00,0.00
+Water Systems,0.00,0.00,0.00,0.00,0.00,0.00
+Refrigeration,0.00,0.00,0.00,0.00,0.00,0.00
+Generators,0.00,0.00,0.00,0.00,0.00,0.00
+,,,,,,
+Total End Uses,29924.00,0.00,0.00,0.00,0.00,0.00

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header static-sticky">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 					
+						<ul>
+ 						
+  							
+
+								
+				
+				  
+				 			{% if user.is_authenticated %}	
+							<li><a href="/" ><div>Home</div></a></li>
+							<li><a href="/index_page" ><div>About</div></a></li>
+							
+							<li><a href="/glossary" ><div>Glossary</div></a></li>
+							
+							<li><a href="/logout_user" ><div>Logout</div></a></li>
+								{% endif %}
+								<li><a href="#">External links</a><ul>
+									<li><a href="https://rsc.ornl.gov/" target="_blank"><div> Roof Savings Calculator </div></a></li>
+									<li><a href="https://heatisland.lbl.gov/" target="_blank"><div> Heat Island group </div></a></li>
+									<li><a href="https://coolcolors.lbl.gov/" target="_blank"><div> Cool Colours Project</div></a></li>
+									<li><a href="https://coolroofs.org/" target="_blank"><div> Cool Roof Rating Council</div></a></li>
+									
+								</ul></li>
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	<section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Cool Roof Calculator</h1>
+            
+            </div>
+
+        </section>
+<style type="text/css">
+
+table {
+  margin: 1rem 0;
+  max-width: 100%;
+  width: 100%; }
+  table th,
+  table td {
+    padding: 0.5rem;
+    text-align: left;
+    vertical-align: center; }
+    [dir="rtl"] table th, [dir="rtl"]
+    table td {
+      text-align: right; }
+
+.table-bordered {
+  border: 1px solid #c0c0c0;
+  border-left-width: 0;
+  border-collapse: separate; }
+  .table-bordered th,
+  .table-bordered td {
+    border-top: 1px solid #c0c0c0;
+    border-left: 1px solid #c0c0c0; }
+  .table-bordered thead:first-child tr:first-child th,
+  .table-bordered tbody:first-child tr:first-child td {
+    border-top-width: 0; }
+  .table-bordered tbody:first-child tr:first-child th[scope="row"] {
+    border-top: none; }
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #ebebeb; }
+
+.table-scrollable {
+  margin: 1rem 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%; }
+  .table-scrollable table {
+    margin: 0; }
+</style>
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+					{%if not simple or detailed or parametric%}
+					<div class="heading-block center">
+							<h2>Hello {{user}}! Click <a href="/">here</a> to do simulations</h2>
+							<span></span>
+						</div>
+
+					{%endif%}
+						
+						<table class="table-striped" >
+						  <thead >
+						{%if simple%}		
+							<tr>
+							  <th >Simulation ID</th>	
+							  <th >Time</th>
+							  <th >Status</th>
+							  <th >View</th>
+							  <th style="text-align: left ;">Edit</th>
+							  
+							  
+							
+	  
+							</tr>
+							{%endif%}
+						  </thead>
+
+						  <tbody>{%if simple%}
+						  	<div class="heading-block center">
+							<h2>Simple results</h2>
+							</div>
+							{% for i in simple %}
+							  <h2>
+				            <tr style="text-align: center;">
+				            	<td>{{i.task_id}}</td>
+				            	<td>{{i.time}}</td>
+				            	<td>{{i.result_status}}</td>
+				            
+				            	{% if i.result_status == "SUCCESS"%}
+
+
+				            	 <td><a href="/display_results_simple/{{i.id}}" class="button  button-reveal button-mini button-border tright" target="_blank" ><i class="icon-angle-right" ></i><span>Result</span></a></td>
+				            	 <td><a href="/edit_page/{{i.id}}" class="button  button-reveal button-mini button-border tright" target="_blank" ><i class="icon-angle-right" ></i><span>inputs</span></a></td>
+				            	
+				            	{% endif %}
+				            </tr>
+				            {% endfor %}
+				            {% endif %}		
+						  </tbody>
+						</table>
+
+					
+				</div>
+				<div class="content-wrap">
+				<div class="container clearfix">
+						
+						<table class="table-striped" >
+						  <thead >
+						{%if detailed%}		
+							<tr>
+							  <th >Simulation ID</th>	
+							  <th >Time</th>
+							  <th >Status</th>
+							  <th >View</th>
+							  <th style="text-align: left ;">Edit</th>
+							  
+							  
+							
+	  
+							</tr>
+							{%endif%}
+						  </thead>
+
+						  <tbody>{%if detailed%}
+						  	<div class="heading-block center">
+							<h2>Detailed results</h2>
+							</div>
+							{% for i in detailed %}
+							  <h2>
+				            <tr style="text-align: center;">
+				            	<td>{{i.task_id}}</td>
+				            	<td>{{i.time}}</td>
+				            	<td>{{i.result_status}}</td>
+				            
+				            	{% if i.result_status == "SUCCESS"%}
+
+
+				            	 <td><a href="/display_results/{{i.id}}" class="button  button-reveal button-mini button-border tright" target="_blank" ><i class="icon-angle-right" ></i><span>Result</span></a></td>
+				            	 <td><a href="/edit_page_detailed/{{i.id}}" class="button  button-reveal button-mini button-border tright" target="_blank" ><i class="icon-angle-right" ></i><span>inputs</span></a></td>
+				            	
+				            	{% endif %}
+				            </tr>
+				            {% endfor %}
+				            {% endif %}		
+						  </tbody>
+						</table>
+
+					
+				</div>
+				</div>
+				<div class="content-wrap">
+				<div class="container clearfix">
+						
+						<table class="table-striped" >
+						  <thead >
+						{%if parametric%}		
+							<tr>
+							  <th >Simulation ID</th>	
+							  <th >Time</th>
+							  <th >Status</th>
+							  <th >View</th>
+							  <th style="text-align: left ;">Edit</th>
+							  
+							  
+							
+	  
+							</tr>
+							{%endif%}
+						  </thead>
+
+						  <tbody>{%if parametric%}
+						  	<div class="heading-block center">
+							<h2>Parametric results</h2>
+							</div>
+							{% for i in parametric %}
+							  <h2>
+				            <tr style="text-align: center;">
+				            	<td>{{i.task_id}}</td>
+				            	<td>{{i.time}}</td>
+				            	<td>{{i.result_status}}</td>
+				            
+				            	{% if i.result_status == "SUCCESS"%}
+
+
+				            	 <td><a href="/display_results_parametric/{{i.id}}" class="button  button-reveal button-mini button-border tright"><i class="icon-angle-right" target="_blank" ></i><span>Result</span></a></td>
+				            	 <td><a href="/edit_page_parametric/{{i.id}}" class="button  button-reveal button-mini button-border tright"><i class="icon-angle-right" target="_blank" ></i><span>inputs</span></a></td>
+				            	
+				            	{% endif %}
+				            </tr>
+				            {% endfor %}
+				            {% endif %}		
+						  </tbody>
+						</table>
+
+					
+				</div>
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+
+</body>
+</html>

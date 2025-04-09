@@ -1,0 +1,2072 @@
+!-   ===========  ALL OBJECTS IN CLASS: SIZING:SYSTEM ===========
+
+Sizing:System,
+    PSZ-HP_1:1:1,            !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    1.0000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    40.0,                    !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+Sizing:System,
+    PSZ-HP_1:2:2,            !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    1.0000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    40.0,                    !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+Sizing:System,
+    PSZ-HP_1:3:3,            !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    1.0000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    40.0,                    !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+Sizing:System,
+    PSZ-HP_1:4:4,            !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    1.0000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    40.0,                    !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+Sizing:System,
+    PSZ-HP_1:5:5,            !- AirLoop Name
+    Sensible,                !- Type of Load to Size On
+    AUTOSIZE,                !- Design Outdoor Air Flow Rate {m3/s}
+    1.0000,                  !- Minimum System Air Flow Ratio
+    7.0,                     !- Preheat Design Temperature {C}
+    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Precool Design Temperature {C}
+    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+    12.8000,                 !- Central Cooling Design Supply Air Temperature {C}
+    40.0,                    !- Central Heating Design Supply Air Temperature {C}
+    NonCoincident,           !- Sizing Option
+    No,                      !- 100% Outdoor Air in Cooling
+    No,                      !- 100% Outdoor Air in Heating
+    0.0085,                  !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    0.0080,                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+    DesignDay,               !- Cooling Design Air Flow Method
+    0.0,                     !- Cooling Design Air Flow Rate {m3/s}
+    DesignDay,               !- Heating Design Air Flow Method
+    0.0,                     !- Heating Design Air Flow Rate {m3/s}
+    VentilationRateProcedure,!- System Outdoor Air Method
+    1.0;                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONECONTROL:THERMOSTAT ===========
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_1 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_1,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_1 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_2 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_2,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_2 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_3 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_3,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_3 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_4 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_4,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_4 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_5 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_5,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_5 DualSPSched;  !- Control 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: THERMOSTATSETPOINT:DUALSETPOINT ===========
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_1 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_2 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_3 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_4 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_5 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRTERMINAL:SINGLEDUCT:UNCONTROLLED ===========
+
+AirTerminal:SingleDuct:Uncontrolled,
+    ZN_1_FLR_1_SEC_1 Direct Air,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_1 Direct Air Inlet Node Name,  !- Zone Supply Air Node Name
+    AUTOSIZE;                !- Maximum Air Flow Rate {m3/s}
+
+AirTerminal:SingleDuct:Uncontrolled,
+    ZN_1_FLR_1_SEC_2 Direct Air,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_2 Direct Air Inlet Node Name,  !- Zone Supply Air Node Name
+    AUTOSIZE;                !- Maximum Air Flow Rate {m3/s}
+
+AirTerminal:SingleDuct:Uncontrolled,
+    ZN_1_FLR_1_SEC_3 Direct Air,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_3 Direct Air Inlet Node Name,  !- Zone Supply Air Node Name
+    AUTOSIZE;                !- Maximum Air Flow Rate {m3/s}
+
+AirTerminal:SingleDuct:Uncontrolled,
+    ZN_1_FLR_1_SEC_4 Direct Air,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_4 Direct Air Inlet Node Name,  !- Zone Supply Air Node Name
+    AUTOSIZE;                !- Maximum Air Flow Rate {m3/s}
+
+AirTerminal:SingleDuct:Uncontrolled,
+    ZN_1_FLR_1_SEC_5 Direct Air,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_5 Direct Air Inlet Node Name,  !- Zone Supply Air Node Name
+    AUTOSIZE;                !- Maximum Air Flow Rate {m3/s}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTLIST ===========
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Name
+    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_1 Direct Air,  !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Name
+    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_2 Direct Air,  !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Name
+    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_3 Direct Air,  !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Name
+    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_4 Direct Air,  !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Name
+    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_5 Direct Air,  !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTCONNECTIONS ===========
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_1,        !- Zone Name
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ,                        !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_1 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_1 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_2,        !- Zone Name
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ,                        !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_2 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_2 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_3,        !- Zone Name
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ,                        !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_3 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_3 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_4,        !- Zone Name
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ,                        !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_4 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_4 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_5,        !- Zone Name
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ,                        !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_5 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_5 Return Air Node Name;  !- Zone Return Air Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FAN:ONOFF ===========
+
+Fan:OnOff,
+    PSZ-HP_1:1:1_Unitary_Package_fan,  !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:1:1_Unitary_PackageDXcool air inlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    Heat Pump Fans;          !- End-Use Subcategory
+
+Fan:OnOff,
+    PSZ-HP_1:2:2_Unitary_Package_fan,  !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:2:2_Unitary_PackageDXcool air inlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    Heat Pump Fans;          !- End-Use Subcategory
+
+Fan:OnOff,
+    PSZ-HP_1:3:3_Unitary_Package_fan,  !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:3:3_Unitary_PackageDXcool air inlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    Heat Pump Fans;          !- End-Use Subcategory
+
+Fan:OnOff,
+    PSZ-HP_1:4:4_Unitary_Package_fan,  !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:4:4_Unitary_PackageDXcool air inlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    Heat Pump Fans;          !- End-Use Subcategory
+
+Fan:OnOff,
+    PSZ-HP_1:5:5_Unitary_Package_fan,  !- Name
+    HVACOperationSchd,       !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    500,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.9,                     !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:5:5_Unitary_PackageDXcool air inlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    Heat Pump Fans;          !- End-Use Subcategory
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:COOLING:DX:SINGLESPEED ===========
+
+Coil:Cooling:DX:SingleSpeed,
+    PSZ-HP_1:1:1_Unitary_Package_cool,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:1:1_Unitary_PackageDXcool air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:1:1_Unitary_PackageheatCoil_AirInlet,  !- Air Outlet Node Name
+    PSZ-HP_1:1:1_Unitary_Package_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    PSZ-HP_1:1:1_Unitary_Package_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    PSZ-HP_1:2:2_Unitary_Package_cool,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:2:2_Unitary_PackageDXcool air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:2:2_Unitary_PackageheatCoil_AirInlet,  !- Air Outlet Node Name
+    PSZ-HP_1:2:2_Unitary_Package_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    PSZ-HP_1:2:2_Unitary_Package_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    PSZ-HP_1:3:3_Unitary_Package_cool,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:3:3_Unitary_PackageDXcool air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:3:3_Unitary_PackageheatCoil_AirInlet,  !- Air Outlet Node Name
+    PSZ-HP_1:3:3_Unitary_Package_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    PSZ-HP_1:3:3_Unitary_Package_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    PSZ-HP_1:4:4_Unitary_Package_cool,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:4:4_Unitary_PackageDXcool air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:4:4_Unitary_PackageheatCoil_AirInlet,  !- Air Outlet Node Name
+    PSZ-HP_1:4:4_Unitary_Package_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    PSZ-HP_1:4:4_Unitary_Package_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    PSZ-HP_1:5:5_Unitary_Package_cool,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:5:5_Unitary_PackageDXcool air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:5:5_Unitary_PackageheatCoil_AirInlet,  !- Air Outlet Node Name
+    PSZ-HP_1:5:5_Unitary_Package_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    PSZ-HP_1:5:5_Unitary_Package_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:ELECTRIC ===========
+
+Coil:Heating:Electric,
+    PSZ-HP_1:1:1_Unitary_Package_SupHeat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    PSZ-HP_1:1:1_Unitary_Packagesup heat air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    PSZ-HP_1:2:2_Unitary_Package_SupHeat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    PSZ-HP_1:2:2_Unitary_Packagesup heat air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    PSZ-HP_1:3:3_Unitary_Package_SupHeat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    PSZ-HP_1:3:3_Unitary_Packagesup heat air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    PSZ-HP_1:4:4_Unitary_Package_SupHeat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    PSZ-HP_1:4:4_Unitary_Packagesup heat air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    PSZ-HP_1:5:5_Unitary_Package_SupHeat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    PSZ-HP_1:5:5_Unitary_Packagesup heat air inlet,  !- Air Inlet Node Name
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node;  !- Air Outlet Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:DX:SINGLESPEED ===========
+
+Coil:Heating:DX:SingleSpeed,
+    PSZ-HP_1:1:1_Unitary_Package_heat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:1:1_Unitary_PackageheatCoil_AirInlet,  !- Air Inlet Node Name
+    PSZ-HP_1:1:1_Unitary_Packagesup heat air inlet,  !- Air Outlet Node Name
+    PSZ-HP_1:1:1_Unitary_Package_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:1:1_Unitary_Package_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    RESISTIVE,               !- Defrost Strategy
+    TIMED,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    PSZ-HP_1:2:2_Unitary_Package_heat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:2:2_Unitary_PackageheatCoil_AirInlet,  !- Air Inlet Node Name
+    PSZ-HP_1:2:2_Unitary_Packagesup heat air inlet,  !- Air Outlet Node Name
+    PSZ-HP_1:2:2_Unitary_Package_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:2:2_Unitary_Package_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    RESISTIVE,               !- Defrost Strategy
+    TIMED,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    PSZ-HP_1:3:3_Unitary_Package_heat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:3:3_Unitary_PackageheatCoil_AirInlet,  !- Air Inlet Node Name
+    PSZ-HP_1:3:3_Unitary_Packagesup heat air inlet,  !- Air Outlet Node Name
+    PSZ-HP_1:3:3_Unitary_Package_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:3:3_Unitary_Package_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    RESISTIVE,               !- Defrost Strategy
+    TIMED,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    PSZ-HP_1:4:4_Unitary_Package_heat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:4:4_Unitary_PackageheatCoil_AirInlet,  !- Air Inlet Node Name
+    PSZ-HP_1:4:4_Unitary_Packagesup heat air inlet,  !- Air Outlet Node Name
+    PSZ-HP_1:4:4_Unitary_Package_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:4:4_Unitary_Package_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    RESISTIVE,               !- Defrost Strategy
+    TIMED,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    PSZ-HP_1:5:5_Unitary_Package_heat,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    PSZ-HP_1:5:5_Unitary_PackageheatCoil_AirInlet,  !- Air Inlet Node Name
+    PSZ-HP_1:5:5_Unitary_Packagesup heat air inlet,  !- Air Outlet Node Name
+    PSZ-HP_1:5:5_Unitary_Package_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    PSZ-HP_1:5:5_Unitary_Package_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    RESISTIVE,               !- Defrost Strategy
+    TIMED,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR ===========
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+    PSZ-HP_1:1:1_Unitary_Package,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    ZN_1_FLR_1_SEC_1,        !- Controlling Zone or Thermostat Location
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    PSZ-HP_1:1:1_Unitary_Package_fan,  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    PSZ-HP_1:1:1_Unitary_Package_heat,  !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    PSZ-HP_1:1:1_Unitary_Package_cool,  !- Cooling Coil Name
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    PSZ-HP_1:1:1_Unitary_Package_SupHeat,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    14.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    BlowThrough,             !- Fan Placement
+    ALWAYS_ON;               !- Supply Air Fan Operating Mode Schedule Name
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+    PSZ-HP_1:2:2_Unitary_Package,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    ZN_1_FLR_1_SEC_2,        !- Controlling Zone or Thermostat Location
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    PSZ-HP_1:2:2_Unitary_Package_fan,  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    PSZ-HP_1:2:2_Unitary_Package_heat,  !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    PSZ-HP_1:2:2_Unitary_Package_cool,  !- Cooling Coil Name
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    PSZ-HP_1:2:2_Unitary_Package_SupHeat,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    14.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    BlowThrough,             !- Fan Placement
+    ALWAYS_ON;               !- Supply Air Fan Operating Mode Schedule Name
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+    PSZ-HP_1:3:3_Unitary_Package,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    ZN_1_FLR_1_SEC_3,        !- Controlling Zone or Thermostat Location
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    PSZ-HP_1:3:3_Unitary_Package_fan,  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    PSZ-HP_1:3:3_Unitary_Package_heat,  !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    PSZ-HP_1:3:3_Unitary_Package_cool,  !- Cooling Coil Name
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    PSZ-HP_1:3:3_Unitary_Package_SupHeat,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    14.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    BlowThrough,             !- Fan Placement
+    ALWAYS_ON;               !- Supply Air Fan Operating Mode Schedule Name
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+    PSZ-HP_1:4:4_Unitary_Package,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    ZN_1_FLR_1_SEC_4,        !- Controlling Zone or Thermostat Location
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    PSZ-HP_1:4:4_Unitary_Package_fan,  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    PSZ-HP_1:4:4_Unitary_Package_heat,  !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    PSZ-HP_1:4:4_Unitary_Package_cool,  !- Cooling Coil Name
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    PSZ-HP_1:4:4_Unitary_Package_SupHeat,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    14.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    BlowThrough,             !- Fan Placement
+    ALWAYS_ON;               !- Supply Air Fan Operating Mode Schedule Name
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+    PSZ-HP_1:5:5_Unitary_Package,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Air Inlet Node Name
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node,  !- Air Outlet Node Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    ZN_1_FLR_1_SEC_5,        !- Controlling Zone or Thermostat Location
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    PSZ-HP_1:5:5_Unitary_Package_fan,  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    PSZ-HP_1:5:5_Unitary_Package_heat,  !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    PSZ-HP_1:5:5_Unitary_Package_cool,  !- Cooling Coil Name
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    PSZ-HP_1:5:5_Unitary_Package_SupHeat,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    14.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    BlowThrough,             !- Fan Placement
+    ALWAYS_ON;               !- Supply Air Fan Operating Mode Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONTROLLER:OUTDOORAIR ===========
+
+Controller:OutdoorAir,
+    PSZ-HP_1:1:1_OA_Controller,  !- Name
+    PSZ-HP_1:1:1_OARelief Node,  !- Relief Air Outlet Node Name
+    PSZ-HP_1:1:1 Supply Equipment Inlet Node,  !- Return Air Node Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:1:1_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+Controller:OutdoorAir,
+    PSZ-HP_1:2:2_OA_Controller,  !- Name
+    PSZ-HP_1:2:2_OARelief Node,  !- Relief Air Outlet Node Name
+    PSZ-HP_1:2:2 Supply Equipment Inlet Node,  !- Return Air Node Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:2:2_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+Controller:OutdoorAir,
+    PSZ-HP_1:3:3_OA_Controller,  !- Name
+    PSZ-HP_1:3:3_OARelief Node,  !- Relief Air Outlet Node Name
+    PSZ-HP_1:3:3 Supply Equipment Inlet Node,  !- Return Air Node Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:3:3_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+Controller:OutdoorAir,
+    PSZ-HP_1:4:4_OA_Controller,  !- Name
+    PSZ-HP_1:4:4_OARelief Node,  !- Relief Air Outlet Node Name
+    PSZ-HP_1:4:4 Supply Equipment Inlet Node,  !- Return Air Node Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:4:4_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+Controller:OutdoorAir,
+    PSZ-HP_1:5:5_OA_Controller,  !- Name
+    PSZ-HP_1:5:5_OARelief Node,  !- Relief Air Outlet Node Name
+    PSZ-HP_1:5:5 Supply Equipment Inlet Node,  !- Return Air Node Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:5:5_OAInlet Node,  !- Actuator Node Name
+    AUTOSIZE,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    AUTOSIZE,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    NoEconomizer,            !- Economizer Control Type
+    ModulateFlow,            !- Economizer Control Action Type
+    28.0,                    !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+    64000.0,                 !- Economizer Maximum Limit Enthalpy {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Electronic Enthalpy Limit Curve Name
+    -100.0,                  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+    NoLockout,               !- Lockout Type
+    FixedMinimum,            !- Minimum Limit Type
+    MinOA_Sched,             !- Minimum Outdoor Air Schedule Name
+    ,                        !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                        !- Maximum Fraction of Outdoor Air Schedule Name
+    ,                        !- Mechanical Ventilation Controller Name
+    ,                        !- Time of Day Economizer Control Schedule Name
+    No,                      !- High Humidity Control
+    ,                        !- Humidistat Control Zone Name
+    ,                        !- High Humidity Outdoor Air Flow Ratio
+    ,                        !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;  !- Heat Recovery Bypass Control Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:CONTROLLERLIST ===========
+
+AirLoopHVAC:ControllerList,
+    PSZ-HP_1:1:1_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    PSZ-HP_1:1:1_OA_Controller;  !- Controller 1 Name
+
+AirLoopHVAC:ControllerList,
+    PSZ-HP_1:2:2_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    PSZ-HP_1:2:2_OA_Controller;  !- Controller 1 Name
+
+AirLoopHVAC:ControllerList,
+    PSZ-HP_1:3:3_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    PSZ-HP_1:3:3_OA_Controller;  !- Controller 1 Name
+
+AirLoopHVAC:ControllerList,
+    PSZ-HP_1:4:4_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    PSZ-HP_1:4:4_OA_Controller;  !- Controller 1 Name
+
+AirLoopHVAC:ControllerList,
+    PSZ-HP_1:5:5_OA_Controllers,  !- Name
+    Controller:OutdoorAir,   !- Controller 1 Object Type
+    PSZ-HP_1:5:5_OA_Controller;  !- Controller 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC ===========
+
+!***** Air Loop: PSZ-HP_1:1:1 *****
+AirLoopHVAC,
+    PSZ-HP_1:1:1,            !- Name
+    ,                        !- Controller List Name
+    PSZ-HP_1:1:1 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    PSZ-HP_1:1:1 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    PSZ-HP_1:1:1 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    PSZ-HP_1:1:1 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    PSZ-HP_1:1:1 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+!***** Air Loop: PSZ-HP_1:2:2 *****
+AirLoopHVAC,
+    PSZ-HP_1:2:2,            !- Name
+    ,                        !- Controller List Name
+    PSZ-HP_1:2:2 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    PSZ-HP_1:2:2 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    PSZ-HP_1:2:2 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    PSZ-HP_1:2:2 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    PSZ-HP_1:2:2 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+!***** Air Loop: PSZ-HP_1:3:3 *****
+AirLoopHVAC,
+    PSZ-HP_1:3:3,            !- Name
+    ,                        !- Controller List Name
+    PSZ-HP_1:3:3 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    PSZ-HP_1:3:3 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    PSZ-HP_1:3:3 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    PSZ-HP_1:3:3 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    PSZ-HP_1:3:3 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+!***** Air Loop: PSZ-HP_1:4:4 *****
+AirLoopHVAC,
+    PSZ-HP_1:4:4,            !- Name
+    ,                        !- Controller List Name
+    PSZ-HP_1:4:4 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    PSZ-HP_1:4:4 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    PSZ-HP_1:4:4 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    PSZ-HP_1:4:4 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    PSZ-HP_1:4:4 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+!***** Air Loop: PSZ-HP_1:5:5 *****
+AirLoopHVAC,
+    PSZ-HP_1:5:5,            !- Name
+    ,                        !- Controller List Name
+    PSZ-HP_1:5:5 Availability Manager List,  !- Availability Manager List Name
+    AUTOSIZE,                !- Design Supply Air Flow Rate {m3/s}
+    PSZ-HP_1:5:5 Air Loop Branches,  !- Branch List Name
+    ,                        !- Connector List Name
+    PSZ-HP_1:5:5 Supply Equipment Inlet Node,  !- Supply Side Inlet Node Name
+    PSZ-HP_1:5:5 Zone Equipment Outlet Node,  !- Demand Side Outlet Node Name
+    PSZ-HP_1:5:5 Zone Equipment Inlet Node,  !- Demand Side Inlet Node Names
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node;  !- Supply Side Outlet Node Names
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:OUTDOORAIRSYSTEM:EQUIPMENTLIST ===========
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    PSZ-HP_1:1:1_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    PSZ-HP_1:1:1_OAMixing Box;  !- Component 1 Name
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    PSZ-HP_1:2:2_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    PSZ-HP_1:2:2_OAMixing Box;  !- Component 1 Name
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    PSZ-HP_1:3:3_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    PSZ-HP_1:3:3_OAMixing Box;  !- Component 1 Name
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    PSZ-HP_1:4:4_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    PSZ-HP_1:4:4_OAMixing Box;  !- Component 1 Name
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    PSZ-HP_1:5:5_OA_Equipment,  !- Name
+    OutdoorAir:Mixer,        !- Component 1 Object Type
+    PSZ-HP_1:5:5_OAMixing Box;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:OUTDOORAIRSYSTEM ===========
+
+AirLoopHVAC:OutdoorAirSystem,
+    PSZ-HP_1:1:1_OA,         !- Name
+    PSZ-HP_1:1:1_OA_Controllers,  !- Controller List Name
+    PSZ-HP_1:1:1_OA_Equipment,  !- Outdoor Air Equipment List Name
+    PSZ-HP_1:1:1 Availability Manager List;  !- Availability Manager List Name
+
+AirLoopHVAC:OutdoorAirSystem,
+    PSZ-HP_1:2:2_OA,         !- Name
+    PSZ-HP_1:2:2_OA_Controllers,  !- Controller List Name
+    PSZ-HP_1:2:2_OA_Equipment,  !- Outdoor Air Equipment List Name
+    PSZ-HP_1:2:2 Availability Manager List;  !- Availability Manager List Name
+
+AirLoopHVAC:OutdoorAirSystem,
+    PSZ-HP_1:3:3_OA,         !- Name
+    PSZ-HP_1:3:3_OA_Controllers,  !- Controller List Name
+    PSZ-HP_1:3:3_OA_Equipment,  !- Outdoor Air Equipment List Name
+    PSZ-HP_1:3:3 Availability Manager List;  !- Availability Manager List Name
+
+AirLoopHVAC:OutdoorAirSystem,
+    PSZ-HP_1:4:4_OA,         !- Name
+    PSZ-HP_1:4:4_OA_Controllers,  !- Controller List Name
+    PSZ-HP_1:4:4_OA_Equipment,  !- Outdoor Air Equipment List Name
+    PSZ-HP_1:4:4 Availability Manager List;  !- Availability Manager List Name
+
+AirLoopHVAC:OutdoorAirSystem,
+    PSZ-HP_1:5:5_OA,         !- Name
+    PSZ-HP_1:5:5_OA_Controllers,  !- Controller List Name
+    PSZ-HP_1:5:5_OA_Equipment,  !- Outdoor Air Equipment List Name
+    PSZ-HP_1:5:5 Availability Manager List;  !- Availability Manager List Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:MIXER ===========
+
+OutdoorAir:Mixer,
+    PSZ-HP_1:1:1_OAMixing Box,  !- Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:1:1_OAInlet Node,  !- Outdoor Air Stream Node Name
+    PSZ-HP_1:1:1_OARelief Node,  !- Relief Air Stream Node Name
+    PSZ-HP_1:1:1 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    PSZ-HP_1:2:2_OAMixing Box,  !- Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:2:2_OAInlet Node,  !- Outdoor Air Stream Node Name
+    PSZ-HP_1:2:2_OARelief Node,  !- Relief Air Stream Node Name
+    PSZ-HP_1:2:2 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    PSZ-HP_1:3:3_OAMixing Box,  !- Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:3:3_OAInlet Node,  !- Outdoor Air Stream Node Name
+    PSZ-HP_1:3:3_OARelief Node,  !- Relief Air Stream Node Name
+    PSZ-HP_1:3:3 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    PSZ-HP_1:4:4_OAMixing Box,  !- Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:4:4_OAInlet Node,  !- Outdoor Air Stream Node Name
+    PSZ-HP_1:4:4_OARelief Node,  !- Relief Air Stream Node Name
+    PSZ-HP_1:4:4 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    PSZ-HP_1:5:5_OAMixing Box,  !- Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Mixed Air Node Name
+    PSZ-HP_1:5:5_OAInlet Node,  !- Outdoor Air Stream Node Name
+    PSZ-HP_1:5:5_OARelief Node,  !- Relief Air Stream Node Name
+    PSZ-HP_1:5:5 Supply Equipment Inlet Node;  !- Return Air Stream Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONESPLITTER ===========
+
+AirLoopHVAC:ZoneSplitter,
+    PSZ-HP_1:1:1 Supply Air Splitter,  !- Name
+    PSZ-HP_1:1:1 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_1 Direct Air Inlet Node Name;  !- Outlet 1 Node Name
+
+AirLoopHVAC:ZoneSplitter,
+    PSZ-HP_1:2:2 Supply Air Splitter,  !- Name
+    PSZ-HP_1:2:2 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_2 Direct Air Inlet Node Name;  !- Outlet 1 Node Name
+
+AirLoopHVAC:ZoneSplitter,
+    PSZ-HP_1:3:3 Supply Air Splitter,  !- Name
+    PSZ-HP_1:3:3 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_3 Direct Air Inlet Node Name;  !- Outlet 1 Node Name
+
+AirLoopHVAC:ZoneSplitter,
+    PSZ-HP_1:4:4 Supply Air Splitter,  !- Name
+    PSZ-HP_1:4:4 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_4 Direct Air Inlet Node Name;  !- Outlet 1 Node Name
+
+AirLoopHVAC:ZoneSplitter,
+    PSZ-HP_1:5:5 Supply Air Splitter,  !- Name
+    PSZ-HP_1:5:5 Zone Equipment Inlet Node,  !- Inlet Node Name
+    ZN_1_FLR_1_SEC_5 Direct Air Inlet Node Name;  !- Outlet 1 Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:SUPPLYPATH ===========
+
+AirLoopHVAC:SupplyPath,
+    PSZ-HP_1:1:1 Supply Path,!- Name
+    PSZ-HP_1:1:1 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    PSZ-HP_1:1:1 Supply Air Splitter;  !- Component 1 Name
+
+AirLoopHVAC:SupplyPath,
+    PSZ-HP_1:2:2 Supply Path,!- Name
+    PSZ-HP_1:2:2 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    PSZ-HP_1:2:2 Supply Air Splitter;  !- Component 1 Name
+
+AirLoopHVAC:SupplyPath,
+    PSZ-HP_1:3:3 Supply Path,!- Name
+    PSZ-HP_1:3:3 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    PSZ-HP_1:3:3 Supply Air Splitter;  !- Component 1 Name
+
+AirLoopHVAC:SupplyPath,
+    PSZ-HP_1:4:4 Supply Path,!- Name
+    PSZ-HP_1:4:4 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    PSZ-HP_1:4:4 Supply Air Splitter;  !- Component 1 Name
+
+AirLoopHVAC:SupplyPath,
+    PSZ-HP_1:5:5 Supply Path,!- Name
+    PSZ-HP_1:5:5 Zone Equipment Inlet Node,  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
+    PSZ-HP_1:5:5 Supply Air Splitter;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONEMIXER ===========
+
+AirLoopHVAC:ZoneMixer,
+    PSZ-HP_1:1:1 Return Air Mixer,  !- Name
+    PSZ-HP_1:1:1 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_1 Return Air Node Name;  !- Inlet 1 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    PSZ-HP_1:2:2 Return Air Mixer,  !- Name
+    PSZ-HP_1:2:2 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_2 Return Air Node Name;  !- Inlet 1 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    PSZ-HP_1:3:3 Return Air Mixer,  !- Name
+    PSZ-HP_1:3:3 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_3 Return Air Node Name;  !- Inlet 1 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    PSZ-HP_1:4:4 Return Air Mixer,  !- Name
+    PSZ-HP_1:4:4 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_4 Return Air Node Name;  !- Inlet 1 Node Name
+
+AirLoopHVAC:ZoneMixer,
+    PSZ-HP_1:5:5 Return Air Mixer,  !- Name
+    PSZ-HP_1:5:5 Zone Equipment Outlet Node,  !- Outlet Node Name
+    ZN_1_FLR_1_SEC_5 Return Air Node Name;  !- Inlet 1 Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:RETURNPATH ===========
+
+AirLoopHVAC:ReturnPath,
+    PSZ-HP_1:1:1 Return Air Path,  !- Name
+    PSZ-HP_1:1:1 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    PSZ-HP_1:1:1 Return Air Mixer;  !- Component 1 Name
+
+AirLoopHVAC:ReturnPath,
+    PSZ-HP_1:2:2 Return Air Path,  !- Name
+    PSZ-HP_1:2:2 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    PSZ-HP_1:2:2 Return Air Mixer;  !- Component 1 Name
+
+AirLoopHVAC:ReturnPath,
+    PSZ-HP_1:3:3 Return Air Path,  !- Name
+    PSZ-HP_1:3:3 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    PSZ-HP_1:3:3 Return Air Mixer;  !- Component 1 Name
+
+AirLoopHVAC:ReturnPath,
+    PSZ-HP_1:4:4 Return Air Path,  !- Name
+    PSZ-HP_1:4:4 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    PSZ-HP_1:4:4 Return Air Mixer;  !- Component 1 Name
+
+AirLoopHVAC:ReturnPath,
+    PSZ-HP_1:5:5 Return Air Path,  !- Name
+    PSZ-HP_1:5:5 Zone Equipment Outlet Node,  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
+    PSZ-HP_1:5:5 Return Air Mixer;  !- Component 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BRANCH ===========
+
+Branch,
+    PSZ-HP_1:1:1 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    PSZ-HP_1:1:1_OA,         !- Component 1 Name
+    PSZ-HP_1:1:1 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    AirLoopHVAC:UnitaryHeatPump:AirToAir,  !- Component 2 Object Type
+    PSZ-HP_1:1:1_Unitary_Package,  !- Component 2 Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Component 2 Inlet Node Name
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node,  !- Component 2 Outlet Node Name
+    Active;                  !- Component 2 Branch Control Type
+
+Branch,
+    PSZ-HP_1:2:2 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    PSZ-HP_1:2:2_OA,         !- Component 1 Name
+    PSZ-HP_1:2:2 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    AirLoopHVAC:UnitaryHeatPump:AirToAir,  !- Component 2 Object Type
+    PSZ-HP_1:2:2_Unitary_Package,  !- Component 2 Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Component 2 Inlet Node Name
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node,  !- Component 2 Outlet Node Name
+    Active;                  !- Component 2 Branch Control Type
+
+Branch,
+    PSZ-HP_1:3:3 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    PSZ-HP_1:3:3_OA,         !- Component 1 Name
+    PSZ-HP_1:3:3 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    AirLoopHVAC:UnitaryHeatPump:AirToAir,  !- Component 2 Object Type
+    PSZ-HP_1:3:3_Unitary_Package,  !- Component 2 Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Component 2 Inlet Node Name
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node,  !- Component 2 Outlet Node Name
+    Active;                  !- Component 2 Branch Control Type
+
+Branch,
+    PSZ-HP_1:4:4 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    PSZ-HP_1:4:4_OA,         !- Component 1 Name
+    PSZ-HP_1:4:4 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    AirLoopHVAC:UnitaryHeatPump:AirToAir,  !- Component 2 Object Type
+    PSZ-HP_1:4:4_Unitary_Package,  !- Component 2 Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Component 2 Inlet Node Name
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node,  !- Component 2 Outlet Node Name
+    Active;                  !- Component 2 Branch Control Type
+
+Branch,
+    PSZ-HP_1:5:5 Air Loop Main Branch,  !- Name
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    ,                        !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,  !- Component 1 Object Type
+    PSZ-HP_1:5:5_OA,         !- Component 1 Name
+    PSZ-HP_1:5:5 Supply Equipment Inlet Node,  !- Component 1 Inlet Node Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Component 1 Outlet Node Name
+    Passive,                 !- Component 1 Branch Control Type
+    AirLoopHVAC:UnitaryHeatPump:AirToAir,  !- Component 2 Object Type
+    PSZ-HP_1:5:5_Unitary_Package,  !- Component 2 Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Component 2 Inlet Node Name
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node,  !- Component 2 Outlet Node Name
+    Active;                  !- Component 2 Branch Control Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BRANCHLIST ===========
+
+BranchList,
+    PSZ-HP_1:1:1 Air Loop Branches,  !- Name
+    PSZ-HP_1:1:1 Air Loop Main Branch;  !- Branch 1 Name
+
+BranchList,
+    PSZ-HP_1:2:2 Air Loop Branches,  !- Name
+    PSZ-HP_1:2:2 Air Loop Main Branch;  !- Branch 1 Name
+
+BranchList,
+    PSZ-HP_1:3:3 Air Loop Branches,  !- Name
+    PSZ-HP_1:3:3 Air Loop Main Branch;  !- Branch 1 Name
+
+BranchList,
+    PSZ-HP_1:4:4 Air Loop Branches,  !- Name
+    PSZ-HP_1:4:4 Air Loop Main Branch;  !- Branch 1 Name
+
+BranchList,
+    PSZ-HP_1:5:5 Air Loop Branches,  !- Name
+    PSZ-HP_1:5:5 Air Loop Main Branch;  !- Branch 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: NODELIST ===========
+
+NodeList,
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_1 Direct Air Inlet Node Name;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_2 Direct Air Inlet Node Name;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_3 Direct Air Inlet Node Name;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_4 Direct Air Inlet Node Name;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_5 Direct Air Inlet Node Name;  !- Node 1 Name
+
+NodeList,
+    PSZ-HP_1:1:1_OANode List,!- Name
+    PSZ-HP_1:1:1_OAInlet Node;  !- Node 1 Name
+
+NodeList,
+    PSZ-HP_1:2:2_OANode List,!- Name
+    PSZ-HP_1:2:2_OAInlet Node;  !- Node 1 Name
+
+NodeList,
+    PSZ-HP_1:3:3_OANode List,!- Name
+    PSZ-HP_1:3:3_OAInlet Node;  !- Node 1 Name
+
+NodeList,
+    PSZ-HP_1:4:4_OANode List,!- Name
+    PSZ-HP_1:4:4_OAInlet Node;  !- Node 1 Name
+
+NodeList,
+    PSZ-HP_1:5:5_OANode List,!- Name
+    PSZ-HP_1:5:5_OAInlet Node;  !- Node 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODE ===========
+
+OutdoorAir:Node,
+    PSZ-HP_1:1:1_Unitary_Package_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    PSZ-HP_1:2:2_Unitary_Package_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    PSZ-HP_1:3:3_Unitary_Package_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    PSZ-HP_1:4:4_Unitary_Package_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    PSZ-HP_1:5:5_Unitary_Package_CondAirInletNode;  !- Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODELIST ===========
+
+OutdoorAir:NodeList,
+    PSZ-HP_1:1:1_OANode List;!- Node or NodeList Name 1
+
+OutdoorAir:NodeList,
+    PSZ-HP_1:2:2_OANode List;!- Node or NodeList Name 1
+
+OutdoorAir:NodeList,
+    PSZ-HP_1:3:3_OANode List;!- Node or NodeList Name 1
+
+OutdoorAir:NodeList,
+    PSZ-HP_1:4:4_OANode List;!- Node or NodeList Name 1
+
+OutdoorAir:NodeList,
+    PSZ-HP_1:5:5_OANode List;!- Node or NodeList Name 1
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGER:NIGHTCYCLE ===========
+
+AvailabilityManager:NightCycle,
+    PSZ-HP_1:1:1 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+AvailabilityManager:NightCycle,
+    PSZ-HP_1:2:2 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+AvailabilityManager:NightCycle,
+    PSZ-HP_1:3:3 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+AvailabilityManager:NightCycle,
+    PSZ-HP_1:4:4 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+AvailabilityManager:NightCycle,
+    PSZ-HP_1:5:5 Availability Manager,  !- Name
+    Always_On,               !- Applicability Schedule Name
+    HVACOperationSchd,       !- Fan Schedule Name
+    CycleOnAny,              !- Control Type
+    1.0,                     !- Thermostat Tolerance {deltaC}
+    1800;                    !- Cycling Run Time {s}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AVAILABILITYMANAGERASSIGNMENTLIST ===========
+
+AvailabilityManagerAssignmentList,
+    PSZ-HP_1:1:1 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    PSZ-HP_1:1:1 Availability Manager;  !- Availability Manager 1 Name
+
+AvailabilityManagerAssignmentList,
+    PSZ-HP_1:2:2 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    PSZ-HP_1:2:2 Availability Manager;  !- Availability Manager 1 Name
+
+AvailabilityManagerAssignmentList,
+    PSZ-HP_1:3:3 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    PSZ-HP_1:3:3 Availability Manager;  !- Availability Manager 1 Name
+
+AvailabilityManagerAssignmentList,
+    PSZ-HP_1:4:4 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    PSZ-HP_1:4:4 Availability Manager;  !- Availability Manager 1 Name
+
+AvailabilityManagerAssignmentList,
+    PSZ-HP_1:5:5 Availability Manager List,  !- Name
+    AvailabilityManager:NightCycle,  !- Availability Manager 1 Object Type
+    PSZ-HP_1:5:5 Availability Manager;  !- Availability Manager 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:SINGLEZONE:REHEAT ===========
+
+SetpointManager:SingleZone:Reheat,
+    SupAirTemp MngrZN_1_FLR_1_SEC_1,  !- Name
+    Temperature,             !- Control Variable
+    10.0,                    !- Minimum Supply Air Temperature {C}
+    50.0,                    !- Maximum Supply Air Temperature {C}
+    ZN_1_FLR_1_SEC_1,        !- Control Zone Name
+    ZN_1_FLR_1_SEC_1 Air Node,  !- Zone Node Name
+    ZN_1_FLR_1_SEC_1 Direct Air Inlet Node Name,  !- Zone Inlet Node Name
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+SetpointManager:SingleZone:Reheat,
+    SupAirTemp MngrZN_1_FLR_1_SEC_2,  !- Name
+    Temperature,             !- Control Variable
+    10.0,                    !- Minimum Supply Air Temperature {C}
+    50.0,                    !- Maximum Supply Air Temperature {C}
+    ZN_1_FLR_1_SEC_2,        !- Control Zone Name
+    ZN_1_FLR_1_SEC_2 Air Node,  !- Zone Node Name
+    ZN_1_FLR_1_SEC_2 Direct Air Inlet Node Name,  !- Zone Inlet Node Name
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+SetpointManager:SingleZone:Reheat,
+    SupAirTemp MngrZN_1_FLR_1_SEC_3,  !- Name
+    Temperature,             !- Control Variable
+    10.0,                    !- Minimum Supply Air Temperature {C}
+    50.0,                    !- Maximum Supply Air Temperature {C}
+    ZN_1_FLR_1_SEC_3,        !- Control Zone Name
+    ZN_1_FLR_1_SEC_3 Air Node,  !- Zone Node Name
+    ZN_1_FLR_1_SEC_3 Direct Air Inlet Node Name,  !- Zone Inlet Node Name
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+SetpointManager:SingleZone:Reheat,
+    SupAirTemp MngrZN_1_FLR_1_SEC_4,  !- Name
+    Temperature,             !- Control Variable
+    10.0,                    !- Minimum Supply Air Temperature {C}
+    50.0,                    !- Maximum Supply Air Temperature {C}
+    ZN_1_FLR_1_SEC_4,        !- Control Zone Name
+    ZN_1_FLR_1_SEC_4 Air Node,  !- Zone Node Name
+    ZN_1_FLR_1_SEC_4 Direct Air Inlet Node Name,  !- Zone Inlet Node Name
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+SetpointManager:SingleZone:Reheat,
+    SupAirTemp MngrZN_1_FLR_1_SEC_5,  !- Name
+    Temperature,             !- Control Variable
+    10.0,                    !- Minimum Supply Air Temperature {C}
+    50.0,                    !- Maximum Supply Air Temperature {C}
+    ZN_1_FLR_1_SEC_5,        !- Control Zone Name
+    ZN_1_FLR_1_SEC_5 Air Node,  !- Zone Node Name
+    ZN_1_FLR_1_SEC_5 Direct Air Inlet Node Name,  !- Zone Inlet Node Name
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SETPOINTMANAGER:MIXEDAIR ===========
+
+SetpointManager:MixedAir,
+    PSZ-HP_1:1:1 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    PSZ-HP_1:1:1 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode,  !- Fan Inlet Node Name
+    PSZ-HP_1:1:1_Unitary_PackageDXcool air inlet,  !- Fan Outlet Node Name
+    PSZ-HP_1:1:1_OA-PSZ-HP_1:1:1_Unitary_PackageNode;  !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+    PSZ-HP_1:2:2 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    PSZ-HP_1:2:2 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode,  !- Fan Inlet Node Name
+    PSZ-HP_1:2:2_Unitary_PackageDXcool air inlet,  !- Fan Outlet Node Name
+    PSZ-HP_1:2:2_OA-PSZ-HP_1:2:2_Unitary_PackageNode;  !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+    PSZ-HP_1:3:3 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    PSZ-HP_1:3:3 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode,  !- Fan Inlet Node Name
+    PSZ-HP_1:3:3_Unitary_PackageDXcool air inlet,  !- Fan Outlet Node Name
+    PSZ-HP_1:3:3_OA-PSZ-HP_1:3:3_Unitary_PackageNode;  !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+    PSZ-HP_1:4:4 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    PSZ-HP_1:4:4 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode,  !- Fan Inlet Node Name
+    PSZ-HP_1:4:4_Unitary_PackageDXcool air inlet,  !- Fan Outlet Node Name
+    PSZ-HP_1:4:4_OA-PSZ-HP_1:4:4_Unitary_PackageNode;  !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+    PSZ-HP_1:5:5 OA Mixed Air Temp Manager,  !- Name
+    Temperature,             !- Control Variable
+    PSZ-HP_1:5:5 Supply Equipment Outlet Node,  !- Reference Setpoint Node Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode,  !- Fan Inlet Node Name
+    PSZ-HP_1:5:5_Unitary_PackageDXcool air inlet,  !- Fan Outlet Node Name
+    PSZ-HP_1:5:5_OA-PSZ-HP_1:5:5_Unitary_PackageNode;  !- Setpoint Node or NodeList Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:QUADRATIC ===========
+
+Curve:Quadratic,
+    PSZ-HP_1:1:1_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:1:1_Unitary_Package_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:1:1_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Name
+    0.8,                     !- Coefficient1 Constant
+    0.2,                     !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:1:1_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Name
+    1.156,                   !- Coefficient1 Constant
+    -0.1816,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:1:1_Unitary_Package_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:2:2_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:2:2_Unitary_Package_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:2:2_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Name
+    0.8,                     !- Coefficient1 Constant
+    0.2,                     !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:2:2_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Name
+    1.156,                   !- Coefficient1 Constant
+    -0.1816,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:2:2_Unitary_Package_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:3:3_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:3:3_Unitary_Package_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:3:3_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Name
+    0.8,                     !- Coefficient1 Constant
+    0.2,                     !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:3:3_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Name
+    1.156,                   !- Coefficient1 Constant
+    -0.1816,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:3:3_Unitary_Package_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:4:4_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:4:4_Unitary_Package_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:4:4_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Name
+    0.8,                     !- Coefficient1 Constant
+    0.2,                     !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:4:4_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Name
+    1.156,                   !- Coefficient1 Constant
+    -0.1816,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:4:4_Unitary_Package_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:5:5_Unitary_Package_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:5:5_Unitary_Package_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:5:5_Unitary_Package_ClgCapFuncFlowFracCurve,  !- Name
+    0.8,                     !- Coefficient1 Constant
+    0.2,                     !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:5:5_Unitary_Package_ClgEirFuncFlowFracCurve,  !- Name
+    1.156,                   !- Coefficient1 Constant
+    -0.1816,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    PSZ-HP_1:5:5_Unitary_Package_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:CUBIC ===========
+
+Curve:Cubic,
+    PSZ-HP_1:1:1_Unitary_Package_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:1:1_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:1:1_Unitary_Package_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:2:2_Unitary_Package_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:2:2_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:2:2_Unitary_Package_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:3:3_Unitary_Package_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:3:3_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:3:3_Unitary_Package_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:4:4_Unitary_Package_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:4:4_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:4:4_Unitary_Package_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:5:5_Unitary_Package_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:5:5_Unitary_Package_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    PSZ-HP_1:5:5_Unitary_Package_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:BIQUADRATIC ===========
+
+Curve:Biquadratic,
+    PSZ-HP_1:1:1_Unitary_Package_ClgCapFuncTempCurve,  !- Name
+    0.766956,                !- Coefficient1 Constant
+    0.0107756,               !- Coefficient2 x
+    -0.0000414703,           !- Coefficient3 x**2
+    0.00134961,              !- Coefficient4 y
+    -0.000261144,            !- Coefficient5 y**2
+    0.000457488,             !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:1:1_Unitary_Package_ClgEirFuncTempCurve,  !- Name
+    0.297145,                !- Coefficient1 Constant
+    0.0430933,               !- Coefficient2 x
+    -0.000748766,            !- Coefficient3 x**2
+    0.00597727,              !- Coefficient4 y
+    0.000482112,             !- Coefficient5 y**2
+    -0.000956448,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:2:2_Unitary_Package_ClgCapFuncTempCurve,  !- Name
+    0.766956,                !- Coefficient1 Constant
+    0.0107756,               !- Coefficient2 x
+    -0.0000414703,           !- Coefficient3 x**2
+    0.00134961,              !- Coefficient4 y
+    -0.000261144,            !- Coefficient5 y**2
+    0.000457488,             !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:2:2_Unitary_Package_ClgEirFuncTempCurve,  !- Name
+    0.297145,                !- Coefficient1 Constant
+    0.0430933,               !- Coefficient2 x
+    -0.000748766,            !- Coefficient3 x**2
+    0.00597727,              !- Coefficient4 y
+    0.000482112,             !- Coefficient5 y**2
+    -0.000956448,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:3:3_Unitary_Package_ClgCapFuncTempCurve,  !- Name
+    0.766956,                !- Coefficient1 Constant
+    0.0107756,               !- Coefficient2 x
+    -0.0000414703,           !- Coefficient3 x**2
+    0.00134961,              !- Coefficient4 y
+    -0.000261144,            !- Coefficient5 y**2
+    0.000457488,             !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:3:3_Unitary_Package_ClgEirFuncTempCurve,  !- Name
+    0.297145,                !- Coefficient1 Constant
+    0.0430933,               !- Coefficient2 x
+    -0.000748766,            !- Coefficient3 x**2
+    0.00597727,              !- Coefficient4 y
+    0.000482112,             !- Coefficient5 y**2
+    -0.000956448,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:4:4_Unitary_Package_ClgCapFuncTempCurve,  !- Name
+    0.766956,                !- Coefficient1 Constant
+    0.0107756,               !- Coefficient2 x
+    -0.0000414703,           !- Coefficient3 x**2
+    0.00134961,              !- Coefficient4 y
+    -0.000261144,            !- Coefficient5 y**2
+    0.000457488,             !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:4:4_Unitary_Package_ClgEirFuncTempCurve,  !- Name
+    0.297145,                !- Coefficient1 Constant
+    0.0430933,               !- Coefficient2 x
+    -0.000748766,            !- Coefficient3 x**2
+    0.00597727,              !- Coefficient4 y
+    0.000482112,             !- Coefficient5 y**2
+    -0.000956448,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:5:5_Unitary_Package_ClgCapFuncTempCurve,  !- Name
+    0.766956,                !- Coefficient1 Constant
+    0.0107756,               !- Coefficient2 x
+    -0.0000414703,           !- Coefficient3 x**2
+    0.00134961,              !- Coefficient4 y
+    -0.000261144,            !- Coefficient5 y**2
+    0.000457488,             !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    PSZ-HP_1:5:5_Unitary_Package_ClgEirFuncTempCurve,  !- Name
+    0.297145,                !- Coefficient1 Constant
+    0.0430933,               !- Coefficient2 x
+    -0.000748766,            !- Coefficient3 x**2
+    0.00597727,              !- Coefficient4 y
+    0.000482112,             !- Coefficient5 y**2
+    -0.000956448,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+Output:Table:SummaryReports,
+    AnnualBuildingUtilityPerformanceSummary,  !- Report 1 Name
+    ComponentCostEconomicsSummary,  !- Report 2 Name
+    InputVerificationandResultsSummary,  !- Report 3 Name
+    ClimaticDataSummary,     !- Report 4 Name
+    EquipmentSummary,        !- Report 5 Name
+    EnvelopeSummary,         !- Report 6 Name
+    AllSummaryAndMonthly;    !- Report 7 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+
+OutputControl:Table:Style,
+    HTML,                    !- Column Separator
+    JtoKWH;                  !- Unit Conversion
+

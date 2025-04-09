@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+<!-- 						<ul>	<li><a href="{% url 'login' %}">login</a></li> -->
+					<!-- <li><a href="/login_register"><div>Login/register</div></a> -->
+							<ul>
+								{% if user.is_anonymous%}
+								<li><a href="{% url 'login_register' %}"><div>login/register</div></a></li>
+								<li><a href="/glossary"><div>Glossary</div></a></li>
+								{% endif %}
+								{% if user.is_authenticated %}
+								  
+								  <li><a href="#"><div>Hi,{{ user.username }}</div></a></li>
+								  <li><a href="{% url 'index_page' %}"><div>About</div></a></li>
+								  <li><a href="/glossary"><div>Glossary</div></a></li>
+								  <li><a href="{% url 'projects_page' %}"><div>Your Projects</div></a></li>
+								  
+								  <li><a href="{% url 'logout_user' %}"><div>logout</div></a></li>
+								{% endif %}
+
+		<!-- 	{% if user.is_authenticated %}
+			  <li><a>Hi {{ user.username }}!</a></li>
+			  <li><a href="{% url 'logout' %}">logout</a></li>
+			{% else %} <div class="alert alert-danger nobottommargin">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          <i class="icon-remove-sign"></i><strong>Login!</strong> To keep a count on your simultions. 
+                        </div>
+
+			{% endif %}
+		 -->
+								
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Cool Roof Calculator</h1>
+                
+    		        
+            </div>
+
+        </section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+                        <ul class="tab-nav tab-nav2 center clearfix">
+                           
+                            <li class="inline-block"><a href="#tab-parametric">Parametric Inputs</a></li>
+                           
+                        </ul>
+
+                        <div class="tab-container">
+
+                           
+
+                            <div class="tab-content clearfix" id="tab-detailed">
+                                <div class="panel panel-default nobottommargin">
+                                	<div class="panel-body" style="padding: 40px;">
+                                		
+                                		<form  class="nobottommargin" action="/submitform_parametric" method="post">
+
+			                                <h3 align="center">Parametric Inputs</h3>
+			                                {% csrf_token %}
+			                                <div class="col_full">
+			                                    <label>Location</label>
+			                                    <!-- <input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" /> -->
+			                                    <select name="Location" class="form-control" id="Location_detailed">
+			                                    	<option value="Ahmedabad">Ahmedabad </option>
+													<option value="Akola">Akola </option>
+													<option value="Allahabad">Allahabad </option>
+													<option value="Amritsar">Amritsar </option>
+													<option value="Aurangabad">Aurangabad </option>
+													<option value="Bangalore">Bangalore </option>
+													<option value="Barmer">Barmer </option>
+													<option value="Belgaum">Belgaum </option>
+													<option value="Bhagalpur">Bhagalpur </option>
+													<option value="Bhopal">Bhopal </option>
+													<option value="Bhubneshwar">Bhubneshwar </option>
+													<option value="Bikaner">Bikaner </option>
+													<option value="Calcutta">Calcutta </option>
+													<option value="Chennai">Chennai</option>
+													<option value="Chirtadurg">Chirtadurg </option>
+													<option value="Dehradun">Dehradun </option>
+													<option value="Dibrugarh">Dibrugarh </option>
+													<option value="Gorakhpur">Gorakhpur </option>
+													<option value="Guwahati">Guwahati </option>
+													<option value="Gwalior">Gwalior </option>
+													<option value="Hissar">Hissar </option>
+													<option value="Hyderabad">Hyderabad </option>
+													<option value="Imphal">Imphal </option>
+													<option value="Indore">Indore </option>
+													<option value="Jabalpur">Jabalpur </option>
+													<option value="Jagdelpur">Jagdelpur </option>
+													<option value="Jaipur">Jaipur </option>
+													<option value="Jaisalmer">Jaisalmer </option>
+													<option value="Jamnagar">Jamnagar </option>
+													<option value="Jodhpur">Jodhpur </option>
+													<option value="Jorhat">Jorhat </option>
+													<option value="Kolkata">Kolkata </option>
+													<option value="Kota">Kota </option>
+													<option value="Kurnool">Kurnool </option>
+													<option value="Lucknow">Lucknow </option>
+													<option value="Mangalore">Mangalore </option>
+													<option value="Mumbai">Mumbai </option>
+													<option value="Nagpur">Nagpur </option>
+													<option value="Nellore">Nellore </option>
+													<option value="NewDelhi">New Delhi </option>
+													<option value="Panjim">Panjim </option>
+													<option value="Patna">Patna </option>
+													<option value="Pune">Pune </option>
+													<option value="Raipur">Raipur </option>
+													<option value="Rajkot">Rajkot </option>
+													<option value="Ramagundam">Ramagundam </option>
+													<option value="Ranchi">Ranchi </option>
+													<option value="Ratnagiri">Ratnagiri </option>
+													<option value="Raxaul">Raxaul </option>
+													<option value="Saharanpur">Saharanpur </option>
+													<option value="Shillong">Shillong </option>
+													<option value="Sholapur">Sholapur </option>
+													<option value="Sundernagar">Sundernagar </option>
+													<option value="Surat">Surat </option>
+													<option value="Tezpur">Tezpur </option>
+													<option value="Tiruchirapalli">Tiruchirapalli </option>
+													<option value="Trivandram">Trivandram </option>
+													<option value="Veraval">Veraval </option>
+													<option value="Vishakhapatnam">Vishakhapatnam </option>
+			                                    </select>
+
+			                                </div>
+
+			                                <div class="col_full">
+			                                    <label>Building Type</label>
+			                                    <select name="Building_type"  class="form-control" id="Building_type_detailed">
+			                                    <option value="office">Office</option>
+												<option value="institutional" >Institutional</option>
+												<option value="retail" >Retail</option>
+												<option value="residentialonlynight">Residential (Night Occupied) </option>
+												<option value="residentialallday">Residential (24 Hrs Occupied)</option>
+												</select>
+			                                </div>
+
+			                                <div class="col_half">
+			                                    <label>Roof area</label>
+			                                    <input type="number" name="Roof_area" placeholder="130" min="130" max="20000"  class="form-control" value="{{edit_data.Roof_area}}" />
+			                                </div>
+
+			                                
+			                                <div class="col_half">
+			                                    <label>Radiant Barrier</label>
+			                                    <select name="Radiant_barrier" class="form-control" id="Radiant_barrier_detailed">
+			                                    	<option value="OFF"> OFF     </option>
+													<option value="ON"> ON </option>
+			                                    </select>
+			                                </div>
+			                                <div class="col_full">
+			                                <label style="color: brown;">Roof Type</label>
+			                                </div>
+			                               
+			                                
+
+			                                <div class="col_half">
+			                                	<label >Layer 1 (Top most):</label>
+												<select name="layer1"  class="form-control" id="Layer_1_detailed">
+													<option value="F08 Metal surface">      Metal Surface         </option>
+													<option value="12mm Thick Mortar">      12mm thick motar       </option>
+													<option value="F13 Built-up roofing">      Built-up roofing      </option>
+													<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+													<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+													<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+													<option value="F14 Slate or tile">      Tile or slate      </option>
+													<option value="F16 Acoustic tile">      Acoustic tile      </option>
+													<option value="Insulation">     Insulation     </option>
+												</select>
+			                                </div>
+
+			                                <div class="col_half">
+			                                <label for="layer2">Layer 2:</label>
+											<select width="40" name="layer2" class="form-control" id="Layer_2_detailed">
+												<option value="F08 Metal surface">      Metal Surface         </option>
+												<option value="12mm Thick Mortar">      12mm thick motar       </option>
+												<option value="F13 Built-up roofing">      Built-up roofing      </option>
+												<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+												<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+												<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+												<option value="F14 Slate or tile">      Tile or slate      </option>
+												<option value="F05 Ceiling air space resistance">      AirGap      </option>
+												<option value="F16 Acoustic tile">      Acoustic tile      </option>
+												<option value="Insulation">     Insulation     </option>
+												<option value="none">     None     </option>
+											</select>
+											</div>
+
+											<div class="col_half">
+			                                <label for="layer2">Layer 3:</label>
+											<select width="40" name="layer3" class="form-control" id="Layer_3_detailed">
+												<option value="F08 Metal surface">      Metal Surface         </option>
+												<option value="12mm Thick Mortar">      12mm thick motar       </option>
+												<option value="F13 Built-up roofing">      Built-up roofing      </option>
+												<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+												<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+												<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+												<option value="F14 Slate or tile">      Tile or slate      </option>
+												<option value="F05 Ceiling air space resistance">      AirGap      </option>
+												<option value="F16 Acoustic tile">      Acoustic tile      </option>
+												<option value="Insulation">     Insulation     </option>
+												<option value="none">     None     </option>
+											</select>
+											</div>
+
+											<div class="col_half">
+			                                <label for="layer2">Layer 4:</label>
+											<select width="40" name="layer4" class="form-control" id="Layer_4_detailed">
+												<option value="F08 Metal surface">      Metal Surface         </option>
+												<option value="12mm Thick Mortar">      12mm thick motar       </option>
+												<option value="F13 Built-up roofing">      Built-up roofing      </option>
+												<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+												<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+												<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+												<option value="F14 Slate or tile">      Tile or slate      </option>
+												<option value="F16 Acoustic tile">      Acoustic tile      </option>
+												<option value="Insulation">     Insulation     </option>
+												<option value="none" >     None     </option>
+											</select>
+											</div>
+											 
+											<div class="col_half">
+											<label class="control-label" style="color: brown;"><b>Roof External Finish</b>:</label><br>
+								          	<label class="control-label" style="color: black;"><b>Normal Roof</b>:</label>
+								           	</div>
+								           <div class="col_half">
+								                <label >Reflectivity (aged):</label>
+								                <input name="reflectivity_base" type="number" class="form-control" placeholder="0.3" min="0" max="1" step="any" value="{{edit_data.Reflectivity_base}}">
+								          </div>
+								          
+								           <div class="col_half">
+								                <label >Emissivity(aged):</label>
+								                <input name="emissivity_base" type="number" class="form-control" placeholder="0.9" min="0" max="1" step="any" value="{{edit_data.Emissivity_base}}">
+								          </div>
+								           <div class="col_half">
+								                <label >Cost (Ruppee/m<sup>2</sup>):</label>
+								                <input name="cost_base" type="number" class="form-control" placeholder="200" min="0" max="2000"  step="any" value="{{edit_data.Cost_base}}">
+								          </div>
+								           <div class="col_half">
+								                <label>Life (Years):</label>
+								                <input name="life_base" type="number" class="form-control" placeholder="10" min="0" max="50"  step="any" value="{{edit_data.Life_base}}">
+								          </div>
+								          <div class="col_half">
+								          <label class="control-label" style="color: black;"><b>Cool Roof</b>:</label>
+								          </div>
+								           <div class="col_half">
+								                <label>Reflectivity (aged):</label>
+								                <input name="reflectivity_proposed" type="number" class="form-control" placeholder="0.7" min="0" max="1"  step="any" value="{{edit_data.Reflectivity_proposed}}">
+								          </div>
+								           <div class="col_half">
+								                <label>Emissivity(aged):</label>
+								                <input name="emissivity_proposed" type="number" class="form-control" placeholder="0.9" min="0" max="1"  step="any" value="{{edit_data.Emissivity_proposed}}">
+								          </div>
+								           <div class="col_half">
+								                <label>Cost (Ruppee/m<sup>2</sup>):</label>
+								                <input name="cost_proposed" type="number" class="form-control" placeholder="500" min="0" max="2000"  step="any" value="{{edit_data.Cost_proposed}}">
+								          </div>
+								           <div class="col_half">
+								                <label>Life (Years):</label>
+								                <input name="life_proposed" type="number" class="form-control" placeholder="5" min="0" max="50" step="any" value="{{edit_data.Life_proposed}}">
+								          </div>
+								          <label>k-Value of insulation (W/mK):</label>
+								           <div class="col_half">
+								                
+								                <input name="kvalue" type="number" class="form-control" placeholder="0.04" min="0.01" max="600" step="any" value="{{edit_data.kvalue}}">
+								          </div>
+			                                <div class="col_full">
+			                                    <label >HVAC Details</label>
+			                                    <select name="HVAC_details" class="form-control">
+			                                    <option value="ptac" selected>Window/Split air conditioner,  Heating source: Electric Heat Pump</option>
+												<option value="aircooled">Central VAV system with air cooled chiller, Heating Source : Electric Resistance
+												</option>
+												<option value="watercooled">Central VAV system with water cooled screw chiller, Heating Source : Electric Resistance</option>
+												<option value="pszhp">Packaged rooftop air conditioner, Heating source: Electric Heat Pump</option>
+												<!-- <option value="uc">Unconditioned: No system</option> -->
+			                                    </select>
+			                                </div>
+			                                
+			                                <div class="col_half">
+								                <label>System/Chiller COP:</label>
+								                <input name="system_cop" type="number" class="form-control" placeholder="3" min="1" max="7"  step="any" value="{{edit_data.System_cop}}">
+									        </div>
+									        <script type="text/javascript">
+			                             
+											var Location_detailed = document.getElementById("Location_detailed").value = "{{edit_data.Location}}"	;
+											var Building_type = document.getElementById("Building_type_detailed").value = "{{edit_data.Building_type}}";
+											
+											var Radiant_barrier = document.getElementById("Radiant_barrier_detailed").value = "{{edit_data.Radiant_barrier}}";
+											var Layer_1 = document.getElementById("Layer_1_detailed").value = "{{edit_data.Layer_1}}";
+											var Layer_2 = document.getElementById("Layer_2_detailed").value = "{{edit_data.Layer_2}}";
+											var Layer_3 = document.getElementById("Layer_3_detailed").value = "{{edit_data.Layer_3}}";
+											var Layer_4 = document.getElementById("Layer_4_detailed").value = "{{edit_data.Layer_4}}";
+											var HVAC_details = document.getElementById("HVAC_details").value = "{{edit_data.HVAC_details}}";
+											
+			                                </script>
+
+
+								          <div class="col_half">
+								          	<label class="control-label"><b>Internal Loads</b>:</label>
+								          	</div>
+								          	<label >Lighting power density (W/m<sup>2</sup>):</label>
+								           <div class="col_half">
+								                
+								                <input name="lighting_power" type="number" class="form-control" placeholder="10.8" min="0" max="100" step="any" value="{{edit_data.Lighting_power}}">
+								          </div>
+								           <label >Equipment power density (W/m<sup>2</sup>):</label>
+								          <div class="col_half">
+								               
+								                <input name="equipment_power" type="number" class="form-control" placeholder="16.5" min="0" max="100" step="any" value="{{edit_data.Equipment_power}}">
+								          </div>
+								          
+								          <div class="col_half">
+								          <label ><b>Window Area</b>:</label>
+								           </div>
+								           <div class="col_half">
+								                <label>North (m<sup>2</sup>):</label>
+								                <input name="win_area_north" type="number" class="form-control" placeholder="11.97" min="0" max="600" step="any" value="{{edit_data.win_area_north}}">
+								          </div>
+								          <div class="col_half">
+								                <label>South (m<sup>2</sup>):</label>
+								                <input name="win_area_south" type="number" class="form-control" placeholder="11.97" min="0" max="600" step="any" value="{{edit_data.win_area_south}}">
+								          </div>
+								          <div class="col_half">
+								                <label>East (m<sup>2</sup>):</label>
+								                <input name="win_area_east" type="number" class="form-control" placeholder="11.97" min="0" max="600"  step="any" value="{{edit_data.win_area_east}}">
+								          </div>
+								          <div class="col_half">
+								                <label>West (m<sup>2</sup>):</label>
+								                <input name="win_area_west" type="number" class="form-control" placeholder="11.97" min="0" max="600"  step="any" value="{{edit_data.win_area_west}}">
+								          </div>
+			                                <div class="col_half">
+			                                    <label>Electricity</label>
+			                                    <input type="number" name="Electricity" placeholder="Rupee/kWh" min="4" max="50" class="form-control" value="{{edit_data.Electricity}}"/>
+			                                </div>
+			                                <div class="col_half">
+						
+											<label class="radio" for="show_now1">
+											<input type="radio" id="show_now1" name="sim_type1" value="rt" checked="checked" colspan="columns" id="rt">Show me the results now
+											</label>
+						
+											</div>
+						
+										<div class="col_one_third">
+										
+											<label class="radio" for="email">
+												<input type="radio" name="sim_type1" value="email1" name="email1" id="email1">Email
+
+											</label>
+										
+										</div>
+										<div class="col_full" id="emailid1">
+												<label class="control-label" for="emailid1">Email ID:</label>
+												
+							<input name="emailid2"  type="email" class="form-control"/>
+							<input name="user_name"  type="hidden" value="{{user.username}}" class="form-control" />			
+										</div>
+
+
+			                                <div class="col_full nobottommargin">
+			                                    <button class="button button-3d button-black nomargin" style="left: 33%;">Simulate</button>
+			                                    
+			                                </div>
+
+			                            </form>
+                                	</div>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+
+                    </div>
+
+
+				</div>
+
+			</div>
+{% if user.is_authenticated %}
+                            <div class="alert alert-success" style="text-align: center;">
+	                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                          <i class="icon-success"></i><strong>You were last logged in at:</strong>  <a href="#" class="alert-link">{{user.last_login}}</a>.
+                        	</div>
+                        	{% endif %}
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/jqBootstrapValidation.js"></script>
+	<script>
+	$(function () { $("input,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+	$('input[name="sim_type"]').change(function () {
+		if ($("input[name='sim_type']:checked").val() == 'email')
+			$('#emailid').show();
+		else
+			$('#emailid').hide();
+	});
+	$('#emailid').hide();
+
+	$('input[name="sim_type1"]').change(function () {
+		if ($("input[name='sim_type1']:checked").val() == 'email1')
+			$('#emailid1').show();
+		else
+			$('#emailid1').hide();
+	});
+	$('#emailid1').hide();
+
+	$('input[name="sim_type2"]').change(function () {
+		if ($("input[name='sim_type2']:checked").val() == 'email2')
+			$('#emailid2').show();
+		else
+			$('#emailid2').hide();
+	});
+	$('#emailid2').hide();
+
+</script>
+</body>
+</html>

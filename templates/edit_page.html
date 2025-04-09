@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+<!-- 						<ul>	<li><a href="{% url 'login' %}">login</a></li> -->
+					<!-- <li><a href="/login_register"><div>Login/register</div></a> -->
+							<ul>
+								{% if user.is_anonymous%}
+								<li><a href="{% url 'login_register' %}"><div>login/register</div></a></li>
+								<li><a href="/glossary"><div>Glossary</div></a></li>
+								{% endif %}
+								{% if user.is_authenticated %}
+								  
+								  <li><a href="#"><div>Hi,{{ user.username }}</div></a></li>
+								  <li><a href="{% url 'index_page' %}"><div>About</div></a></li>
+								  <li><a href="/glossary"><div>Glossary</div></a></li>
+								  <li><a href="{% url 'projects_page' %}"><div>Your Projects</div></a></li>
+								  
+								  <li><a href="{% url 'logout_user' %}"><div>logout</div></a></li>
+								{% endif %}
+
+		<!-- 	{% if user.is_authenticated %}
+			  <li><a>Hi {{ user.username }}!</a></li>
+			  <li><a href="{% url 'logout' %}">logout</a></li>
+			{% else %} <div class="alert alert-danger nobottommargin">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          <i class="icon-remove-sign"></i><strong>Login!</strong> To keep a count on your simultions. 
+                        </div>
+
+			{% endif %}
+		 -->
+								
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Cool Roof Calculator</h1>
+                
+    		        
+            </div>
+
+        </section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+                        <ul class="tab-nav tab-nav2 center clearfix">
+                            <li class="inline-block"><a href="#tab-simple">Simple Inputs</a></li>
+                           
+                        </ul>
+
+                        <div class="tab-container">
+
+                            <div class="tab-content clearfix" id="tab-simple">
+                                <div class="panel panel-default nobottommargin">
+                                	<div class="panel-body" style="padding: 40px;">
+                                		<form  class="nobottommargin" action="/submitform" method="post">
+
+			                                <h3 align="center">Simple Inputs</h3>
+			                                {% csrf_token %}
+			                                <div class="col_full">
+			                                    <label>Location</label>
+			                                    <!-- <input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" /> -->
+			                                    <select name="Location" class="form-control" id="Location">
+			                                    	
+			                                    	<option value="Ahmedabad">Ahmedabad </option>
+													<option value="Akola">Akola </option>
+													<option value="Allahabad">Allahabad </option>
+													<option value="Amritsar">Amritsar </option>
+													<option value="Aurangabad">Aurangabad </option>
+													<option value="Bangalore">Bangalore </option>
+													<option value="Barmer">Barmer </option>
+													<option value="Belgaum">Belgaum </option>
+													<option value="Bhagalpur">Bhagalpur </option>
+													<option value="Bhopal">Bhopal </option>
+													<option value="Bhubneshwar">Bhubneshwar </option>
+													<option value="Bikaner">Bikaner </option>
+													<option value="Calcutta">Calcutta </option>
+													<option value="Chennai">Chennai</option>
+													<option value="Chirtadurg">Chirtadurg </option>
+													<option value="Dehradun">Dehradun </option>
+													<option value="Dibrugarh">Dibrugarh </option>
+													<option value="Gorakhpur">Gorakhpur </option>
+													<option value="Guwahati">Guwahati </option>
+													<option value="Gwalior">Gwalior </option>
+													<option value="Hissar">Hissar </option>
+													<option value="Hyderabad">Hyderabad </option>
+													<option value="Imphal">Imphal </option>
+													<option value="Indore">Indore </option>
+													<option value="Jabalpur">Jabalpur </option>
+													<option value="Jagdelpur">Jagdelpur </option>
+													<option value="Jaipur">Jaipur </option>
+													<option value="Jaisalmer">Jaisalmer </option>
+													<option value="Jamnagar">Jamnagar </option>
+													<option value="Jodhpur">Jodhpur </option>
+													<option value="Jorhat">Jorhat </option>
+													<option value="Kolkata">Kolkata </option>
+													<option value="Kota">Kota </option>
+													<option value="Kurnool">Kurnool </option>
+													<option value="Lucknow">Lucknow </option>
+													<option value="Mangalore">Mangalore </option>
+													<option value="Mumbai">Mumbai </option>
+													<option value="Nagpur">Nagpur </option>
+													<option value="Nellore">Nellore </option>
+													<option value="NewDelhi">New Delhi </option>
+													<option value="Panjim">Panjim </option>
+													<option value="Patna">Patna </option>
+													<option value="Pune">Pune </option>
+													<option value="Raipur">Raipur </option>
+													<option value="Rajkot">Rajkot </option>
+													<option value="Ramagundam">Ramagundam </option>
+													<option value="Ranchi">Ranchi </option>
+													<option value="Ratnagiri">Ratnagiri </option>
+													<option value="Raxaul">Raxaul </option>
+													<option value="Saharanpur">Saharanpur </option>
+													<option value="Shillong">Shillong </option>
+													<option value="Sholapur">Sholapur </option>
+													<option value="Sundernagar">Sundernagar </option>
+													<option value="Surat">Surat </option>
+													<option value="Tezpur">Tezpur </option>
+													<option value="Tiruchirapalli">Tiruchirapalli </option>
+													<option value="Trivandram">Trivandram </option>
+													<option value="Veraval">Veraval </option>
+													<option value="Vishakhapatnam">Vishakhapatnam </option>
+			                                    </select>
+			                                    
+			                                </div>
+			                                <div class="col_full">
+			                                    <label>Building Type</label>
+			                                    <select name="Building_type"  class="form-control" id="Building_type">
+			                                    <option value="office" >Office</option>
+												<option value="institutional" >Institutional</option>
+												<option value="retail" >Retail</option>
+												<option value="residentialonlynight">Residential (Night Occupied) </option>
+												<option value="residentialallday">Residential (24 Hrs Occupied)</option>
+												</select>
+			                                </div>
+
+
+
+			                                <div class="col_half">
+			                                    <label>Roof area</label>
+			                                    <input type="number" name="Roof_area" placeholder="130" min="130" max="20000" value="{{edit_data.Roof_area}}" class="form-control" />
+			                                </div>
+											
+			                                <div class="col_full">
+			                                    <label>Roof Type</label>
+			                                    <select name="Roof_type"  class="form-control" id="Roof_type">
+			                                    <option value="insulated">Insulated Concrete Roof         </option>
+												<option value="uninsulated" >Uninsulated Concrete Roof       </option>
+												<option value="material3">100 Reinforced Concrete+12 cement render on both sides </option>
+												<option value="material4">100 Reinforced Concrete+75 lime concrete (brick bats)+20 clay tile </option>
+												<option value="material5">100 Reinforced Concrete+12 cement render+25 air gap+Mangalore tile </option>
+												</select>
+			                                </div>
+
+			                                <div class="col_half">
+			                                    <label>Radiant Barrier</label>
+			                                    <select name="Radiant_barrier" class="form-control" id="Radiant_barrier">
+			                                    	<option value="OFF"> OFF     </option>
+													<option value="ON"> ON </option>
+			                                    </select>
+			                                </div>
+			                                
+			                                <div class="col_full">
+			                                    <label>Normal Roof</label>
+			                                    <select name="basecase" class="form-control" id="Normal_Roof">
+		                                    	<option value="0.23">Gray EPDM (SR=0.23, IE=0.87, SRI=21)</option>
+												<option value="0.22">Gray Asphalt Shingle (SR=0.22, IE=0.91, SRI=22)</option>
+												<option value="0.25">Unpainted cement tile (SR=0.25, IE=0.9, SRI=25)</option>
+												<option value="0.33">Red Clay tile (SR=0.33, IE=0.9, SRI=36)</option>
+												<option value="0.34">Light Gravel (SR=0.34, IE=0.9, SRI=37)</option>
+												<option value="0.61">Aluminium coating (SR=0.61, IE=0.25, SRI=50)</option>
+												<option value="0.65">White-coated gravel (SR=0.65, IE=0.9, SRI=79)</option>
+												<option value="0.67">White coating on metal roof (SR=0.67, IE=0.85, SRI=82)</option>
+												<option value="0.69">White EPDM (SR=0.69, IE=0.87, SRI=84)</option>
+												<option value="0.73">White cement tile (SR=0.73, IE=0.9, SRI=90)</option>
+												<option value="0.80">White coating, 1 coat (SR=0.8, IE=0.91, SRI=100)</option>
+												<option value="0.83">PVC white (SR=0.83, IE=0.92, SRI=104)</option>
+												<option value="0.85">White coating, 2 coats (SR=0.85, IE=0.91, SRI=107)</option>
+			                                    </select>
+			                                </div>
+
+			                                <div class="col_full">
+			                                    <label>Cool Roof</label>
+			                                    <select name="proposedcase" class="form-control" id="Cool_roof">
+			                                   	<option value="0.23">Gray EPDM (SR=0.23, IE=0.87, SRI=21)</option>
+												<option value="0.22">Gray Asphalt Shingle (SR=0.22, IE=0.91, SRI=22)</option>
+												<option value="0.25">Unpainted cement tile (SR=0.25, IE=0.9, SRI=25)</option>
+												<option value="0.33">Red Clay tile (SR=0.33, IE=0.9, SRI=36)</option>
+												<option value="0.34">Light Gravel (SR=0.34, IE=0.9, SRI=37)</option>
+												<option value="0.61">Aluminium coating (SR=0.61, IE=0.25, SRI=50)</option>
+												<option value="0.65">White-coated gravel (SR=0.65, IE=0.9, SRI=79)</option>
+												<option value="0.67">White coating on metal roof (SR=0.67, IE=0.85, SRI=82)</option>
+												<option value="0.69">White EPDM (SR=0.69, IE=0.87, SRI=84)</option>
+												<option value="0.73">White cement tile (SR=0.73, IE=0.9, SRI=90)</option>
+												<option value="0.80">White coating, 1 coat (SR=0.8, IE=0.91, SRI=100)</option>
+												<option value="0.83">PVC white (SR=0.83, IE=0.92, SRI=104)</option>
+												<option value="0.85">White coating, 2 coats (SR=0.85, IE=0.91, SRI=107)</option>
+			                                    </select>
+			                                </div>
+			                                <div class="col_full">
+			                                    <label >HVAC Details</label>
+			                                    <select name="HVAC_details" class="form-control" id="HVAC_details">
+			                                    <option value="ptac">Window/Split air conditioner,  Heating source: Electric Heat Pump</option>
+												<option value="aircooled">Central VAV system with air cooled chiller, Heating Source : Electric Resistance
+												</option>
+												<option value="watercooled">Central VAV system with water cooled screw chiller, Heating Source : Electric Resistance</option>
+												<option value="pszhp">Packaged rooftop air conditioner, Heating source: Electric Heat Pump</option>
+												<!-- <option value="uc">Unconditioned: No system</option> -->
+			                                    </select>
+			                                </div>
+			                                <div class="col_two_third">
+			                                    <label>Electricity</label>
+			                                    <input type="number" name="Electricity" placeholder="Rupee/kWh" min="4" max="50" class="form-control" value="{{edit_data.Electricity}}" />
+			                                </div>
+			                                <div class="col_half">
+											<script type="text/javascript">
+			                             
+											var Location = document.getElementById("Location").value = "{{edit_data.Location}}"	;
+											var Building_type = document.getElementById("Building_type").value = "{{edit_data.Building_type}}";
+											var Roof_type = document.getElementById("Roof_type").value = "{{edit_data.Roof_type}}";
+											var Radiant_barrier = document.getElementById("Radiant_barrier").value = "{{edit_data.Radiant_barrier}}";
+											var Normal_Roof = document.getElementById("Normal_Roof").value = "{{edit_data.Normal_Roof}}";
+											var Cool_roof = document.getElementById("Cool_roof").value = "{{edit_data.Cool_roof}}";
+											var HVAC_details = document.getElementById("HVAC_details").value = "{{edit_data.HVAC_details}}";
+											
+			                                </script>
+			                                
+											<label class="radio" for="show_now">
+											<input type="radio" id="show_now" name="sim_type" value="rt" checked="checked" colspan="columns" id="rt">Show me the results now
+											</label>
+						
+											</div>
+						
+										<div class="col_one_third">
+										
+											<label class="radio" for="email">
+												<input type="radio" name="sim_type" value="{{edit_data.email}}" name="email" id="email">Email
+
+											</label>
+										
+										</div>
+										<div class="col_full" id="emailid">
+												<label class="control-label" for="emailid">Email ID:</label>
+												
+							<input name="emailid"  type="email" class="form-control"/>
+
+							<input name="user_name"  type="text" value="{{user.username}}" class="form-control" hidden/>												
+										</div>
+
+
+			                                <div class="col_full nobottommargin">
+			                                    <button class="button button-3d button-black nomargin" style="left: 33%;">Simulate</button>
+			                                    
+			                                </div>
+
+			                            </form>
+                                	</div>
+                                </div>
+                            </div>
+
+                            </div>
+
+
+                    </div>
+
+
+				</div>
+
+			</div>
+{% if user.is_authenticated %}
+                            <div class="alert alert-success" style="text-align: center;">
+	                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                          <i class="icon-success"></i><strong>You were last logged in at:</strong>  <a href="#" class="alert-link">{{user.last_login}}</a>.
+                        	</div>
+                        	{% endif %}
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/jqBootstrapValidation.js"></script>
+	<script>
+	$(function () { $("input,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+	$('input[name="sim_type"]').change(function () {
+		if ($("input[name='sim_type']:checked").val() == 'email')
+			$('#emailid').show();
+		else
+			$('#emailid').hide();
+	});
+	$('#emailid').hide();
+
+	$('input[name="sim_type1"]').change(function () {
+		if ($("input[name='sim_type1']:checked").val() == 'email1')
+			$('#emailid1').show();
+		else
+			$('#emailid1').hide();
+	});
+	$('#emailid1').hide();
+
+	$('input[name="sim_type2"]').change(function () {
+		if ($("input[name='sim_type2']:checked").val() == 'email2')
+			$('#emailid2').show();
+		else
+			$('#emailid2').hide();
+	});
+	$('#emailid2').hide();
+
+</script>
+</body>
+</html>

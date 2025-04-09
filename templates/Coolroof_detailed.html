@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cool Roof Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--  Fonts and icons  -->
+      <!--     Fonts and icons     -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <!-- Material Kit CSS -->
+    <link href="/static/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('/static/assets/img/bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h1>Cool Roof Calculator</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main main-raised">
+  <div class="container">
+    <div class="section col-md-4 ml-auto mr-auto">
+        <div class="text-center">
+            <h3 class="title">Detailed Inputs</h3>
+        </div>
+
+      <form class="" method="POST" action="/submitform_detailed">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="user_name">User Name</label>
+          <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name"  style="width: 400px;">
+        </div>
+      
+        <div class="form-group">
+          <label for="emailid">Email ID</label>
+          <input name="emailid1" type="email" class="form-control" id="emailid" placeholder="abc@gmail.com" style="width: 400px;">
+        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Location</label>
+                <select name="Location" class="form-control selectpicker" data-style="btn btn-link" style="width: 400px;">
+                    <option value="Ahmedabad">Ahmedabad </option>
+								<option value="Akola">Akola </option>
+								<option value="Allahabad">Allahabad </option>
+								<option value="Amritsar">Amritsar </option>
+								<option value="Aurangabad">Aurangabad </option>
+								<option value="Bangalore">Bangalore </option>
+								<option value="Barmer">Barmer </option>
+								<option value="Belgaum">Belgaum </option>
+								<option value="Bhagalpur">Bhagalpur </option>
+								<option value="Bhopal">Bhopal </option>
+								<option value="Bhubneshwar">Bhubneshwar </option>
+								<option value="Bikaner">Bikaner </option>
+								<option value="Calcutta">Calcutta </option>
+								<option value="Chennai">Chennai</option>
+								<option value="Chirtadurg">Chirtadurg </option>
+								<option value="Dehradun">Dehradun </option>
+								<option value="Dibrugarh">Dibrugarh </option>
+								<option value="Gorakhpur">Gorakhpur </option>
+								<option value="Guwahati">Guwahati </option>
+								<option value="Gwalior">Gwalior </option>
+								<option value="Hissar">Hissar </option>
+								<option value="Hyderabad">Hyderabad </option>
+								<option value="Imphal">Imphal </option>
+								<option value="Indore">Indore </option>
+								<option value="Jabalpur">Jabalpur </option>
+								<option value="Jagdelpur">Jagdelpur </option>
+								<option value="Jaipur">Jaipur </option>
+								<option value="Jaisalmer">Jaisalmer </option>
+								<option value="Jamnagar">Jamnagar </option>
+								<option value="Jodhpur">Jodhpur </option>
+								<option value="Jorhat">Jorhat </option>
+								<option value="Kolkata">Kolkata </option>
+								<option value="Kota">Kota </option>
+								<option value="Kurnool">Kurnool </option>
+								<option value="Lucknow">Lucknow </option>
+								<option value="Mangalore">Mangalore </option>
+								<option value="Mumbai">Mumbai </option>
+								<option value="Nagpur">Nagpur </option>
+								<option value="Nellore">Nellore </option>
+								<option value="NewDelhi" selected>New Delhi </option>
+								<option value="Panjim">Panjim </option>
+								<option value="Patna">Patna </option>
+								<option value="Pune">Pune </option>
+								<option value="Raipur">Raipur </option>
+								<option value="Rajkot">Rajkot </option>
+								<option value="Ramagundam">Ramagundam </option>
+								<option value="Ranchi">Ranchi </option>
+								<option value="Ratnagiri">Ratnagiri </option>
+								<option value="Raxaul">Raxaul </option>
+								<option value="Saharanpur">Saharanpur </option>
+								<option value="Shillong">Shillong </option>
+								<option value="Sholapur">Sholapur </option>
+								<option value="Sundernagar">Sundernagar </option>
+								<option value="Surat">Surat </option>
+								<option value="Tezpur">Tezpur </option>
+								<option value="Tiruchirapalli">Tiruchirapalli </option>
+								<option value="Trivandram">Trivandram </option>
+								<option value="Veraval">Veraval </option>
+								<option value="Vishakhapatnam">Vishakhapatnam </option>
+                </select>
+              </div>
+          <div class="form-group">
+                <label for="exampleFormControlSelect1">Building Type</label>
+                <select name="Building_type" class="form-control selectpicker" data-style="btn btn-link"  style="width: 400px;">
+                               <option value="office" selected>Office</option>
+								<option value="institutional" >Institutional</option>
+								<option value="retail" >Retail</option>
+								<option value="residentialonlynight">Residential (Night Occupied) </option>
+								<option value="residentialallday">Residential (24 Hrs Occupied)</option>
+                </select>
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Roof Area</label>
+                <input name="Roof_area" type="number" class="form-control" placeholder="130" min="130" max="20000" style="width: 400px;">
+          </div>
+          <div class="togglebutton">
+          <label for="exampleFormControlSelect1" style="color: #090B3E;">Radiant Barrier</label>
+                <select name="Radiant_barrier" class="form-control selectpicker" data-style="btn btn-link" style="width: 400px;">
+
+									<option value="OFF" selected> OFF     </option>
+									<option value="ON"> ON </option>
+                </select>
+          </div><br>
+
+
+          <!-- <label class="control-label" for="Roof_type"><b>Roof Type</b>:</label> -->
+          <div class="form-group">
+          <label class="control-label" for="layer1">Layer 1 (Top most):</label>
+			<select width="40" name="layer1"  class="form-control selectpicker">
+				<option value="F08 Metal surface">      Metal Surface         </option>
+				<option value="12mm Thick Mortar" selected>      12mm thick motar       </option>
+				<option value="F13 Built-up roofing">      Built-up roofing      </option>
+				<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+				<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+				<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+				<option value="F14 Slate or tile">      Tile or slate      </option>
+				<option value="F16 Acoustic tile">      Acoustic tile      </option>
+				<option value="Insulation">     Insulation     </option>
+			</select>
+			</div>
+
+		  <div class="form-group">
+          <label class="control-label" for="layer2">Layer 2:</label>
+			<select width="40" name="layer2" class="form-control selectpicker">
+				<option value="F08 Metal surface">      Metal Surface         </option>
+				<option value="12mm Thick Mortar">      12mm thick motar       </option>
+				<option value="F13 Built-up roofing">      Built-up roofing      </option>
+				<option value="150mm Thick RCC Slab" selected>      150mm Thick RCC Slab      </option>
+				<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+				<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+				<option value="F14 Slate or tile">      Tile or slate      </option>
+				<option value="F05 Ceiling air space resistance">      AirGap      </option>
+				<option value="F16 Acoustic tile">      Acoustic tile      </option>
+				<option value="Insulation">     Insulation     </option>
+				<option value="none">     None     </option>
+			</select>
+			</div>
+		  <div class="form-group">
+          <label class="control-label" for="layer3">Layer 3:</label>
+			<select width="40" name="layer3" class="form-control selectpicker">
+				<option value="F08 Metal surface">      Metal Surface         </option>
+				<option value="12mm Thick Mortar" selected>      12mm thick motar       </option>
+				<option value="F13 Built-up roofing">      Built-up roofing      </option>
+				<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+				<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+				<option value="Gypsum Plasterboard">      Gypsum Plasterboard      </option>
+				<option value="F14 Slate or tile">      Tile or slate      </option>
+				<option value="F05 Ceiling air space resistance">      AirGap      </option>
+				<option value="F16 Acoustic tile">      Acoustic tile      </option>
+				<option value="Insulation">     Insulation     </option>
+				<option value="none">     None     </option>
+			</select>
+			</div>
+		   <div class="form-group">
+           <label class="control-label" for="layer4">Layer 4:</label>
+			<select width="40" name="layer4" class="form-control selectpicker">
+				<option value="F08 Metal surface">      Metal Surface         </option>
+				<option value="12mm Thick Mortar">      12mm thick motar       </option>
+				<option value="F13 Built-up roofing">      Built-up roofing      </option>
+				<option value="150mm Thick RCC Slab">      150mm Thick RCC Slab      </option>
+				<option value="200mm Thick RCC Slab">      200mm Thick RCC Slab      </option>
+				<option value="Gypsum Plasterboard" selected>      Gypsum Plasterboard      </option>
+				<option value="F14 Slate or tile">      Tile or slate      </option>
+				<option value="F16 Acoustic tile">      Acoustic tile      </option>
+				<option value="Insulation">     Insulation     </option>
+				<option value="none" >     None     </option>
+			</select>
+			</div>
+          <!-- <div class="form-group">
+                <label for="exampleFormControlSelect1">Roof Type</label>
+                <select name="Roof_type" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
+                               <option value="insulated">      Insulated Concrete Roof         </option>
+									<option value="uninsulated" selected>   Uninsulated Concrete Roof       </option>
+									<option value="material3"> 100 Reinforced Concrete+12 cement render on both sides </option>
+									<option value="material4"> 100 Reinforced Concrete+75 lime concrete (brick bats)+20 clay tile </option>
+									<option value="material5"> 100 Reinforced Concrete+12 cement render+25 air gap+Mangalore tile </option>
+                </select>
+          </div> -->
+          	<label class="control-label"><b>Roof External Finish</b>:</label><br>
+          	<label class="control-label" style="color: grey;"><b>Normal Roof</b>:</label>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Reflectivity (aged):</label>
+                <input name="reflectivity_base" type="number" class="form-control" placeholder="0.3" min="0" max="1" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Emissivity(aged):</label>
+                <input name="emissivity_base" type="number" class="form-control" placeholder="0.9" min="0" max="1" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Cost (Ruppee/m<sup>2</sup>):</label>
+                <input name="cost_base" type="number" class="form-control" placeholder="200" min="0" max="2000" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Life (Years):</label>
+                <input name="life_base" type="number" class="form-control" placeholder="10" min="0" max="50" style="width: 400px;" step="any">
+          </div>
+
+          <label class="control-label" style="color: grey;"><b>Cool Roof</b>:</label>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Reflectivity (aged):</label>
+                <input name="reflectivity_proposed" type="number" class="form-control" placeholder="0.7" min="0" max="1" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Emissivity(aged):</label>
+                <input name="emissivity_proposed" type="number" class="form-control" placeholder="0.9" min="0" max="1" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Cost (Ruppee/m<sup>2</sup>):</label>
+                <input name="cost_proposed" type="number" class="form-control" placeholder="500" min="0" max="2000" style="width: 400px;" step="any">
+          </div>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Life (Years):</label>
+                <input name="life_proposed" type="number" class="form-control" placeholder="5" min="0" max="50" style="width: 400px;" step="any">
+          </div>
+
+        	<label class="control-label"><b>HVAC Details</b>:</label><br>
+          <div class="form-group">
+                <label for="exampleFormControlSelect1">HVAC System Type</label>
+                <select name="HVAC_details" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 450px;">
+                                   <option value="ptac" selected>Window/Split air conditioner,  Heating source: Electric Heat Pump</option>
+									<option value="aircooled">Central VAV system with air cooled chiller, Heating Source : Electric Resistance</option>
+									<option value="watercooled">Central VAV system with water cooled screw chiller, Heating Source : Electric Resistance</option>
+									<option value="pszhp">Packaged rooftop air conditioner, Heating source: Electric Heat Pump</option>
+									<option value="uc">Unconditioned: No system</option>
+
+                </select>
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">System/Chiller COP:</label>
+                <input name="system_cop" type="number" class="form-control" placeholder="3" min="1" max="7" style="width: 400px;" step="any">
+          </div>
+
+
+
+          <label class="control-label"><b>Internal Loads</b>:</label><br>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Lighting power density (W/m<sup>2</sup>):</label>
+                <input name="lighting_power" type="number" class="form-control" placeholder="10.8" min="0" max="100" style="width: 400px;" step="any">
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">Equipment power density (W/m<sup>2</sup>):</label>
+                <input name="equipment_power" type="number" class="form-control" placeholder="16.5" min="0" max="100" style="width: 400px;" step="any">
+          </div>
+          
+
+          <label class="control-label"><b>Window Area</b>:</label><br>
+           <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">North (m<sup>2</sup>):</label>
+                <input name="win_area_north" type="number" class="form-control" placeholder="11.97" min="0" max="600" style="width: 400px;" step="any">
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">South (m<sup>2</sup>):</label>
+                <input name="win_area_south" type="number" class="form-control" placeholder="11.97" min="0" max="600" style="width: 400px;" step="any">
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">East (m<sup>2</sup>):</label>
+                <input name="win_area_east" type="number" class="form-control" placeholder="11.97" min="0" max="600" style="width: 400px;" step="any">
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: #090B3E;">West (m<sup>2</sup>):</label>
+                <input name="win_area_west" type="number" class="form-control" placeholder="11.97" min="0" max="600" style="width: 400px;" step="any">
+          </div>
+           
+
+          <div class="form-group">
+                <label for="exampleFormControlInput11" style="color: #090B3E;"><b> Electricity (Rupee/kWh)</b>:</label>
+                <input name="Electricity" type="number" class="form-control" id="exampleFormControlInput11" placeholder="6" min="4" max="50" style="width: 400px;">
+          </div>
+           <button class="btn btn-primary" style="margin-left: 33%;">Simulate</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer footer-default" >
+  <div class="container">
+    <nav class="float-left">
+      <ul>
+        <li>
+          <a href="https://www.creative-tim.com/">
+{#              Creative Tim#}
+          </a>
+        </li>
+      </ul>
+    </nav>
+{#    <div class="copyright float-right">#}
+{#        &copy;#}
+{#        <script>#}
+{#            document.write(new Date().getFullYear())#}
+{#        </script>, made with <i class="material-icons">favorite</i> by#}
+{#        <a href="https://www.creative-tim.com/" target="blank">Creative Tim</a> for a better web.#}
+{#    </div>#}
+  </div>
+</footer>
+  </body>
+
+<!--   Core JS Files   -->
+<script src="/static/assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="/static/assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="/static/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/static/assets/js/plugins/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="/static/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/static/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!--  Google Maps Plugin  -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="http://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="/static/assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+</html>

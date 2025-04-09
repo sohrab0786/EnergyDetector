@@ -1,0 +1,39 @@
+Program Version,EnergyPlus, Version 24.2.0-94a887817b, YMD=2025.03.11 13:58,
+   ** Severe  ** Line: 1315 Index: 19 - Object contains more field values than maximum number of IDD fields and is not extensible.
+   ** Severe  ** Line: 1315 Index: 19 - Error parsing "FenestrationSurface:Detailed". Error in following line.
+   ** Severe  ** ~~~     11.3518,0.0000,1.8093;                !- X,Y,Z ==> Vertex 4 {m}
+   ** Severe  ** Line: 1315 Index: 25 - "1.8093" is not a valid Object Type.
+   ** Severe  ** Line: 1330 Index: 19 - Object contains more field values than maximum number of IDD fields and is not extensible.
+   ** Severe  ** Line: 1330 Index: 19 - Error parsing "FenestrationSurface:Detailed". Error in following line.
+   ** Severe  ** ~~~     0.0000,11.3518,1.8093;               !- X,Y,Z ==> Vertex 4 {m}
+   ** Severe  ** Line: 1330 Index: 25 - "1.8093" is not a valid Object Type.
+   ** Severe  ** Line: 1345 Index: 30 - Object contains more field values than maximum number of IDD fields and is not extensible.
+   ** Severe  ** Line: 1345 Index: 30 - Error parsing "FenestrationSurface:Detailed". Error in following line.
+   ** Severe  ** ~~~     -4.5200000000000005, 4.57,  1.8093;             !- X,Y,Z ==> Vertex 4 {m}
+   ** Severe  ** Line: 1345 Index: 38 - "1.8093" is not a valid Object Type.
+   ** Severe  ** Line: 1360 Index: 18 - Object contains more field values than maximum number of IDD fields and is not extensible.
+   ** Severe  ** Line: 1360 Index: 18 - Error parsing "FenestrationSurface:Detailed". Error in following line.
+   ** Severe  ** ~~~     0.0000,0.0500, 1.8093;                    !- X,Y,Z ==> Vertex 4 {m}
+   ** Severe  ** Line: 1360 Index: 25 - "1.8093" is not a valid Object Type.
+   ** Severe  ** Line: 2009 Index: 12 - Field cannot be Autosize or Autocalculate
+   ** Severe  ** Line: 2036 Index: 12 - Field cannot be Autosize or Autocalculate
+   ** Severe  ** Line: 2063 Index: 12 - Field cannot be Autosize or Autocalculate
+   ** Severe  ** Line: 2090 Index: 12 - Field cannot be Autosize or Autocalculate
+   ** Severe  ** Line: 2117 Index: 12 - Field cannot be Autosize or Autocalculate
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][number_of_vertices] - "0.000000" - Expected number greater than or equal to 3.000000
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][number_of_vertices] - Failed to validate against child schema #0.
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][number_of_vertices] - "0.000000" - Failed to match against any enum values.
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][number_of_vertices] - Failed to validate against child schema #1.
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][number_of_vertices] - Failed to validate against any schemas allowed by anyOf constraint.
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][sun_exposure] - "WindExposed" - Failed to match against any enum values.
+   ** Severe  ** <root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][vertices][3] - Missing required property 'vertex_z_coordinate'.
+   ** Warning ** Version: in IDF="8.9" not the same as expected="24.2"
+   **  Fatal  ** Errors occurred on processing input file. Preceding condition(s) cause termination.
+   ...Summary of Errors that led to program termination:
+   ..... Reference severe error count=28
+   ..... Last severe error=<root>[BuildingSurface:Detailed][ZN_1_FLR_1_SEC_1_Ceiling][vertices][3] - Missing required property 'vertex_z_coordinate'.
+   ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).
+   ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 1 Warning; 28 Severe Errors; Elapsed Time=00hr 00min  0.07sec

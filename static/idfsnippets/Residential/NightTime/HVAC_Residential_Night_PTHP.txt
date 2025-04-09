@@ -1,0 +1,1262 @@
+!-   ===========  ALL OBJECTS IN CLASS: ZONECONTROL:THERMOSTAT ===========
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_1 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_1,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_1 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_2 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_2,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_2 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_3 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_3,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_3 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_4 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_4,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_4 DualSPSched;  !- Control 1 Name
+
+ZoneControl:Thermostat,
+    ZN_1_FLR_1_SEC_5 Thermostat,  !- Name
+    ZN_1_FLR_1_SEC_5,        !- Zone or ZoneList Name
+    Dual Zone Control Type Sched,  !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    ZN_1_FLR_1_SEC_5 DualSPSched;  !- Control 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: THERMOSTATSETPOINT:DUALSETPOINT ===========
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_1 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_2 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_3 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_4 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+    ZN_1_FLR_1_SEC_5 DualSPSched,  !- Name
+    HtgSetP_Sch,             !- Heating Setpoint Temperature Schedule Name
+    ClgSetP_Sch;             !- Cooling Setpoint Temperature Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:PACKAGEDTERMINALHEATPUMP ===========
+
+ZoneHVAC:PackagedTerminalHeatPump,
+    ZN_1_FLR_1_SEC_1 PTHP,   !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_1 PTHP Exhaust Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHP Inlet Node,  !- Air Outlet Node Name
+    OutdoorAir:Mixer,        !- Outdoor Air Mixer Object Type
+    ZN_1_FLR_1_SEC_1 PTHP OA Mixer,  !- Outdoor Air Mixer Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    ZN_1_FLR_1_SEC_1 PTHPFan,!- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    ZN_1_FLR_1_SEC_1 PTHP Heat Pump,  !- Heating Coil Name
+    0.001,                   !- Heating Convergence Tolerance {dimensionless}
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    ZN_1_FLR_1_SEC_1 PTHP DX Coil,  !- Cooling Coil Name
+    0.001,                   !- Cooling Convergence Tolerance {dimensionless}
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    ZN_1_FLR_1_SEC_1 PTHP Supplmnt Htg Coil,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    18.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    DrawThrough,             !- Fan Placement
+    ZN_1_FLR_1_SEC_1 PTHP Mode Sched;  !- Supply Air Fan Operating Mode Schedule Name
+
+ZoneHVAC:PackagedTerminalHeatPump,
+    ZN_1_FLR_1_SEC_2 PTHP,   !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_2 PTHP Exhaust Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHP Inlet Node,  !- Air Outlet Node Name
+    OutdoorAir:Mixer,        !- Outdoor Air Mixer Object Type
+    ZN_1_FLR_1_SEC_2 PTHP OA Mixer,  !- Outdoor Air Mixer Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    ZN_1_FLR_1_SEC_2 PTHPFan,!- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    ZN_1_FLR_1_SEC_2 PTHP Heat Pump,  !- Heating Coil Name
+    0.001,                   !- Heating Convergence Tolerance {dimensionless}
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    ZN_1_FLR_1_SEC_2 PTHP DX Coil,  !- Cooling Coil Name
+    0.001,                   !- Cooling Convergence Tolerance {dimensionless}
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    ZN_1_FLR_1_SEC_2 PTHP Supplmnt Htg Coil,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    18.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    DrawThrough,             !- Fan Placement
+    ZN_1_FLR_1_SEC_2 PTHP Mode Sched;  !- Supply Air Fan Operating Mode Schedule Name
+
+ZoneHVAC:PackagedTerminalHeatPump,
+    ZN_1_FLR_1_SEC_3 PTHP,   !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_3 PTHP Exhaust Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHP Inlet Node,  !- Air Outlet Node Name
+    OutdoorAir:Mixer,        !- Outdoor Air Mixer Object Type
+    ZN_1_FLR_1_SEC_3 PTHP OA Mixer,  !- Outdoor Air Mixer Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    ZN_1_FLR_1_SEC_3 PTHPFan,!- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    ZN_1_FLR_1_SEC_3 PTHP Heat Pump,  !- Heating Coil Name
+    0.001,                   !- Heating Convergence Tolerance {dimensionless}
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    ZN_1_FLR_1_SEC_3 PTHP DX Coil,  !- Cooling Coil Name
+    0.001,                   !- Cooling Convergence Tolerance {dimensionless}
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    ZN_1_FLR_1_SEC_3 PTHP Supplmnt Htg Coil,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    18.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    DrawThrough,             !- Fan Placement
+    ZN_1_FLR_1_SEC_3 PTHP Mode Sched;  !- Supply Air Fan Operating Mode Schedule Name
+
+ZoneHVAC:PackagedTerminalHeatPump,
+    ZN_1_FLR_1_SEC_4 PTHP,   !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_4 PTHP Exhaust Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHP Inlet Node,  !- Air Outlet Node Name
+    OutdoorAir:Mixer,        !- Outdoor Air Mixer Object Type
+    ZN_1_FLR_1_SEC_4 PTHP OA Mixer,  !- Outdoor Air Mixer Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    ZN_1_FLR_1_SEC_4 PTHPFan,!- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    ZN_1_FLR_1_SEC_4 PTHP Heat Pump,  !- Heating Coil Name
+    0.001,                   !- Heating Convergence Tolerance {dimensionless}
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    ZN_1_FLR_1_SEC_4 PTHP DX Coil,  !- Cooling Coil Name
+    0.001,                   !- Cooling Convergence Tolerance {dimensionless}
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    ZN_1_FLR_1_SEC_4 PTHP Supplmnt Htg Coil,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    18.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    DrawThrough,             !- Fan Placement
+    ZN_1_FLR_1_SEC_4 PTHP Mode Sched;  !- Supply Air Fan Operating Mode Schedule Name
+
+ZoneHVAC:PackagedTerminalHeatPump,
+    ZN_1_FLR_1_SEC_5 PTHP,   !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    ZN_1_FLR_1_SEC_5 PTHP Exhaust Node,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHP Inlet Node,  !- Air Outlet Node Name
+    OutdoorAir:Mixer,        !- Outdoor Air Mixer Object Type
+    ZN_1_FLR_1_SEC_5 PTHP OA Mixer,  !- Outdoor Air Mixer Name
+    AUTOSIZE,                !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate During Heating Operation {m3/s}
+    AUTOSIZE,                !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                     !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,               !- Supply Air Fan Object Type
+    ZN_1_FLR_1_SEC_5 PTHPFan,!- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
+    ZN_1_FLR_1_SEC_5 PTHP Heat Pump,  !- Heating Coil Name
+    0.001,                   !- Heating Convergence Tolerance {dimensionless}
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
+    ZN_1_FLR_1_SEC_5 PTHP DX Coil,  !- Cooling Coil Name
+    0.001,                   !- Cooling Convergence Tolerance {dimensionless}
+    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
+    ZN_1_FLR_1_SEC_5 PTHP Supplmnt Htg Coil,  !- Supplemental Heating Coil Name
+    AUTOSIZE,                !- Maximum Supply Air Temperature from Supplemental Heater {C}
+    18.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
+    DrawThrough,             !- Fan Placement
+    ZN_1_FLR_1_SEC_5 PTHP Mode Sched;  !- Supply Air Fan Operating Mode Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTLIST ===========
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Name
+    ZoneHVAC:PackagedTerminalHeatPump,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_1 PTHP,   !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Name
+    ZoneHVAC:PackagedTerminalHeatPump,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_2 PTHP,   !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Name
+    ZoneHVAC:PackagedTerminalHeatPump,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_3 PTHP,   !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Name
+    ZoneHVAC:PackagedTerminalHeatPump,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_4 PTHP,   !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+ZoneHVAC:EquipmentList,
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Name
+    ZoneHVAC:PackagedTerminalHeatPump,  !- Zone Equipment 1 Object Type
+    ZN_1_FLR_1_SEC_5 PTHP,   !- Zone Equipment 1 Name
+    1,                       !- Zone Equipment 1 Cooling Sequence
+    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONEHVAC:EQUIPMENTCONNECTIONS ===========
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_1,        !- Zone Name
+    ZN_1_FLR_1_SEC_1 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_1 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_1 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_1 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_2,        !- Zone Name
+    ZN_1_FLR_1_SEC_2 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_2 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_2 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_2 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_3,        !- Zone Name
+    ZN_1_FLR_1_SEC_3 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_3 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_3 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_3 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_4,        !- Zone Name
+    ZN_1_FLR_1_SEC_4 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_4 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_4 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_4 Return Air Node Name;  !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentConnections,
+    ZN_1_FLR_1_SEC_5,        !- Zone Name
+    ZN_1_FLR_1_SEC_5 Equipment,  !- Zone Conditioning Equipment List Name
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Zone Air Inlet Node or NodeList Name
+    ZN_1_FLR_1_SEC_5 Exhaust Nodes,  !- Zone Air Exhaust Node or NodeList Name
+    ZN_1_FLR_1_SEC_5 Air Node,  !- Zone Air Node Name
+    ZN_1_FLR_1_SEC_5 Return Air Node Name;  !- Zone Return Air Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FAN:ONOFF ===========
+
+Fan:OnOff,
+    ZN_1_FLR_1_SEC_1 PTHPFan,!- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    300,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.85,                    !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_1 PTHPFan Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHP Fan Outlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    PTHP Fan;                !- End-Use Subcategory
+
+Fan:OnOff,
+    ZN_1_FLR_1_SEC_2 PTHPFan,!- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    300,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.85,                    !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_2 PTHPFan Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHP Fan Outlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    PTHP Fan;                !- End-Use Subcategory
+
+Fan:OnOff,
+    ZN_1_FLR_1_SEC_3 PTHPFan,!- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    300,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.85,                    !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_3 PTHPFan Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHP Fan Outlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    PTHP Fan;                !- End-Use Subcategory
+
+Fan:OnOff,
+    ZN_1_FLR_1_SEC_4 PTHPFan,!- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    300,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.85,                    !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_4 PTHPFan Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHP Fan Outlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    PTHP Fan;                !- End-Use Subcategory
+
+Fan:OnOff,
+    ZN_1_FLR_1_SEC_5 PTHPFan,!- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    0.6,                     !- Fan Efficiency
+    300,                     !- Pressure Rise {Pa}
+    AUTOSIZE,                !- Maximum Flow Rate {m3/s}
+    0.85,                    !- Motor Efficiency
+    1.0,                     !- Motor In Airstream Fraction
+    ZN_1_FLR_1_SEC_5 PTHPFan Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHP Fan Outlet,  !- Air Outlet Node Name
+    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
+    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    PTHP Fan;                !- End-Use Subcategory
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:COOLING:DX:SINGLESPEED ===========
+
+Coil:Cooling:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_1 PTHP DX Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    2.8,                     !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_1 PTHPDX Coil Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHPHeatCoil_AirInlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHP_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    ZN_1_FLR_1_SEC_1 PTHP_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_2 PTHP DX Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    2.8,                     !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_2 PTHPDX Coil Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHPHeatCoil_AirInlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHP_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    ZN_1_FLR_1_SEC_2 PTHP_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_3 PTHP DX Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    2.8,                     !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_3 PTHPDX Coil Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHPHeatCoil_AirInlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHP_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    ZN_1_FLR_1_SEC_3 PTHP_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_4 PTHP DX Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    2.8,                     !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_4 PTHPDX Coil Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHPHeatCoil_AirInlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHP_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    ZN_1_FLR_1_SEC_4 PTHP_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+Coil:Cooling:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_5 PTHP DX Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Cooling Capacity {W}
+    AUTOSIZE,                !- Rated Sensible Heat Ratio
+    2.8,                     !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_5 PTHPDX Coil Inlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHPHeatCoil_AirInlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHP_ClgCapFuncTempCurve,  !- Total Cooling Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_ClgCapFuncFlowFracCurve,  !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_ClgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_ClgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    1000.0,                  !- Nominal Time for Condensate Removal to Begin {s}
+    1.5,                     !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+    3.0,                     !- Maximum Cycling Rate {cycles/hr}
+    45.0,                    !- Latent Capacity Time Constant {s}
+    ZN_1_FLR_1_SEC_5 PTHP_CondAirInletNode,  !- Condenser Air Inlet Node Name
+    AirCooled;               !- Condenser Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:ELECTRIC ===========
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_1 PTHP Supplmnt Htg Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_1 PTHP Fan Outlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHP Inlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_2 PTHP Supplmnt Htg Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_2 PTHP Fan Outlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHP Inlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_3 PTHP Supplmnt Htg Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_3 PTHP Fan Outlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHP Inlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_4 PTHP Supplmnt Htg Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_4 PTHP Fan Outlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHP Inlet Node;  !- Air Outlet Node Name
+
+Coil:Heating:Electric,
+    ZN_1_FLR_1_SEC_5 PTHP Supplmnt Htg Coil,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    1.0,                     !- Efficiency
+    AUTOSIZE,                !- Nominal Capacity {W}
+    ZN_1_FLR_1_SEC_5 PTHP Fan Outlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHP Inlet Node;  !- Air Outlet Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:DX:SINGLESPEED ===========
+
+Coil:Heating:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_1 PTHP Heat Pump,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_1 PTHPHeatCoil_AirInlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHPFan Inlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_1 PTHP_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_1 PTHP_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    Resistive,               !- Defrost Strategy
+    Timed,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_2 PTHP Heat Pump,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_2 PTHPHeatCoil_AirInlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHPFan Inlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_2 PTHP_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_2 PTHP_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    Resistive,               !- Defrost Strategy
+    Timed,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_3 PTHP Heat Pump,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_3 PTHPHeatCoil_AirInlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHPFan Inlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_3 PTHP_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_3 PTHP_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    Resistive,               !- Defrost Strategy
+    Timed,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_4 PTHP Heat Pump,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_4 PTHPHeatCoil_AirInlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHPFan Inlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_4 PTHP_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_4 PTHP_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    Resistive,               !- Defrost Strategy
+    Timed,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+Coil:Heating:DX:SingleSpeed,
+    ZN_1_FLR_1_SEC_5 PTHP Heat Pump,  !- Name
+    ALWAYS_ON,               !- Availability Schedule Name
+    AUTOSIZE,                !- Rated Total Heating Capacity {W}
+    3,                       !- Rated COP {W/W}
+    AUTOSIZE,                !- Rated Air Flow Rate {m3/s}
+    773.3,                   !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+    ZN_1_FLR_1_SEC_5 PTHPHeatCoil_AirInlet,  !- Air Inlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHPFan Inlet,  !- Air Outlet Node Name
+    ZN_1_FLR_1_SEC_5 PTHP_HtgCapFuncTempCurve,  !- Total Heating Capacity Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_HtgCapFuncFlowFracCurve,  !- Total Heating Capacity Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_HtgEirFuncTempCurve,  !- Energy Input Ratio Function of Temperature Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_HtgEirFuncFlowFracCurve,  !- Energy Input Ratio Function of Flow Fraction Curve Name
+    ZN_1_FLR_1_SEC_5 PTHP_HtgPlrCurve,  !- Part Load Fraction Correlation Curve Name
+    ,                        !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
+    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+    200.0,                   !- Crankcase Heater Capacity {W}
+    8.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+    Resistive,               !- Defrost Strategy
+    Timed,                   !- Defrost Control
+    0.166667,                !- Defrost Time Period Fraction
+    AUTOSIZE,                !- Resistive Defrost Heater Capacity {W}
+    4;                       !- Region number for calculating HSPF
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:MIXER ===========
+
+OutdoorAir:Mixer,
+    ZN_1_FLR_1_SEC_1 PTHP OA Mixer,  !- Name
+    ZN_1_FLR_1_SEC_1 PTHPDX Coil Inlet,  !- Mixed Air Node Name
+    ZN_1_FLR_1_SEC_1 PTHP OA Node,  !- Outdoor Air Stream Node Name
+    ZN_1_FLR_1_SEC_1 PTHP Relief Node,  !- Relief Air Stream Node Name
+    ZN_1_FLR_1_SEC_1 PTHP Exhaust Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    ZN_1_FLR_1_SEC_2 PTHP OA Mixer,  !- Name
+    ZN_1_FLR_1_SEC_2 PTHPDX Coil Inlet,  !- Mixed Air Node Name
+    ZN_1_FLR_1_SEC_2 PTHP OA Node,  !- Outdoor Air Stream Node Name
+    ZN_1_FLR_1_SEC_2 PTHP Relief Node,  !- Relief Air Stream Node Name
+    ZN_1_FLR_1_SEC_2 PTHP Exhaust Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    ZN_1_FLR_1_SEC_3 PTHP OA Mixer,  !- Name
+    ZN_1_FLR_1_SEC_3 PTHPDX Coil Inlet,  !- Mixed Air Node Name
+    ZN_1_FLR_1_SEC_3 PTHP OA Node,  !- Outdoor Air Stream Node Name
+    ZN_1_FLR_1_SEC_3 PTHP Relief Node,  !- Relief Air Stream Node Name
+    ZN_1_FLR_1_SEC_3 PTHP Exhaust Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    ZN_1_FLR_1_SEC_4 PTHP OA Mixer,  !- Name
+    ZN_1_FLR_1_SEC_4 PTHPDX Coil Inlet,  !- Mixed Air Node Name
+    ZN_1_FLR_1_SEC_4 PTHP OA Node,  !- Outdoor Air Stream Node Name
+    ZN_1_FLR_1_SEC_4 PTHP Relief Node,  !- Relief Air Stream Node Name
+    ZN_1_FLR_1_SEC_4 PTHP Exhaust Node;  !- Return Air Stream Node Name
+
+OutdoorAir:Mixer,
+    ZN_1_FLR_1_SEC_5 PTHP OA Mixer,  !- Name
+    ZN_1_FLR_1_SEC_5 PTHPDX Coil Inlet,  !- Mixed Air Node Name
+    ZN_1_FLR_1_SEC_5 PTHP OA Node,  !- Outdoor Air Stream Node Name
+    ZN_1_FLR_1_SEC_5 PTHP Relief Node,  !- Relief Air Stream Node Name
+    ZN_1_FLR_1_SEC_5 PTHP Exhaust Node;  !- Return Air Stream Node Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: NODELIST ===========
+
+NodeList,
+    ZN_1_FLR_1_SEC_1 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_1 PTHP Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_1 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_1 PTHP Exhaust Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_2 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_2 PTHP Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_2 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_2 PTHP Exhaust Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_3 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_3 PTHP Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_3 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_3 PTHP Exhaust Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_4 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_4 PTHP Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_4 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_4 PTHP Exhaust Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_5 Inlet Nodes,  !- Name
+    ZN_1_FLR_1_SEC_5 PTHP Inlet Node;  !- Node 1 Name
+
+NodeList,
+    ZN_1_FLR_1_SEC_5 Exhaust Nodes,  !- Name
+    ZN_1_FLR_1_SEC_5 PTHP Exhaust Node;  !- Node 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODE ===========
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_1 PTHP OA Node;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_1 PTHP_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_2 PTHP OA Node;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_2 PTHP_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_3 PTHP OA Node;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_3 PTHP_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_4 PTHP OA Node;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_4 PTHP_CondAirInletNode;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_5 PTHP OA Node;  !- Name
+
+OutdoorAir:Node,
+    ZN_1_FLR_1_SEC_5 PTHP_CondAirInletNode;  !- Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:QUADRATIC ===========
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_ClgCapFuncFlowFracCurve,  !- Name
+    0.718954,                !- Coefficient1 Constant
+    0.435436,                !- Coefficient2 x
+    -0.154193,               !- Coefficient3 x**2
+    0.75,                    !- Minimum Value of x
+    1.25;                    !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_ClgEirFuncFlowFracCurve,  !- Name
+    1.1552,                  !- Coefficient1 Constant
+    -0.1808,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_ClgCapFuncFlowFracCurve,  !- Name
+    0.718954,                !- Coefficient1 Constant
+    0.435436,                !- Coefficient2 x
+    -0.154193,               !- Coefficient3 x**2
+    0.75,                    !- Minimum Value of x
+    1.25;                    !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_ClgEirFuncFlowFracCurve,  !- Name
+    1.1552,                  !- Coefficient1 Constant
+    -0.1808,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_ClgCapFuncFlowFracCurve,  !- Name
+    0.718954,                !- Coefficient1 Constant
+    0.435436,                !- Coefficient2 x
+    -0.154193,               !- Coefficient3 x**2
+    0.75,                    !- Minimum Value of x
+    1.25;                    !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_ClgEirFuncFlowFracCurve,  !- Name
+    1.1552,                  !- Coefficient1 Constant
+    -0.1808,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_ClgCapFuncFlowFracCurve,  !- Name
+    0.718954,                !- Coefficient1 Constant
+    0.435436,                !- Coefficient2 x
+    -0.154193,               !- Coefficient3 x**2
+    0.75,                    !- Minimum Value of x
+    1.25;                    !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_ClgEirFuncFlowFracCurve,  !- Name
+    1.1552,                  !- Coefficient1 Constant
+    -0.1808,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_ClgCapFuncFlowFracCurve,  !- Name
+    0.718954,                !- Coefficient1 Constant
+    0.435436,                !- Coefficient2 x
+    -0.154193,               !- Coefficient3 x**2
+    0.75,                    !- Minimum Value of x
+    1.25;                    !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_ClgEirFuncFlowFracCurve,  !- Name
+    1.1552,                  !- Coefficient1 Constant
+    -0.1808,                 !- Coefficient2 x
+    0.0256,                  !- Coefficient3 x**2
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_ClgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_HtgEirFuncFlowFracCurve,  !- Name
+    1.3824,                  !- Coefficient1 Constant
+    -0.4336,                 !- Coefficient2 x
+    0.0512,                  !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+Curve:Quadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_HtgPlrCurve,  !- Name
+    0.75,                    !- Coefficient1 Constant
+    0.25,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Minimum Value of x
+    1.0;                     !- Maximum Value of x
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:CUBIC ===========
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_1 PTHP_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_1 PTHP_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_1 PTHP_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_2 PTHP_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_2 PTHP_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_2 PTHP_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_3 PTHP_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_3 PTHP_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_3 PTHP_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_4 PTHP_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_4 PTHP_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_4 PTHP_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_5 PTHP_HtgCapFuncTempCurve,  !- Name
+    0.758746,                !- Coefficient1 Constant
+    0.027626,                !- Coefficient2 x
+    0.000148716,             !- Coefficient3 x**2
+    0.0000034992,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_5 PTHP_HtgCapFuncFlowFracCurve,  !- Name
+    0.84,                    !- Coefficient1 Constant
+    0.16,                    !- Coefficient2 x
+    0.0,                     !- Coefficient3 x**2
+    0.0,                     !- Coefficient4 x**3
+    0.5,                     !- Minimum Value of x
+    1.5;                     !- Maximum Value of x
+
+Curve:Cubic,
+    ZN_1_FLR_1_SEC_5 PTHP_HtgEirFuncTempCurve,  !- Name
+    1.19248,                 !- Coefficient1 Constant
+    -0.0300438,              !- Coefficient2 x
+    0.00103745,              !- Coefficient3 x**2
+    -0.000023328,            !- Coefficient4 x**3
+    -20.0,                   !- Minimum Value of x
+    20.0;                    !- Maximum Value of x
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CURVE:BIQUADRATIC ===========
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_ClgCapFuncTempCurve,  !- Name
+    0.942587793,             !- Coefficient1 Constant
+    0.009543347,             !- Coefficient2 x
+    0.0018423,               !- Coefficient3 x**2
+    -0.011042676,            !- Coefficient4 y
+    0.000005249,             !- Coefficient5 y**2
+    -0.000009720,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_1 PTHP_ClgEirFuncTempCurve,  !- Name
+    0.342414409,             !- Coefficient1 Constant
+    0.034885008,             !- Coefficient2 x
+    -0.000623700,            !- Coefficient3 x**2
+    0.004977216,             !- Coefficient4 y
+    0.000437951,             !- Coefficient5 y**2
+    -0.000728028,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_ClgCapFuncTempCurve,  !- Name
+    0.942587793,             !- Coefficient1 Constant
+    0.009543347,             !- Coefficient2 x
+    0.0018423,               !- Coefficient3 x**2
+    -0.011042676,            !- Coefficient4 y
+    0.000005249,             !- Coefficient5 y**2
+    -0.000009720,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_2 PTHP_ClgEirFuncTempCurve,  !- Name
+    0.342414409,             !- Coefficient1 Constant
+    0.034885008,             !- Coefficient2 x
+    -0.000623700,            !- Coefficient3 x**2
+    0.004977216,             !- Coefficient4 y
+    0.000437951,             !- Coefficient5 y**2
+    -0.000728028,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_ClgCapFuncTempCurve,  !- Name
+    0.942587793,             !- Coefficient1 Constant
+    0.009543347,             !- Coefficient2 x
+    0.0018423,               !- Coefficient3 x**2
+    -0.011042676,            !- Coefficient4 y
+    0.000005249,             !- Coefficient5 y**2
+    -0.000009720,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_3 PTHP_ClgEirFuncTempCurve,  !- Name
+    0.342414409,             !- Coefficient1 Constant
+    0.034885008,             !- Coefficient2 x
+    -0.000623700,            !- Coefficient3 x**2
+    0.004977216,             !- Coefficient4 y
+    0.000437951,             !- Coefficient5 y**2
+    -0.000728028,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_ClgCapFuncTempCurve,  !- Name
+    0.942587793,             !- Coefficient1 Constant
+    0.009543347,             !- Coefficient2 x
+    0.0018423,               !- Coefficient3 x**2
+    -0.011042676,            !- Coefficient4 y
+    0.000005249,             !- Coefficient5 y**2
+    -0.000009720,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_4 PTHP_ClgEirFuncTempCurve,  !- Name
+    0.342414409,             !- Coefficient1 Constant
+    0.034885008,             !- Coefficient2 x
+    -0.000623700,            !- Coefficient3 x**2
+    0.004977216,             !- Coefficient4 y
+    0.000437951,             !- Coefficient5 y**2
+    -0.000728028,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_ClgCapFuncTempCurve,  !- Name
+    0.942587793,             !- Coefficient1 Constant
+    0.009543347,             !- Coefficient2 x
+    0.0018423,               !- Coefficient3 x**2
+    -0.011042676,            !- Coefficient4 y
+    0.000005249,             !- Coefficient5 y**2
+    -0.000009720,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+Curve:Biquadratic,
+    ZN_1_FLR_1_SEC_5 PTHP_ClgEirFuncTempCurve,  !- Name
+    0.342414409,             !- Coefficient1 Constant
+    0.034885008,             !- Coefficient2 x
+    -0.000623700,            !- Coefficient3 x**2
+    0.004977216,             !- Coefficient4 y
+    0.000437951,             !- Coefficient5 y**2
+    -0.000728028,            !- Coefficient6 x*y
+    17.00000,                !- Minimum Value of x
+    22.00000,                !- Maximum Value of x
+    13.00000,                !- Minimum Value of y
+    46.00000;                !- Maximum Value of y
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+Output:Table:SummaryReports,
+    AllSummaryAndMonthly,              !- Report 1 Name
+    ComponentCostEconomicsSummary,  !- Report 2 Name
+    InputVerificationandResultsSummary,  !- Report 3 Name
+    ClimaticDataSummary,     !- Report 4 Name
+    EquipmentSummary,        !- Report 5 Name
+    EnvelopeSummary;         !- Report 6 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+
+OutputControl:Table:Style,
+    HTML,                    !- Column Separator
+    JtoKWH;                  !- Unit Conversion
+

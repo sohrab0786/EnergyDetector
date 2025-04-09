@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cool Roof Calculator</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div> -->
+
+					
+					<nav id="primary-menu">
+ 
+<!-- 						<ul>	<li><a href="{% url 'login' %}">login</a></li> -->
+					<!-- <li><a href="/login_register"><div>Login/register</div></a> -->
+							<ul>
+								{% if user.is_anonymous%}
+								<li><a href="/"><div>Home</div></a></li>
+								<li><a href="{% url 'login_register' %}"><div>login/register</div></a></li>
+								<li><a href="/glossary"><div>Glossary</div></a></li>
+								{% endif %}
+
+								{% if user.is_authenticated %}
+								  
+								  <li><a href="#"><div>Hi,{{ user.username }}</div></a></li>
+								  <li><a href="/"><div>Home</div></a></li>
+								  <li><a href="/glossary"><div>Glossary</div></a></li>
+								  <li><a href="{% url 'projects_page' %}"><div>Your Projects</div></a></li>
+								  
+								  <li><a href="{% url 'logout_user' %}"><div>logout</div></a></li>
+								{% endif %}
+								<li><a href="#">External links</a><ul>
+                                    <li><a href="https://rsc.ornl.gov/" target="_blank"><div> Roof Savings Calculator </div></a></li>
+                                    <li><a href="https://heatisland.lbl.gov/" target="_blank"><div> Heat Island group </div></a></li>
+                                    <li><a href="https://coolcolors.lbl.gov/" target="_blank"><div> Cool Colours Project</div></a></li>
+                                    <li><a href="https://coolroofs.org/" target="_blank"><div> Cool Roof Rating Council</div></a></li>
+                                    
+                                </ul></li>
+
+		<!-- 	{% if user.is_authenticated %}
+			  <li><a>Hi {{ user.username }}!</a></li>
+			  <li><a href="{% url 'logout' %}">logout</a></li>
+			{% else %} <div class="alert alert-danger nobottommargin">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          <i class="icon-remove-sign"></i><strong>Login!</strong> To keep a count on your simultions. 
+                        </div>
+
+			{% endif %}
+		 -->
+								
+							
+						</ul> 
+
+
+					</nav>
+
+				</div>
+
+			</div>
+
+		</header>
+
+	 <section id="page-title" class="page-title-center">
+
+            <div class="container clearfix">
+                <h1>Cool Roof Calculator</h1>
+                
+    		        
+            </div>
+
+        </section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+ 					<div class="postcontent nobottommargin clearfix">
+ 						<h3>Cool Roof</h3>
+
+                        <blockquote>
+                            <p>  A cool roof is a roof which reflects or emits the suns heat back into the sky instead of transferring it into the building below. This property of coolness of the roof is measured by two major properties of the roof surface. These two basic characteristics that determine the "coolness" of a roof are solar reflectance (SR) and thermal emittance (TE). Both properties are rated on a scale from 0 to 1, where 1 is the most reflective or emissive. 
+                            </p>
+                        </blockquote>
+                        <img src="/static/images/cool.png">
+                        <div class="line"></div>
+
+                        <h3>Advantages</h3>
+                        <blockquote>
+                           
+                            <ul style="margin-left: 30px;">
+                            	<li>In unconditioned spaces, use of cool roof decrease the indoor temperatures and increases the comfort</li>
+                            	<li>In Conditioned spaces, cool roofs help in decreasing the heat gain through roof, which
+reduces the energy consumption by the cooling system.</li>
+                            	<li>Reduces Heat Island effect: Cities generally are around 2 &#176;C to 8  &#176;C warmer than surrounding
+areas due to dark materials, including roofs, which absorb the sun's light energy as heat
+during the day and release it at night as heat. This phenomenon removes the opportunity for air to cool down at night and results in higher temperatures being maintained longer. By immediately reflecting solar radiation back into the atmosphere and reemitting some portion of it as infrared light, cool roofs result in cooler air temperatures for the surrounding urban environment during hot summer months, thereby reducing the heat island effect caused.</li>
+                            	<li>Reduces Global warming: Cool roof also help in decreasing the rate of global warming. Cool
+roofs directly reduce green house gas emissions by conserving electricity for air conditioning
+therefore emitting less CO<sub>2</sub> from power plants. Cool roofs also cool the world independently
+of avoided carbon emissions, simply by reflecting the sun's energy as light back to the
+atmosphere, thereby mitigating global warming. A Lawrence Berkeley National Laboratory
+study found that world-wide reflective roofing will produce a global cooling effect equivalent
+to offsetting 24 gigatons of CO<sub>2</sub> over the lifetime of the roofs.</li>
+                            	<li>Cool roof also decreases roof maintenance costs due to their longer roof life.</li>
+                            </ul>
+                        </blockquote>
+                        <h3></h3>
+                        <blockquote>
+                        	One of the major challenges that people face in applying Cool Roof is selecting the most appropriate technology/material for their building location and roof type. There is wide variety of cool roof materials with differences in their emissivity, reflectivity, life, initial cost. Performance of each of the materials varies over a wide range with change in climatic conditions, roof type, Heating Ventilation and Air-Conditioning (HVAC) system type, etc. Availability of a wide range of varieties and their varying performance with various prevailing conditions, are the two major reasons because of which estimation of energy savings from Cool Roofs is difficult. Correct choice of the Cool Roof material should therefore be made by considering various building features, keeping into consideration the Life Cycle Cost (LCC).
+                        </blockquote>
+                          <h3></h3>
+                        <blockquote>
+                        	 Hence there is need of a tool which takes the mentioned parameters as input and calculates the resultant energy savings and the LCC for various types of Cool Roofing materials and technologies. That tool if online serves various users such as, house owners, builders, Architects, Engineers and the Researchers. The Cool Roof Calculator helps in comparing two identical building models that differ by the roof external finish. The users can input the parameters of the building either in the simple calculator or the detail calculator, based on which the energy savings and payback, or the comfort shall be calculated. Simulations on this tool are carried on the EnergyPlus Simulation Software. The Calculator can simulate weather conditions for all major cities in India. 
+                        </blockquote>
+ 					</div>
+    	                    
+
+                </div>
+
+				</div>
+
+			</div>
+							{% if user.is_authenticated %}
+                            <div class="alert alert-success" style="text-align: center;">
+	                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                          <i class="icon-success"></i><strong>You were last logged in at:</strong>  <a href="#" class="alert-link">{{user.last_login}}</a>.
+                        	</div>
+                        	{% endif %}
+		</section><!-- #content end -->
+
+
+	</div><!-- #wrapper end -->
+
+	
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/static/js/functions.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	
+	
+</body>
+</html>
