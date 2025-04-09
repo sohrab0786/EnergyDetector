@@ -2,22 +2,17 @@ EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
 
 # Python
 __pycache__/
-*.py[cod]
-*.egg-info/
-*.so
-*.log
+
+
 
 # Django
-*.sqlite3
-*.env
+
 
 # Environments
 env/
 venv/
 myenv/
 # VS Code
-.vscode/
+
 
 # OS
-.DS_Store
-Thumbs.db
