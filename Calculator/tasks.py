@@ -54,7 +54,7 @@ def run_simulation_simple(pk):
     template_folder_path_base = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")
     template_folder_path_base = str(Path(template_folder_path_base))
     print(f'template_folder_path_base: {template_folder_path_base}')
-    ENERGYPLUS_PATH = "C:\\EnergyPlusV8-9-0\\energyplus.exe"
+    ENERGYPLUS_PATH = "energyplus"
     command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,base_path]
     print("command_line after")
     print(command_line_base)
@@ -488,7 +488,7 @@ def run_simulation(pk):
     print('running base')
 
     template_folder_path_base = str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")))
-    ENERGYPLUS_PATH = "C:\\EnergyPlusV8-9-0\\energyplus.exe"
+    ENERGYPLUS_PATH = "energyplus"
     command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,base_path]
     print("command_line after")
     print(command_line_base)
@@ -892,7 +892,7 @@ def run_simulation_parametric(pk):
     print('running base')
 
     template_folder_path_base = str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")))
-    ENERGYPLUS_PATH = "C:\\EnergyPlusV8-9-0\\energyplus.exe"
+    ENERGYPLUS_PATH = "energyplus"
     command_line_base = [ENERGYPLUS_PATH,"-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base"  ,base_path]
     print("command_line after")
     print(command_line_base)
