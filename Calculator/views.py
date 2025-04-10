@@ -1271,7 +1271,7 @@ def simple(request):
         # Celery task id is stored in db.
         form_detailed_data.task_id =task_id
         print(f'django-q_task {task_id}')
-        sleep(80)
+        sleep(100)
         # Save the results in db.
         #form_detailed_data.save()
         print('done')
@@ -2128,7 +2128,7 @@ def detailed(request):
         form_detailed_data.task_id =task_id
         print(f'django-q_task {task_id}')
         # Save the results in db.
-        sleep(80)
+        sleep(100)
         #form_detailed_data.save()
         print('done')
         #print(celery_task.id)
@@ -2999,7 +2999,7 @@ def parametric(request):
         print('done')
         #print(celery_task.id)
         #print(celery_task.ready())
-        sleep(80)
+        sleep(100)
         pk = form_detailed_data.id
         print(f'pk : {pk}')
         print("Redirecting to results page.")
