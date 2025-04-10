@@ -90,15 +90,16 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_ROOT = ""
+#STATIC_ROOT = ""
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-
+    os.path.join(BASE_DIR, 'templates/static'),
+    os.path.join(BASE_DIR, 'Calculator/static'),
     os.path.join(BASE_DIR, 'static'),
 
    
 )
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
