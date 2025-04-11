@@ -118,12 +118,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 Q_CLUSTER = {
     'name': 'DjangoQ',
-    'workers': 2,              # Reduce if sim is CPU heavy
-    'timeout': 300,            # Increase to fit your longest task
-    'retry': 120,              # Retry failed tasks after 2 minutes
+    'workers': 2,
+    'timeout': 300,     # Your task's max allowed time
+    'retry': 360,       # Must be greater than timeout
     'queue_limit': 500,
     'bulk': 10,
-    'save_limit': 250,         # Optional: auto-cleanup
+    'save_limit': 250,
     'orm': 'default',
-    'log_level': 'DEBUG',      # Optional: for debugging
+    'log_level': 'DEBUG',
 }
