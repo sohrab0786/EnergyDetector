@@ -1267,7 +1267,7 @@ def run_simulation_parametric(pk):
     
     if emailid:
         subject = 'Cool Roof Calculator results'
-        message = 'http://localhost:8000/display_results/' + str(pk) + "/"
+        message = 'http://localhost:8000/display_results_parametric/' + str(pk) + "/"
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [emailid]
 
