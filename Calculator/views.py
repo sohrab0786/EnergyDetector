@@ -1271,34 +1271,25 @@ def simple(request):
         # Celery task id is stored in db.
         form_detailed_data.task_id =task_id
         print(f'django-q_task {task_id}')
-        timeout = 90  # total seconds to wait
-        interval = 5  # check every 5 seconds
-        elapsed = 0
-      
-        while elapsed < timeout:
-              task = Task.objects.filter(id=task_id).first()
-              if task and task.stopped:
-                  if task.success:
-                      print("Task completed successfully.")
-                  else:
-                      print(f"Task failed: {task.result}")
-                  break
-              sleep(interval)
-              elapsed += interval
-      
-          # Redirect to the results page
+        sleep(80)
+        # Save the results in db.
+        #form_detailed_data.save()
+        print('done')
+        #print(celery_task.id)
+        #print(celery_task.ready())
+        #start django-q server like below in separate terminal
+        #python manage.py qcluster
+        #then run server
+        #python manage.py ruserver
         pk = form_detailed_data.id
-        print(f'pk: {pk}')
-        return redirect('display_results_simple/' + str(pk) + "/")
-      
+        print(f'pk : {pk}')
+        return redirect('display_results_simple/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
-          exc_type, exc_obj, exc_tb = sys.exc_info()
-          fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-          print('error occurred...')
-          print(exc_type, fname, exc_tb.tb_lineno)
-      
-          # If something fails, fallback to the loader view
-          return postdata_loader_simple(request, pk)
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print('error occured..')
+        print(exc_type, fname, exc_tb.tb_lineno)
+    return postdata_loader_simple(request,pk)
 
 
 #For Simple inputs form func()
@@ -2138,31 +2129,25 @@ def detailed(request):
         print(f'django-q_task {task_id}')
         # Save the results in db.
     
-        # Polling for task completion (optional for testing)
-        timeout = 90  # total wait time in seconds
-        interval = 5  # check every 5 seconds
-        elapsed = 0
-   
-        while elapsed < timeout:
-           task = Task.objects.filter(id=task_id).first()
-           if task and task.stopped:
-               if task.success:
-                   print("Task completed successfully.")
-               else:
-                   print(f"Task failed: {task.result}")
-               break
-           sleep(interval)
-           elapsed += interval
-   
+        sleep(80)
+        # Save the results in db.
+        #form_detailed_data.save()
+        print('done')
+        #print(celery_task.id)
+        #print(celery_task.ready())
+        #start django-q server like below in separate terminal
+        #python manage.py qcluster
+        #then run server
+        #python manage.py ruserver
         pk = form_detailed_data.id
-        print(f'pk: {pk}')
-        return redirect('display_results/' + str(pk) + "/")
-   
+        print(f'pk : {pk}')
+        return redirect('display_results/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
-       exc_type, exc_obj, exc_tb = sys.exc_info()
-       fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-       print(f"Exception: {exc_type} in {fname} line {exc_tb.tb_lineno} - {e}")
-       return postdata_loader(request, pk)
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print('error occured..')
+        print(exc_type, fname, exc_tb.tb_lineno)
+        return postdata_loader(request, pk)
       
 
 def parametric(request):
@@ -3021,35 +3006,26 @@ def parametric(request):
         print('done')
         #print(celery_task.id)
         #print(celery_task.ready())
-        # Poll task status (optional in dev/testing)
-        timeout = 90  # total seconds to wait
-        interval = 5  # check every 5 seconds
-        elapsed = 0
-   
-        while elapsed < timeout:
-           task = Task.objects.filter(id=task_id).first()
-           if task and task.stopped:
-               if task.success:
-                   print("Task completed successfully.")
-               else:
-                   print(f"Task failed: {task.result}")
-               break
-           sleep(interval)
-           elapsed += interval
-   
+        sleep(80)
+        # Save the results in db.
+        #form_detailed_data.save()
+        print('done')
+        #print(celery_task.id)
+        #print(celery_task.ready())
+        #start django-q server like below in separate terminal
+        #python manage.py qcluster
+        #then run server
+        #python manage.py ruserver
         pk = form_detailed_data.id
-        print(f'pk: {pk}')
-        print("Redirecting to results page.")
-        return redirect('display_results_parametric/' + str(pk) + "/")
-   
+        print(f'pk : {pk}')
+        return redirect('display_results_parametric/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
-       exc_type, exc_obj, exc_tb = sys.exc_info()
-       fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-       print("Error occurred...")
-       print(exc_type, fname, exc_tb.tb_lineno)
-   
-       # Fallback if exception happens
-       return postdata_loader_parametric(request, pk)
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print('error occured..')
+        print(exc_type, fname, exc_tb.tb_lineno)
+        # Fallback if exception happens
+        return postdata_loader_parametric(request, pk)
 #############################################################################################################################
 
 ############################ SIMPLE ########################################
