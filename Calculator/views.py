@@ -3048,8 +3048,8 @@ def parametric(request):
        print("Error occurred...")
        print(exc_type, fname, exc_tb.tb_lineno)
    
-   # Fallback if exception happens
-   return postdata_loader_parametric(request, pk)
+       # Fallback if exception happens
+       return postdata_loader_parametric(request, pk)
 #############################################################################################################################
 
 ############################ SIMPLE ########################################
