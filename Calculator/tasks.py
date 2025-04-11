@@ -451,7 +451,7 @@ def run_simulation_simple(pk):
     print('data saved')
     if emailid:
         subject = 'Cool Roof Calculator results'
-        message = 'http://localhost:8000/display_results/' + str(pk) + "/"
+        message = 'http://13.126.206.17:8000/display_results_simple/' + str(pk) + "/"
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [emailid]
 
