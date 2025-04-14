@@ -63,15 +63,15 @@
       <form class="" method="POST" action="/submitform">
         {% csrf_token %}
 		<div class="form-group">
-			<label for="user_name">User Name</label>
+			<label for="user_name" style="color: #00a1b5;">User Name</label>
 			<input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name"  style="width: 400px;">
 		</div>	
 		<div class="form-group">
-			<label for="emailid">Email ID</label>
+			<label for="emailid" style="color: #00a1b5;">Email ID</label>
 			<input name="emailid" type="email" class="form-control" id="emailid" placeholder="abc@gmail.com" style="width: 400px;">
 		</div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Location</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">Location</label>
                 <select name="Location" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
                     <option value="Ahmedabad">Ahmedabad </option>
 								<option value="Akola">Akola </option>
@@ -135,7 +135,7 @@
                 </select>
               </div>
           <div class="form-group">
-                <label for="exampleFormControlSelect1">Building Type</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">Building Type</label>
                 <select name="Building_type" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
                                <option value="office" selected>Office</option>
 								<option value="institutional" >Institutional</option>
@@ -145,11 +145,11 @@
                 </select>
           </div>
           <div class="form-group">
-                <label for="exampleFormControlInput1" style="color: #090B3E;">Roof Area</label>
+                <label for="exampleFormControlInput1" style="color: #00a1b5;">Roof Area</label>
                 <input name="Roof_area" type="number" class="form-control" id="exampleFormControlInput1" placeholder="130" min="130" max="20000" style="width: 400px;">
           </div>
           <div class="form-group">
-                <label for="exampleFormControlSelect1">Roof Type</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">Roof Type</label>
                 <select name="Roof_type" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
                                <option value="insulated">      Insulated Concrete Roof         </option>
 									<option value="uninsulated" selected>   Uninsulated Concrete Roof       </option>
@@ -159,7 +159,7 @@
                 </select>
           </div>
           <div class="togglebutton">
-          <label for="exampleFormControlSelect1" style="color: #090B3E;">Radiant Barrier</label>
+          <label for="exampleFormControlSelect1" style="color: #00a1b5;">Radiant Barrier</label>
                 <select name="Radiant_barrier" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
 
 									<option value="OFF" selected> OFF     </option>
@@ -167,7 +167,7 @@
                 </select>
           </div>
            <div class="form-group">
-                <label for="exampleFormControlSelect1">Normal Roof</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">Normal Roof</label>
                 <select name="basecase" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
                                         <option value="0.23">Gray EPDM (SR=0.23, IE=0.87, SRI=21)</option>
 										<option value="0.22">Gray Asphalt Shingle (SR=0.22, IE=0.91, SRI=22)</option>
@@ -185,7 +185,7 @@
                 </select>
           </div>
           <div class="form-group">
-                <label for="exampleFormControlSelect1">Cool Roof</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">Cool Roof</label>
                 <select name="proposedcase" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 400px;">
                                     <option value="0.23">Gray EPDM (SR=0.23, IE=0.87, SRI=21)</option>
 									<option value="0.22">Gray Asphalt Shingle (SR=0.22, IE=0.91, SRI=22)</option>
@@ -204,7 +204,7 @@
                 </select>
           </div>
           <div class="form-group">
-                <label for="exampleFormControlSelect1">HVAC Details</label>
+                <label for="exampleFormControlSelect1" style="color: #00a1b5;">HVAC Details</label>
                 <select name="HVAC_details" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 450px;">
                                    <option value="ptac" selected>Window/Split air conditioner,  Heating source: Electric Heat Pump</option>
 									<option value="aircooled">Central VAV system with air cooled chiller, Heating Source : Electric Resistance</option>
@@ -215,7 +215,7 @@
                 </select>
           </div>
           <div class="form-group">
-                <label for="exampleFormControlInput11" style="color: #090B3E;"> Electricity</label>
+                <label for="exampleFormControlInput11" style="color: #00a1b5;"> Electricity</label>
                 <input name="Electricity" type="number" class="form-control" id="exampleFormControlInput11" placeholder="Rupee/kWh" min="4" max="50" style="width: 400px;">
           </div>
            <button class="btn btn-primary" style="margin-left: 33%;">Simulate</button>
