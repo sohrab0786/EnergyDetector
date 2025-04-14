@@ -35,31 +35,29 @@
   <div class="container">
     <div class="section col-md-4 ml-auto mr-auto">
 		<!-- Outer container to center everything -->
-		<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
-		    
-		    <!-- Logo (centered and on top) -->
-		 <div class="text-center mb-4">
-	           <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" style="max-width: 200px; height: auto;">
-	         </div>
-		
-		    <!-- Navigation Tabs (centered and horizontal) -->
-		    <div style="display: flex; gap: 15px; justify-content: center; flex-direction: row;">
-		        <a href="{% url 'CoolRoof' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #3C4858; background-color: #fff; transition: all 0.3s ease-in-out; text-decoration: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent;">
-		            <i class="material-icons" style="margin-right: 8px; font-size: 24px;">home</i>
-		            <span>Simple Inputs</span>
-		        </a>
-		
-		        <a href="{% url 'coolroof_detailed' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #3C4858; background-color: #fff; transition: all 0.3s ease-in-out; text-decoration: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent;">
-		            <i class="material-icons" style="margin-right: 8px; font-size: 24px;">architecture</i>
-		            <span>Detailed Inputs</span>
-		        </a>
-		
-		        <a href="{% url 'coolroof_parametric' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #3C4858; background-color: #fff; transition: all 0.3s ease-in-out; text-decoration: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent;">
-		            <i class="material-icons" style="margin-right: 8px; font-size: 24px;">tune</i>
-		            <span>Parametric Inputs</span>
-		        </a>
-		    </div>
-		</div>
+			<div class="logo-nav-wrapper" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center;">
+	    <!-- Logo -->
+	    <div class="text-center mb-4">
+	        <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" class="plaksha-logo" style="max-width: 150px; height: auto;">
+	    </div>
+	
+	    <!-- Navigation Tabs -->
+	    <div class="nav-tabs-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+	        <a href="{% url 'CoolRoof' %}" class="input-pill nav-tab">
+	            <i class="material-icons nav-icon">home</i>
+	            <span>Simple Inputs</span>
+	        </a>
+	        <a href="{% url 'coolroof_detailed' %}" class="input-pill nav-tab">
+	            <i class="material-icons nav-icon">architecture</i>
+	            <span>Detailed Inputs</span>
+	        </a>
+	        <a href="{% url 'coolroof_parametric' %}" class="input-pill nav-tab">
+	            <i class="material-icons nav-icon">tune</i>
+	            <span>Parametric Inputs</span>
+	        </a>
+	    </div>
+	</div>
+
 	    <!--no new -->
         <div class="text-center">
             <h3 class="title">Simple Inputs</h3>
@@ -244,26 +242,7 @@
 	        <span style="margin-left: 10px; font-size: 16px;">₹/kWh</span>
 	
 	</div>
-
-           <button class="btn" style="
-    margin-left: 33%;
-    padding: 8px 24px;
-    font-size: 15px;
-    font-weight: 500;
-    background-color: #00a1b5;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 161, 181, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-"
-onmouseover="this.style.backgroundColor='#007a8c'; this.style.transform='scale(1.04)'"
-onmouseout="this.style.backgroundColor='#00a1b5'; this.style.transform='scale(1)'"
->
-    Simulate
-</button>
-
-
+           <button class="btn btn-primary" style="margin-left: 33%;">Simulate</button>
       </form>
     </div>
 
