@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,11 +12,14 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
-    <link href="/static/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" type="text/css" />
+   <!-- <link href="/static/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" type="text/css" /> -->
+	  <link rel="stylesheet" href="{% static 'assets/css/material-kit.css' %}">
   </head>
   <body>
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('/static/assets/img/bg.jpg')">
+<!--<div class="page-header header-filter" data-parallax="true" style="background-image: url('/static/assets/img/bg.jpg')">-->
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static 'assets/img/bg.jpg' %}');">
+
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
@@ -35,7 +39,7 @@
 		    
 		    <!-- Logo (centered and on top) -->
 		 <div class="text-center mb-4">
-	           <img src="/static/assets/img/Plaksha-logo.jpeg" alt="Plaksha Logo" style="max-width: 200px; height: auto;">
+	           <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" style="max-width: 200px; height: auto;">
 	         </div>
 		
 		    <!-- Navigation Tabs (centered and horizontal) -->
@@ -289,19 +293,20 @@ onmouseout="this.style.backgroundColor='#00a1b5'; this.style.transform='scale(1)
   </body>
 
 <!--   Core JS Files   -->
-<script src="/static/assets/js/core/jquery.min.js" type="text/javascript"></script>
-<script src="/static/assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="/static/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-<script src="/static/assets/js/plugins/moment.min.js"></script>
-<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-<script src="/static/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="/static/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-<!--  Google Maps Plugin  -->
+<!-- Core JS Files -->
+<script src="{% static 'assets/js/core/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/js/core/popper.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/js/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/js/plugins/moment.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+
+<!-- Google Maps Plugin -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 
-<!-- Place this tag in your head or just before your close body tag. -->
+<!-- GitHub Buttons -->
 <script async defer src="http://buttons.github.io/buttons.js"></script>
-<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-<script src="/static/assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+<!-- Material Kit JS -->
+<script src="{% static 'assets/js/material-kit.js?v=2.0.4' %}" type="text/javascript"></script>
 </html>
