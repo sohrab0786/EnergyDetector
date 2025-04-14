@@ -46,11 +46,14 @@
           <label for="user_name" style="color: #00a1b5;">User Name</label>
           <input name="user_name" type="text" class="form-control" id="user_name1" placeholder="Enter your name"  style="width: 400px;">
         </div>
-      
         <div class="form-group">
           <label for="emailid" style="color: #00a1b5;">Email ID</label>
           <input name="emailid1" type="email" class="form-control" id="emailid1" placeholder="abc@gmail.com" required style="width: 400px;">
         </div>
+	      <p style="color: #555; font-size: 14px; margin-bottom: 15px;">
+		  Enter the details and then click <strong>'Simulate'</strong><br>
+		  <em>Note: All values are in SI units</em>
+             </p>
             <div class="form-group">
                 <label for="exampleFormControlSelect1" style="color: #00a1b5;">Location</label>
                 <select name="Location" class="form-control selectpicker" data-style="btn btn-link" style="width: 400px;">
@@ -131,6 +134,11 @@
                 <input name="Roof_area" type="number" class="form-control" placeholder="130" min="130" max="20000" style="width: 400px; display: inline-block;">
                 <span style="margin-left: 10px; font-size: 16px;">m²</span>
             </div>
+		<small style="color: #777; display: block; margin-top: 5px;">
+		    (min: 130 m<sup>2</sup>, max: 20,000 m<sup>2</sup>)<br>
+		    <b>Note:</b> For residential buildings, input the total roof area over all the occupied spaces.<br>
+		    For other building types, input total roof area over conditioned spaces.
+		  </small>
 	</div>
           <div class="togglebutton">
           <label for="exampleFormControlSelect1" style="color: #00a1b5;">Radiant Barrier</label>
@@ -251,8 +259,13 @@
                 <label for="exampleFormControlInput1" style="color: #090B3E;">Life (Years):</label>
                 <input name="life_proposed" type="number" class="form-control" placeholder="5" min="0" max="50" style="width: 400px;" step="any">
           </div>
-
-        	<label class="control-label" style="color: #007979;"><b>HVAC Details</b>:</label><br>
+          <p style="color: #555; margin-bottom: 8px;">
+		  To view the properties of various available cool roof materials in the market, please click the link
+		  <a href="https://coolroofs.org/directory" target="_blank" style="color: #007979; text-decoration: underline;">
+		    here
+		  </a>.
+		</p>
+	  <label class="control-label" style="color: #007979;"><b>HVAC Details</b>:</label><br>
           <div class="form-group">
                 <label for="exampleFormControlSelect1">HVAC System Type</label>
                 <select name="HVAC_details" class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1" style="width: 450px;">
