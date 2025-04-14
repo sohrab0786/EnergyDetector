@@ -35,28 +35,29 @@
   <div class="container">
     <div class="section col-md-4 ml-auto mr-auto">
 		<!-- Outer container to center everything -->
-			<div class="logo-nav-wrapper" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center;">
-	    <!-- Logo -->
-	    <div class="text-center mb-4">
-	        <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" class="plaksha-logo" style="max-width: 150px; height: auto;">
-	    </div>
-	
-	    <!-- Navigation Tabs -->
-	    <div class="nav-tabs-wrapper" style="color: #007979; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-	        <a href="{% url 'CoolRoof' %}" class="input-pill nav-tab">
-	            <i class="material-icons nav-icon">home</i>
-	            <span>Simple Inputs</span>
-	        </a>
-	        <a href="{% url 'coolroof_detailed' %}" class="input-pill nav-tab">
-	            <i class="material-icons nav-icon">architecture</i>
-	            <span>Detailed Inputs</span>
-	        </a>
-	        <a href="{% url 'coolroof_parametric' %}" class="input-pill nav-tab">
-	            <i class="material-icons nav-icon">tune</i>
-	            <span>Parametric Inputs</span>
-	        </a>
-	    </div>
-	</div>
+		<div class="logo-nav-wrapper" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center;">
+		    <!-- Logo -->
+		    <div class="text-center mb-4">
+		        <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" class="plaksha-logo" style="max-width: 150px; height: auto;">
+		    </div>
+		
+		    <!-- Navigation Tabs -->
+		    <div class="nav-tabs-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+		        <a href="{% url 'CoolRoof' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #007979; background-color: #fff; text-decoration: none; transition: all 0.3s ease-in-out; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent; min-width: 180px; justify-content: center;">
+		            <i class="material-icons" style="margin-right: 8px; font-size: 24px; color: #007979;">home</i>
+		            <span>Simple Inputs</span>
+		        </a>
+		        <a href="{% url 'coolroof_detailed' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #007979; background-color: #fff; text-decoration: none; transition: all 0.3s ease-in-out; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent; min-width: 180px; justify-content: center;">
+		            <i class="material-icons" style="margin-right: 8px; font-size: 24px; color: #007979;">architecture</i>
+		            <span>Detailed Inputs</span>
+		        </a>
+		        <a href="{% url 'coolroof_parametric' %}" class="input-pill" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 8px; font-weight: 500; font-size: 16px; color: #007979; background-color: #fff; text-decoration: none; transition: all 0.3s ease-in-out; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); border: 2px solid transparent; min-width: 180px; justify-content: center;">
+		            <i class="material-icons" style="margin-right: 8px; font-size: 24px; color: #007979;">tune</i>
+		            <span>Parametric Inputs</span>
+		        </a>
+		    </div>
+		</div>
+
 
 	    <!--no new -->
         <div class="text-center">
