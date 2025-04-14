@@ -95,11 +95,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
  
     
-    
+    os.path.join(BASE_DIR, 'static'),
     #os.path.join(BASE_DIR, 'templates/static'),
-    os.path.join(BASE_DIR, 'CoolRoof/static'),
-    #os.path.join(BASE_DIR, 'static'),
+    #os.path.join(BASE_DIR, 'CoolRoof/static'),
 )
+#for collectstatic command make staticfiles_dirs = templates/static only
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email settings
