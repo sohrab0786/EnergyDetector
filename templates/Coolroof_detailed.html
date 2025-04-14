@@ -125,10 +125,13 @@
 								<option value="residentialallday">Residential (24 Hrs Occupied)</option>
                 </select>
           </div>
-          <div class="form-group">
-                <label for="exampleFormControlInput1" style="color: #00a1b5;">Roof Area</label>
-                <input name="Roof_area" type="number" class="form-control" placeholder="130" min="130" max="20000" style="width: 400px;">
-          </div>
+       <div class="form-group">
+	    <label for="exampleFormControlInput1" style="color: #00a1b5;">Roof Area</label>
+	        <div style="display: flex; align-items: center;">
+                <input name="Roof_area" type="number" class="form-control" placeholder="130" min="130" max="20000" style="width: 400px; display: inline-block;">
+                <span style="margin-left: 10px; font-size: 16px;">m²</span>
+            </div>
+	</div>
           <div class="togglebutton">
           <label for="exampleFormControlSelect1" style="color: #00a1b5;">Radiant Barrier</label>
                 <select name="Radiant_barrier" class="form-control selectpicker" data-style="btn btn-link" style="width: 400px;">
