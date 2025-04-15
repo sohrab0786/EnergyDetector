@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,11 +13,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
     <!-- Material Kit CSS -->
-    <link href="/static/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" type="text/css" />
+   
+<link href="{% static 'assets/css/material-kit.css' %}" rel="stylesheet" type="text/css" />
   </head>
   <body>
 
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('/static/assets/img/bg.jpg')">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static "assets/img/bg.jpg" %}')">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
@@ -33,7 +35,7 @@
     <div class="section col-md-4 ml-auto mr-auto">
 	    <!-- Logo -->
   <div class="text-center mb-4">
-    <img src="/static/assets/img/Plaksha-logo.jpeg" alt="Plaksha Logo" style="max-width: 200px; height: auto;">
+    <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" style="max-width: 150px; height: auto;">
   </div>
 
         <div class="text-center">
