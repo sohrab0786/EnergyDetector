@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 #from forms import Simple
 from Calculator.models import Simple
-from django_q.tasks import async_task
+#from django_q.tasks import async_task
 from Calculator.models import Detailed_Data
 from Calculator.models import Parametric_Data
 from .tasks import run_simulation, run_simulation_simple, run_simulation_parametric
@@ -33,7 +33,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 from django.http import  JsonResponse
-from django_q.models import Task
+#from django_q.models import Task
 
 
 # from django.contrib.auth import logout
@@ -1250,60 +1250,23 @@ def simple(request):
         "Roof_type":str(Roof_type),"Normal_Roof_e":str(basecasee),"Cool_roof_e":str(proposedcasee),"emailid":str(emailid)}
         print(json.dumps(input_dict))
         # Caching: Check if the output exists; otherwise, create a new Simple object.
+
         form_detailed_data = Simple.objects.filter(**input_dict).first()
-        
         if form_detailed_data:
-            print(f"Existing entry found. {form_detailed_data.id}")
-            # Check if the task is in progress or completed
-            if form_detailed_data.result_status == 'processing':
-                return HttpResponse('Simulation is already in progress. Please wait.')
-            
-            if form_detailed_data.result_status == 'completed':
-                return redirect('display_results_simple/' + str(form_detailed_data.id) + "/")
-
-        # If no existing record, create a new Simple object
-        input_dict['file_uuid'] = file_uuid
-        input_dict['username'] = user_name
-        form_detailed_data = Simple.objects.create(**input_dict)
-        print("New entry created.")
-        
-        # Set status to 'processing' to prevent duplicate submissions
-        form_detailed_data.result_status = 'processing'
-        form_detailed_data.save()
-        
-        # Start background task for simulation
-        print(f'form_detailed_data.pk: {form_detailed_data.pk}')
-        task_id = async_task(run_simulation_simple, form_detailed_data.pk)
-        form_detailed_data.task_id = task_id
-        form_detailed_data.save()
-
-        # Polling for task completion
-        timeout = 120  # seconds
-        poll_interval = 2  # seconds
-        waited = 0
-        result = None
-        
-        while waited < timeout:
-            task_result = Task.objects.filter(id=task_id, success=True).first()
-            if task_result:
-                result = task_result.result
-                print(f"Task completed. Result: {result}")
-                # Once the task is complete, update the status and save result
-                form_detailed_data.result_status = 'completed'
-                form_detailed_data.save()
-                break
-            time.sleep(poll_interval)
-            waited += poll_interval
-
-        if not result:
-            print("Task timed out or failed.")
-            form_detailed_data.result_status = 'failed'
-            form_detailed_data.save()
-            return HttpResponse("Simulation failed or timed out. Please try again later.")
-
-        # Redirect to the results page after task completion
-        return redirect('display_results_simple/' + str(form_detailed_data.pk) + "/")
-
+           return redirect('display_results_simple/'+str(form_detailed_data.id)+"/")
+        else:
+            input_dict['file_uuid'] = file_uuid
+            input_dict['username'] = user_name
+            form_detailed_data = Detailed_Data.objects.create(**input_dict)
+            print("New entry created.")
+        celery_task = run_simulation_simple.delay(form_detailed_data.pk) 
+        from_detailed_data.task_id = celery_task.id
+        from_detailed.data.save()
+        print('done')
+        print(celery_task.id)
+        print(celery_task.ready())
+        pk = from_detailed_data.id
+        return postdata_loader_simple(request, pk)
     except Exception as e:
         print(f"Error occurred: {e}")
         exc_type, exc_obj, exc_tb = sys.exc_info()
@@ -1311,8 +1274,8 @@ def simple(request):
         print(f"Error details: {exc_type}, {fname}, {exc_tb.tb_lineno}")
         
         # Return a generic error message and try to reload the form data if needed
-        pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
-        return postdata_loader_simple(request, pk)
+        #pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
+        return postdata_loader_simple(request, None)
 
 #For Simple inputs form func()
 def detailed(request):
@@ -3051,104 +3014,55 @@ def parametric(request):
 #############################################################################################################################
 
 ############################ SIMPLE ########################################
-
-
 def getCompletionStatusSimple(request, pk):
-    try:
-        form_detailed_data = Simple.objects.filter(pk=pk).first()
-        
-        if not form_detailed_data:
-            return HttpResponse('Error: No such entry.')
-
-        # If the task is already marked as 'completed', return the result immediately
-        if form_detailed_data.result_status == 'completed':
-            return HttpResponse(f'Task already completed. Result: {form_detailed_data.result}')  # Assuming 'result' is stored in Simple model
-
-        # If the task is in progress, return an appropriate message
-        if form_detailed_data.result_status == 'processing':
-            return HttpResponse('Task is still being processed. Please wait.')
-
-        # If the task has failed, inform the user
-        if form_detailed_data.result_status == 'failed':
-            return HttpResponse('Task failed. Please try again later.')
-
-        # Retrieve the task ID from the form data
-        task_id = form_detailed_data.task_id
-        task = Task.objects.filter(id=task_id).first()
-
-        if not task:
-            return HttpResponse('Task not found.')
-
-        # Polling until the task is finished or until the timeout
-        timeout = 120  # maximum waiting time in seconds
-        poll_interval = 2  # how often to check if the task is done
-        waited = 0
-
-        while waited < timeout:
-            task = Task.objects.filter(id=task_id).first()  # Re-fetch the task object to check the latest status
-            if task and task.success:
-                # Task is successful
-                form_detailed_data.result_status = 'completed'
-                form_detailed_data.result = task.result  # Save result into form_detailed_data
-                form_detailed_data.save()
-                return HttpResponse(f'Task completed. Result: {task.result}')  # Display result if task is successful
-
-            elif task and task.failed:
-                # Task failed
-                form_detailed_data.result_status = 'failed'
-                form_detailed_data.save()
-                return HttpResponse('Task failed. Please try again later.')
-
-            time.sleep(poll_interval)  # Wait before checking again
-            waited += poll_interval
-
-        # If we hit the timeout
-        form_detailed_data.result_status = 'timed out'
-        form_detailed_data.save()
-        return HttpResponse('Task timed out. Please try again later.')
-
-    except Exception as e:
-        exc_type, exc_obj, exc_tb = sys.exc_info()
-        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print(f"Error occurred: {exc_type} {fname} {exc_tb.tb_lineno}")
-        return HttpResponse('Error occurred during task status check.')
+    try: 
+        form_detailed_data = Simple.objects.get(pk = pk)
+    except Simple.DoesNotExist:
+        return HttpResponse('Error in Simulation. Contact SysAdmin')
+        # raise Exception('invalid pk')
+    task_id = form_detailed_data.task_id
+    result = AsyncResult(task_id)
+    status = result.status
+    form_detailed_data.result_status = status
+    form_detailed_data.save()
+    
+    if result.ready():
+        return HttpResponse('true')
+    else:
+        return  HttpResponse('false') 
 import json
 from django.http import HttpResponse
 
 def redirectResultsSimple(request, pk):
-    form_detailed_data = Simple.objects.filter(pk=pk).first()
-    
-    if form_detailed_data is None:
+    try: 
+        form_detailed_data = Simple.objects.get(pk=pk)
+    except Simple.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
 
     output = {}
-
-    # Extract field values
     for field in form_detailed_data._meta.get_fields():
-        output[field.name] = getattr(form_detailed_data, field.name)
+        field_name = field.name
+        output[field_name] = getattr(form_detailed_data, field_name)
 
-    # Helper function to safely load JSON fields
-    def safe_json_loads(value):
-        try:
-            return json.loads(value) if value and value.strip() else []
-        except json.JSONDecodeError:
-            return []  # Return empty list if JSON decoding fails
+    # Safely decode JSON fields
+    try:
+        output['heating_compare'] = json.loads(form_detailed_data.heating_compare)
+        output['cooling_compare'] = json.loads(form_detailed_data.cooling_compare)
+    except Exception as e:
+        print(f"❌ Error decoding compare fields: {e}")
+        output['heating_compare'] = []
+        output['cooling_compare'] = []
 
-    # Load JSON fields safely
-    output['heating_compare'] = safe_json_loads(form_detailed_data.heating_compare)
-    output['cooling_compare'] = safe_json_loads(form_detailed_data.cooling_compare)
+    # Convert to tuples (for consistency)
+    heating_compare = [tuple(i for i in value) for value in output['heating_compare']]
+    cooling_compare = [tuple(i for i in value) for value in output['cooling_compare']]
+    
+    output['heating_compare'] = heating_compare
+    output['cooling_compare'] = cooling_compare
 
-    # Convert to tuple format
-    output['heating_compare'] = [tuple(value) for value in output['heating_compare']]
-    output['cooling_compare'] = [tuple(value) for value in output['cooling_compare']]
-
-    # Debugging: Print only if 'Total_Savings' exists
-    if 'Total_Savings' in output:
-        print(output['Total_Savings'])
+    print(output.get('Total_Savings', 'No Total_Savings field found'))
 
     return postdata_simple(request, output)
-
-
 
 
 ###################### DETAILED ########################################
