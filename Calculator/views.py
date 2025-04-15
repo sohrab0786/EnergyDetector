@@ -3030,37 +3030,36 @@ def getCompletionStatusSimple(request, pk):
         return HttpResponse('true')
     else:
         return  HttpResponse('false') 
-import json
-from django.http import HttpResponse
-
 def redirectResultsSimple(request, pk):
     try: 
         form_detailed_data = Simple.objects.get(pk=pk)
     except Simple.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
-
-    output = {}
-    for field in form_detailed_data._meta.get_fields():
-        field_name = field.name
-        output[field_name] = getattr(form_detailed_data, field_name)
-
-    # Safely decode JSON fields
-    try:
-        output['heating_compare'] = json.loads(form_detailed_data.heating_compare)
-        output['cooling_compare'] = json.loads(form_detailed_data.cooling_compare)
-    except Exception as e:
-        print(f"❌ Error decoding compare fields: {e}")
-        output['heating_compare'] = []
-        output['cooling_compare'] = []
-
-    # Convert to tuples (for consistency)
-    heating_compare = [tuple(i for i in value) for value in output['heating_compare']]
-    cooling_compare = [tuple(i for i in value) for value in output['cooling_compare']]
     
-    output['heating_compare'] = heating_compare
-    output['cooling_compare'] = cooling_compare
+    output = {}
 
-    print(output.get('Total_Savings', 'No Total_Savings field found'))
+    # Extract field values
+    for field in form_detailed_data._meta.get_fields():
+        output[field.name] = getattr(form_detailed_data, field.name)
+
+    # Helper function to safely load JSON fields
+    def safe_json_loads(value):
+        try:
+            return json.loads(value) if value and value.strip() else []
+        except json.JSONDecodeError:
+            return []  # Return empty list if JSON decoding fails
+
+    # Load JSON fields safely
+    output['heating_compare'] = safe_json_loads(form_detailed_data.heating_compare)
+    output['cooling_compare'] = safe_json_loads(form_detailed_data.cooling_compare)
+
+    # Convert to tuple format if necessary
+    output['heating_compare'] = [tuple(value) for value in output['heating_compare']]
+    output['cooling_compare'] = [tuple(value) for value in output['cooling_compare']]
+
+    # Debugging: Print only if 'Total_Savings' exists
+    if 'Total_Savings' in output:
+        print(output['Total_Savings'])
 
     return postdata_simple(request, output)
 
