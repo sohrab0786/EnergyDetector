@@ -1356,16 +1356,8 @@ def detailed(request):
             win_area_east = 11.97
         if (win_area_west == ""):
             win_area_west = 11.97
-        
-
-        
-        
-        
-        weather_file = os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw" 
-                                                                                                                                
-
+        weather_file = os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw"                                                                                                                       
         length = width = math.sqrt(int(Roof_area))
-        
         solarAbBase = visibleAbBase = 1 - float(Reflectivity_base)
         solarAbProposed = visibleAbProposed = 1 - float(Reflectivity_proposed)
         thermalAbBase = float(Emissivity_base)
@@ -1613,14 +1605,12 @@ def detailed(request):
             folder2 = os.mkdir(os.path.join(BASE_DIR,"templates","html_dir",file_uuid))
             base_html_folder = os.mkdir(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base"))
             proposed_html_folder = os.mkdir(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"proposed"))
-
         except OSError as e:
             if e.errno != errno.EEXIST:
                 # directory already exists
                 pass
             else:
                 print(e)
-
         scheduleClass = ""
         hvac_string = ""
         modelTemplate = ""
@@ -1628,30 +1618,17 @@ def detailed(request):
         if (Building_type == "office"):
             if (HVAC_details == "uc"):
                 modelTemplate = os.path.join(BASE_DIR,"static/idfsnippets/Office/Main_Office_UC.idf")
-                
-            
             else:
                 modelTemplate = os.path.join(BASE_DIR,"static/idfsnippets/Office/Office_Main.idf")
-                
-
             if (HVAC_details == "ptac"):
-        
                 fname = os.path.join(BASE_DIR, 'static/idfsnippets/Office/Schedule_Office_PTHP.txt')
-
                 fptr = open(fname, "r") or exit("Unable to open file!")
-                
                 scheduleClass = fptr.read()
-                
-
                 fptr.close()
                 hvac_file = os.path.join(BASE_DIR,"static/idfsnippets/Office/HVAC_Office_PTHP.txt")
-                
                 file1 = open(hvac_file, "r") or sys.exit("can't open model template for reading")
                 hvac_string = file1.read()
-                
                 file1.close()
-                
-
             elif (HVAC_details == "pszhp"):
                 fname = os.path.join(BASE_DIR,"static/idfsnippets/Office/Schedule_Office_Others_back.txt")
                 fptr = open(fname, "r") or exit("Unable to open file!")
@@ -1671,7 +1648,6 @@ def detailed(request):
                 file1 = open(hvac_file, "r") or sys.exit("can't open model template for reading")
                 hvac_string = file1.read()
                 file1.close()
-
             elif (HVAC_details == "aircooled"):
                 fname = os.path.join(BASE_DIR,"static/idfsnippets/Office/Schedule_Office_Others_back.txt")
                 fptr = open(fname, "r") or exit("Unable to open file!")
@@ -1681,7 +1657,6 @@ def detailed(request):
                 file1 = open(hvac_file, "r") or sys.exit("can't open model template for reading")
                 hvac_string = file1.read()
                 file1.close()
-
             elif (HVAC_details == "uc"):
                 fname = os.path.join(BASE_DIR,"static/idfsnippets/Office/Schedule_Office_UC.txt")
                 fptr = open(fname, "r") or exit("Unable to open file!")
@@ -1691,18 +1666,12 @@ def detailed(request):
                 file1 = open(hvac_file, "r") or sys.exit("can't open model template for reading")
                 hvac_string = file1.read()
                 file1.close()
-
-        elif (Building_type == "institutional"):
-
-    
+        elif (Building_type == "institutional"):    
             if (HVAC_details == "uc"):
                 modelTemplate = os.path.join(BASE_DIR,"static/idfsnippets/Institute/Main_Institute_UC.idf")
-        
             else:
                 modelTemplate = os.path.join(BASE_DIR,"static/idfsnippets/Institute/Institute_Main.idf")
-        
             if (HVAC_details == "ptac"):
-        
                 fname = os.path.join(BASE_DIR,"static/idfsnippets/Institute/Schedule_Institute_Others_back.txt")
                 fptr = open(fname, "r") or exit("Unable to open file!")
                 scheduleClass = fptr.read()
@@ -2070,78 +2039,49 @@ def detailed(request):
         theData = theData.replace('%site_location%',str(Location))
         theData = theData.replace('%appendix_type%',str(appendix_G))
         theData = theData.replace('%SystemCOP%',str(System_cop))
-
         proposed_path = os.path.join(static_dir,"model_idf",file_uuid,"proposed","model.idf")
-        
-        
         with open(proposed_path,'w') as file2:
-
             file2.write(theData)
             file2.write(baseMaterial)
             file2.write(baseConstruction)
             file2.write(hvac_string)
-
         file2.close()
         file1.close()
-
         input_dict = {"Location":str(Location), "Building_type":str(Building_type), "Roof_area":str(Roof_area), "Layer_1":str(layer1),
             "Layer_2":str(layer2),"Layer_3":str(layer3),"Layer_4":str(layer4),"Radiant_barrier":str(Radiant_barrier),"Reflectivity_base":str(Reflectivity_base),"Emissivity_base":str(Emissivity_base),
             "Cost_base":str(Cost_base),"Life_base":str(Life_base),"Reflectivity_proposed":str(Reflectivity_proposed),"Emissivity_proposed":str(Emissivity_proposed),"Cost_proposed":str(Cost_proposed),
             "Life_proposed":str(Life_proposed),"System_cop":str(System_cop), "HVAC_details":str(HVAC_details),"Lighting_power":str(Lighting_power),"Equipment_power":str(Equipment_power),"win_area_north":str(win_area_north),
             "win_area_south":str(win_area_south),"win_area_east":str(win_area_east),"win_area_west":str(win_area_west),"Electricity":str(Electricity),"emailid":str(emailid)}
         print(json.dumps(input_dict))
-    
         form_detailed_data = Detailed_Data.objects.filter(**input_dict).first()
         if form_detailed_data:
-            return redirect('display_results/' + str(form_detailed_data.id) + "/")
-
-        # If no existing record is found, create a new one
+           return redirect('display_results/'+str(form_detailed_data.id)+"/")
         else:
             input_dict['file_uuid'] = file_uuid
             input_dict['username'] = user_name
             form_detailed_data = Detailed_Data.objects.create(**input_dict)
             print("New entry created.")
-
-        # Redirect to the results page after creating the new object
-        #return redirect('display_results_detailed/' + str(form_detailed_data.id) + "/")
-
-
-        print('running task')
-        #run_simulation(form_detailed_data.pk)
-        task_id = async_task(run_simulation, form_detailed_data.pk)
-        
-        #print(f'celery_task {celery_task.id}')
-        # Celery task id is stored in db.
-        form_detailed_data.task_id =task_id
-        print(f'django-q_task {task_id}')
-        # Save the results in db.
-    
-        sleep(80)
-        # Save the results in db.
-        #form_detailed_data.save()
+        celery_task = run_simulation.delay(form_detailed_data.pk) 
+        form_detailed_data.task_id = celery_task.id
+        form_detailed_data.save()
         print('done')
-        #print(celery_task.id)
-        #print(celery_task.ready())
-        #start django-q server like below in separate terminal
-        #python manage.py qcluster
-        #then run server
-        #python manage.py ruserver
+        print(celery_task.id)
+        result = AsyncResult(celery_task.id)
+        print(f'Current Status: {result.status}')
+        print(celery_task.ready())
         pk = form_detailed_data.id
-        print(f'pk : {pk}')
-        return redirect('display_results/' + str(form_detailed_data.id) + "/") 
+        return postdata_loader(request, pk)
     except Exception as e:
+        print(f"Error occurred: {e}")
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print('error occured..')
-        print(exc_type, fname, exc_tb.tb_lineno)
-        return postdata_loader(request, pk)
-      
-
+        print(f"Error details: {exc_type}, {fname}, {exc_tb.tb_lineno}")
+        
+        # Return a generic error message and try to reload the form data if needed
+        #pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
+        return postdata_loader(request, None)
 def parametric(request):
-    
-    pk = None
-    
-    
+    pk = None    
     msg = ""
     try:
         # GENERATES UNIQUE CODE FOR WORKING DIRECTORY OF USER FOR A PARTICULAR SIMULATION
@@ -2970,49 +2910,32 @@ def parametric(request):
             "win_area_south":str(win_area_south),"win_area_east":str(win_area_east),"win_area_west":str(win_area_west),"Electricity":str(Electricity),"kvalue":str(kvalue),"emailid":str(emailid)}
         print(json.dumps(input_dict))
         form_detailed_data = Parametric_Data.objects.filter(**input_dict).first()
-        if form_detailed_data:
-            return redirect('display_results_parametric/' + str(form_detailed_data.id) + "/")
+         if form_detailed_data:
+           return redirect('display_results_parametric/'+str(form_detailed_data.id)+"/")
         else:
-          # If no existing record is found, create a new one
-          input_dict['file_uuid'] = file_uuid
-          input_dict['username'] = user_name
-          form_detailed_data = Parametric_Data.objects.create(**input_dict)
-          print("New entry created.")
-        # Redirect to the results page after creating the new object
-        #return redirect('display_results_parametric/' + str(form_detailed_data.id) + "/")
-        print('running task')
-        #run_simulation_parametric(form_detailed_data.pk)
-        task_id = async_task(run_simulation_parametric, form_detailed_data.pk)
-        
-        #print(f'celery_task {celery_task.id}')
-        # Celery task id is stored in db.
-        form_detailed_data.task_id =task_id
-        print(f'django-q_task {task_id}')
-        # Save the results in db.
-        #form_detailed_data.save()
+            input_dict['file_uuid'] = file_uuid
+            input_dict['username'] = user_name
+            form_detailed_data = Parametric_Data.objects.create(**input_dict)
+            print("New entry created.")
+        celery_task = run_simulation_parametric.delay(form_detailed_data.pk) 
+        form_detailed_data.task_id = celery_task.id
+        form_detailed_data.save()
         print('done')
-        #print(celery_task.id)
-        #print(celery_task.ready())
-        sleep(80)
-        # Save the results in db.
-        #form_detailed_data.save()
-        print('done')
-        #print(celery_task.id)
-        #print(celery_task.ready())
-        #start django-q server like below in separate terminal
-        #python manage.py qcluster
-        #then run server
-        #python manage.py ruserver
+        print(celery_task.id)
+        result = AsyncResult(celery_task.id)
+        print(f'Current Status: {result.status}')
+        print(celery_task.ready())
         pk = form_detailed_data.id
-        print(f'pk : {pk}')
-        return redirect('display_results_parametric/' + str(form_detailed_data.id) + "/") 
+        return postdata_loader_parametric(request, pk)
     except Exception as e:
+        print(f"Error occurred: {e}")
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print('error occured..')
-        print(exc_type, fname, exc_tb.tb_lineno)
-        # Fallback if exception happens
-        return postdata_loader_parametric(request, pk)
+        print(f"Error details: {exc_type}, {fname}, {exc_tb.tb_lineno}")
+        # Return a generic error message and try to reload the form data if needed
+        #pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
+        return postdata_loader_parametric(request, None)
+        
 #############################################################################################################################
 
 ############################ SIMPLE ########################################
@@ -3068,111 +2991,104 @@ def redirectResultsSimple(request, pk):
 
 ###################### DETAILED ########################################
 def getCompletionStatus(request, pk):
-    try: # Get the db values for the pk
-        form_detailed_data = Detailed_Data.objects.filter(pk = pk).first()
+    try: 
+        form_detailed_data = Detailed_Data.objects.get(pk = pk)
     except Detailed_Data.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
+        # raise Exception('invalid pk')
     task_id = form_detailed_data.task_id
-    
-    # Celery task id result
     result = AsyncResult(task_id)
-    
-    # Celery status
     status = result.status
-    # Save status to db ( PENDING if not completed in your projects)
     form_detailed_data.result_status = status
-    form_detailed_data.save()
-    # Wait till results are ready (sends response to post_loader_simple.html )
+    form_detailed_data.save()    
     if result.ready():
         return HttpResponse('true')
     else:
-        return  HttpResponse('false')
-
+        return  HttpResponse('false') 
 
 def redirectResults(request, pk):
-    form_detailed_data = Detailed_Data.objects.filter(pk=pk).first()
-    
-    if form_detailed_data is None:
+    try: 
+        form_detailed_data = Detailed_Data.objects.get(pk=pk)
+    except Detailed_Data.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
-
+    
     output = {}
 
-    # ✅ Correct way to get field names
+    # Extract field values
     for field in form_detailed_data._meta.get_fields():
-        if hasattr(form_detailed_data, field.name):  # Ensure the field exists in the model instance
-            output[field.name] = getattr(form_detailed_data, field.name)
+        output[field.name] = getattr(form_detailed_data, field.name)
 
-    # ✅ Safe JSON parsing
+    # Helper function to safely load JSON fields
     def safe_json_loads(value):
         try:
             return json.loads(value) if value and value.strip() else []
         except json.JSONDecodeError:
-            return []
+            return []  # Return empty list if JSON decoding fails
 
+    # Load JSON fields safely
     output['heating_compare'] = safe_json_loads(form_detailed_data.heating_compare)
     output['cooling_compare'] = safe_json_loads(form_detailed_data.cooling_compare)
-    
-    # ✅ Ensuring data format
-    output['heating_compare'] = [tuple(i) for i in output['heating_compare']]
-    output['cooling_compare'] = [tuple(i) for i in output['cooling_compare']]
 
-    # ✅ Safe print statement to avoid KeyError
-    print(f"Total Savings: {output.get('Total_Savings', 'Not Found')}")
+    # Convert to tuple format if necessary
+    output['heating_compare'] = [tuple(value) for value in output['heating_compare']]
+    output['cooling_compare'] = [tuple(value) for value in output['cooling_compare']]
+
+    # Debugging: Print only if 'Total_Savings' exists
+    if 'Total_Savings' in output:
+        print(output['Total_Savings'])
 
     return postdata_detailed(request, output)
 
 
-
-
-
 ########################### PARAMETRIC ##################################
+
 def getCompletionStatusParametric(request, pk):
     try: 
-        form_detailed_data = Parametric_Data.objects.filter(pk = pk).first()
+        form_detailed_data = Parametric_Data.objects.get(pk = pk)
     except Parametric_Data.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
+        # raise Exception('invalid pk')
     task_id = form_detailed_data.task_id
     result = AsyncResult(task_id)
     status = result.status
     form_detailed_data.result_status = status
-    form_detailed_data.save()
+    form_detailed_data.save()    
     if result.ready():
         return HttpResponse('true')
     else:
         return  HttpResponse('false')
 
-
 def redirectResultsParametric(request, pk):
-    form_detailed_data = Parametric_Data.objects.filter(pk=pk).first()
-    
-    if form_detailed_data is None:
+    try: 
+        form_detailed_data = Parametric_Data.objects.get(pk=pk)
+    except Parametric_Data.DoesNotExist:
         return HttpResponse('Error in Simulation. Contact SysAdmin')
-
     output = {}
-
-    # ✅ Correct field retrieval
+    # Extract field values
     for field in form_detailed_data._meta.get_fields():
-        if hasattr(form_detailed_data, field.name):  # Ensure field exists in the instance
-            output[field.name] = getattr(form_detailed_data, field.name)
+        output[field.name] = getattr(form_detailed_data, field.name)
 
-    # ✅ Safe JSON parsing function
+    # Helper function to safely load JSON fields
     def safe_json_loads(value):
         try:
             return json.loads(value) if value and value.strip() else []
         except json.JSONDecodeError:
-            return []
+            return []  # Return empty list if JSON decoding fails
 
+    # Load JSON fields safely
     output['heating_compare'] = safe_json_loads(form_detailed_data.heating_compare)
     output['cooling_compare'] = safe_json_loads(form_detailed_data.cooling_compare)
-    
-    # ✅ Ensuring correct data format
-    output['heating_compare'] = [tuple(i) for i in output['heating_compare']]
-    output['cooling_compare'] = [tuple(i) for i in output['cooling_compare']]
 
-    # ✅ Safe print statement
-    print(f"Total Savings: {output.get('Total_Savings', 'Not Found')}")
+    # Convert to tuple format if necessary
+    output['heating_compare'] = [tuple(value) for value in output['heating_compare']]
+    output['cooling_compare'] = [tuple(value) for value in output['cooling_compare']]
+
+    # Debugging: Print only if 'Total_Savings' exists
+    if 'Total_Savings' in output:
+        print(output['Total_Savings'])
 
     return postdata_parametric(request, output)
+
 #############################################################################################################################################
 
 # User Registration
