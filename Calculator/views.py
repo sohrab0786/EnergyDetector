@@ -3052,28 +3052,53 @@ def parametric(request):
 
 ############################ SIMPLE ########################################
 
+
 def getCompletionStatusSimple(request, pk):
     try:
         form_detailed_data = Simple.objects.filter(pk=pk).first()
+        
         if not form_detailed_data:
             return HttpResponse('Error: No such entry.')
 
+        # If the task is already marked as 'completed', return the result immediately
+        if form_detailed_data.result_status == 'completed':
+            return HttpResponse(f'Task already completed. Result: {form_detailed_data.result}')  # Assuming 'result' is stored in Simple model
+
+        # If the task is in progress, return an appropriate message
+        if form_detailed_data.result_status == 'processing':
+            return HttpResponse('Task is still being processed. Please wait.')
+
+        # If the task has failed, inform the user
+        if form_detailed_data.result_status == 'failed':
+            return HttpResponse('Task failed. Please try again later.')
+
+        # Retrieve the task ID from the form data
         task_id = form_detailed_data.task_id
         task = Task.objects.filter(id=task_id).first()
+
+        if not task:
+            return HttpResponse('Task not found.')
 
         # Polling until the task is finished or until the timeout
         timeout = 120  # maximum waiting time in seconds
         poll_interval = 2  # how often to check if the task is done
         waited = 0
+
         while waited < timeout:
+            task = Task.objects.filter(id=task_id).first()  # Re-fetch the task object to check the latest status
             if task and task.success:
+                # Task is successful
                 form_detailed_data.result_status = 'completed'
+                form_detailed_data.result = task.result  # Save result into form_detailed_data
                 form_detailed_data.save()
                 return HttpResponse(f'Task completed. Result: {task.result}')  # Display result if task is successful
+
             elif task and task.failed:
+                # Task failed
                 form_detailed_data.result_status = 'failed'
                 form_detailed_data.save()
                 return HttpResponse('Task failed. Please try again later.')
+
             time.sleep(poll_interval)  # Wait before checking again
             waited += poll_interval
 
@@ -3087,7 +3112,6 @@ def getCompletionStatusSimple(request, pk):
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         print(f"Error occurred: {exc_type} {fname} {exc_tb.tb_lineno}")
         return HttpResponse('Error occurred during task status check.')
-        
 import json
 from django.http import HttpResponse
 
