@@ -1276,7 +1276,7 @@ def simple(request):
         result = None
     
         while waited < timeout:
-            task_result = Task.objects.filter(task_id=task_id, success=True).first()
+            task_result = Task.objects.filter(id=task_id, success=True).first()  # <-- changed here
             if task_result:
                 result = task_result.result
                 print(f"Task completed. Result: {result}")
@@ -3043,7 +3043,7 @@ def getCompletionStatusSimple(request, pk):
             return HttpResponse('Invalid ID')
 
         task_id = form_detailed_data.task_id
-        task = Task.objects.filter(task_id=task_id).first()
+        task = Task.objects.filter(id=task_id).first()
 
         if task and task.success:
             form_detailed_data.result_status = "SUCCESS"
