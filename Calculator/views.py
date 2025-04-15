@@ -1260,8 +1260,8 @@ def simple(request):
             form_detailed_data = Simple.objects.create(**input_dict)
             print("New entry created.")
         celery_task = run_simulation_simple.delay(form_detailed_data.pk) 
-        from_detailed_data.task_id = celery_task.id
-        from_detailed.data.save()
+        form_detailed_data.task_id = celery_task.id
+        form_detailed_data.save()
         print('done')
         print(celery_task.id)
         print(celery_task.ready())
