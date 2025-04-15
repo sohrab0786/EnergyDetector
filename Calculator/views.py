@@ -2910,7 +2910,7 @@ def parametric(request):
             "win_area_south":str(win_area_south),"win_area_east":str(win_area_east),"win_area_west":str(win_area_west),"Electricity":str(Electricity),"kvalue":str(kvalue),"emailid":str(emailid)}
         print(json.dumps(input_dict))
         form_detailed_data = Parametric_Data.objects.filter(**input_dict).first()
-         if form_detailed_data:
+        if form_detailed_data:
            return redirect('display_results_parametric/'+str(form_detailed_data.id)+"/")
         else:
             input_dict['file_uuid'] = file_uuid
