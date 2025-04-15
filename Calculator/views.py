@@ -3036,27 +3036,42 @@ def parametric(request):
 #############################################################################################################################
 
 ############################ SIMPLE ########################################
+
 def getCompletionStatusSimple(request, pk):
     try:
         form_detailed_data = Simple.objects.filter(pk=pk).first()
         if not form_detailed_data:
-            return HttpResponse('Invalid ID')
+            return HttpResponse('Error: No such entry.')
 
         task_id = form_detailed_data.task_id
         task = Task.objects.filter(id=task_id).first()
 
-        if task and task.success:
-            form_detailed_data.result_status = "SUCCESS"
-            form_detailed_data.save()
-            return HttpResponse('true')
-        else:
-            form_detailed_data.result_status = "PENDING"
-            form_detailed_data.save()
-            return HttpResponse('false')
+        # Polling until the task is finished or until the timeout
+        timeout = 120  # maximum waiting time in seconds
+        poll_interval = 2  # how often to check if the task is done
+        waited = 0
+        while waited < timeout:
+            if task and task.success:
+                form_detailed_data.result_status = 'completed'
+                form_detailed_data.save()
+                return HttpResponse(f'Task completed. Result: {task.result}')  # Display result if task is successful
+            elif task and task.failed:
+                form_detailed_data.result_status = 'failed'
+                form_detailed_data.save()
+                return HttpResponse('Task failed. Please try again later.')
+            time.sleep(poll_interval)  # Wait before checking again
+            waited += poll_interval
+
+        # If we hit the timeout
+        form_detailed_data.result_status = 'timed out'
+        form_detailed_data.save()
+        return HttpResponse('Task timed out. Please try again later.')
 
     except Exception as e:
-        print("Error in getCompletionStatusSimple:", e)
-        return HttpResponse('Error in Simulation. Contact SysAdmin')
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print(f"Error occurred: {exc_type} {fname} {exc_tb.tb_lineno}")
+        return HttpResponse('Error occurred during task status check.')
         
 import json
 from django.http import HttpResponse
