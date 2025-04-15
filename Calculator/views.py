@@ -1261,55 +1261,38 @@ def simple(request):
         print(f'form detailed data.pk : {form_detailed_data.pk}')
         #print(f'running simulation {run_simulation_simple(form_detailed_data.pk)}')
         task_id = async_task(run_simulation_simple, form_detailed_data.pk)
-        
-        #print(f'celery_task {celery_task.id}')
-        # Celery task id is stored in db.
-        form_detailed_data.task_id =task_id
-        #print(f'django-q_task {task_id}')
-        #sleep(80)
-        # Save the results in db.
+
+        form_detailed_data.task_id = task_id
         form_detailed_data.save()
-        #print('done')
-        #print(f"Task submitted: {task_id}")
-        pk = form_detailed_data.id
-        # Poll for task completion
-        timeout = 120  # max wait time in seconds
-        poll_interval = 2  # how often to check
+    
+        # Polling for result (OPTIONAL: You can instead redirect immediately to a status page)
+        timeout = 120  # seconds
+        poll_interval = 2
         waited = 0
         result = None
     
         while waited < timeout:
-            task_result = Task.objects.filter(id=task_id, success=True).first()
+            task_result = Task.objects.filter(task_id=task_id, success=True).first()
             if task_result:
                 result = task_result.result
-                print(f"Task result: {result}")
+                print(f"Task completed. Result: {result}")
                 break
             time.sleep(poll_interval)
             waited += poll_interval
     
         if not result:
-            print("Timeout or task failed.")
-            # Optionally, handle timeout/failure (redirect to error page or show message)
+            print("Task timed out or failed.")
+            # Optionally handle timeout
     
         return redirect('display_results_simple/' + str(form_detailed_data.pk) + "/")
 
-        
-        #print(celery_task.id)
-        #print(celery_task.ready())
-        #start django-q server like below in separate terminal
-        #python manage.py qcluster
-        #then run server
-        #python manage.py ruserver
-        #pk = form_detailed_data.id
-        #print(f'pk : {pk}')
-        #return redirect('display_results_simple/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print('error occured..')
+        print("Error occurred:")
         print(exc_type, fname, exc_tb.tb_lineno)
-    return postdata_loader_simple(request,pk)
 
+        return postdata_loader_simple(request, pk)
 
 #For Simple inputs form func()
 def detailed(request):
