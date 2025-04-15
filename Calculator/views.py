@@ -33,14 +33,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 # from django.contrib.auth import logout
-
-
 SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-   
-
 # Create your views here.
 
 #For Simple inputs form func()
@@ -778,7 +772,8 @@ def simple(request):
         else:
             proposedConstruction = proposedConstruction + ";     !- Layer 5\n"        
         # Create directories
-        static_dir = settings.STATICFILES_DIRS[0]
+        #static_dir = settings.STATICFILES_DIRS[0]
+        static_dir = os.path.join(BASE_DIR, 'static')
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
@@ -1618,7 +1613,7 @@ def detailed(request):
         
 
         
-        static_dir = settings.STATICFILES_DIRS[0]
+        static_dir = os.path.join(BASE_DIR, 'static') #settings.STATICFILES_DIRS[0]
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
@@ -2497,7 +2492,7 @@ def parametric(request):
         
 
         
-        static_dir = settings.STATICFILES_DIRS[0]
+        static_dir = os.path.join(BASE_DIR, 'static')#settings.STATICFILES_DIRS[0]
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
