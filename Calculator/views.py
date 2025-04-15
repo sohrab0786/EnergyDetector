@@ -1251,51 +1251,66 @@ def simple(request):
         print(json.dumps(input_dict))
         # Caching: Check if the output exists; otherwise, create a new Simple object.
         form_detailed_data = Simple.objects.filter(**input_dict).first()
+        
         if form_detailed_data:
-            print(f"Existing entry found.{form_detailed_data.id}")
-            return redirect('display_results_simple/' + str(form_detailed_data.id) + "/")
-        # If no existing record is found, create a new one
+            print(f"Existing entry found. {form_detailed_data.id}")
+            # Check if the task is in progress or completed
+            if form_detailed_data.result_status == 'processing':
+                return HttpResponse('Simulation is already in progress. Please wait.')
+            
+            if form_detailed_data.result_status == 'completed':
+                return redirect('display_results_simple/' + str(form_detailed_data.id) + "/")
+
+        # If no existing record, create a new Simple object
         input_dict['file_uuid'] = file_uuid
         input_dict['username'] = user_name
         form_detailed_data = Simple.objects.create(**input_dict)
         print("New entry created.")
-        # Redirect to the results page after creating the new object
-        print('running task')
-        # It is connected to tasks.py file (Waits for pk value)
-        print(f'form detailed data.pk : {form_detailed_data.pk}')
-        #print(f'running simulation {run_simulation_simple(form_detailed_data.pk)}')
+        
+        # Set status to 'processing' to prevent duplicate submissions
+        form_detailed_data.result_status = 'processing'
+        form_detailed_data.save()
+        
+        # Start background task for simulation
+        print(f'form_detailed_data.pk: {form_detailed_data.pk}')
         task_id = async_task(run_simulation_simple, form_detailed_data.pk)
-
         form_detailed_data.task_id = task_id
         form_detailed_data.save()
-    
-        # Polling for result (OPTIONAL: You can instead redirect immediately to a status page)
+
+        # Polling for task completion
         timeout = 120  # seconds
-        poll_interval = 2
+        poll_interval = 2  # seconds
         waited = 0
         result = None
-    
+        
         while waited < timeout:
-            task_result = Task.objects.filter(id=task_id, success=True).first()  # <-- changed here
+            task_result = Task.objects.filter(id=task_id, success=True).first()
             if task_result:
                 result = task_result.result
                 print(f"Task completed. Result: {result}")
+                # Once the task is complete, update the status and save result
+                form_detailed_data.result_status = 'completed'
+                form_detailed_data.save()
                 break
             time.sleep(poll_interval)
             waited += poll_interval
-    
+
         if not result:
             print("Task timed out or failed.")
-            # Optionally handle timeout
-    
+            form_detailed_data.result_status = 'failed'
+            form_detailed_data.save()
+            return HttpResponse("Simulation failed or timed out. Please try again later.")
+
+        # Redirect to the results page after task completion
         return redirect('display_results_simple/' + str(form_detailed_data.pk) + "/")
 
     except Exception as e:
+        print(f"Error occurred: {e}")
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print("Error occurred:")
-        print(exc_type, fname, exc_tb.tb_lineno)
-    
+        print(f"Error details: {exc_type}, {fname}, {exc_tb.tb_lineno}")
+        
+        # Return a generic error message and try to reload the form data if needed
         pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
         return postdata_loader_simple(request, pk)
 
