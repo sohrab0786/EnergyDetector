@@ -772,8 +772,8 @@ def simple(request):
         else:
             proposedConstruction = proposedConstruction + ";     !- Layer 5\n"        
         # Create directories
-        #static_dir = settings.STATICFILES_DIRS[0]
-        static_dir = os.path.join(BASE_DIR, 'static')
+        static_dir = settings.STATICFILES_DIRS[1]
+        #static_dir = os.path.join(BASE_DIR, 'static')
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
@@ -1613,7 +1613,7 @@ def detailed(request):
         
 
         
-        static_dir = os.path.join(BASE_DIR, 'static') #settings.STATICFILES_DIRS[0]
+        static_dir =  settings.STATICFILES_DIRS[1] #os.path.join(BASE_DIR, 'static')
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
@@ -2492,7 +2492,7 @@ def parametric(request):
         
 
         
-        static_dir = os.path.join(BASE_DIR, 'static')#settings.STATICFILES_DIRS[0]
+        static_dir = settings.STATICFILES_DIRS[1] #os.path.join(BASE_DIR, 'static')
         try:
             folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid))
             base_folder = os.mkdir(os.path.join(static_dir,"model_idf",file_uuid,"base"))
