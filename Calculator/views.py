@@ -1291,7 +1291,8 @@ def simple(request):
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         print("Error occurred:")
         print(exc_type, fname, exc_tb.tb_lineno)
-
+    
+        pk = form_detailed_data.pk if 'form_detailed_data' in locals() and form_detailed_data else None
         return postdata_loader_simple(request, pk)
 
 #For Simple inputs form func()
