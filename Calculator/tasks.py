@@ -43,7 +43,7 @@ def run_simulation_simple(pk):
     weather_file = os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw"
     weather_file = str(Path(weather_file))
     print(f'weather file: {weather_file}')
-    static_dir = settings.STATICFILES_DIRS[0]
+    static_dir = os.path.join(BASE_DIR, 'static')#settings.STATICFILES_DIRS[0]
     base_path = os.path.join(static_dir,"model_idf",file_uuid,"base","model.idf")
     base_path = str(Path(base_path))
     print(f'base_path: {base_path}')
@@ -483,7 +483,7 @@ def run_simulation(pk):
     file_uuid = form_detailed_data.file_uuid
     Location = form_detailed_data.Location
     weather_file = str(Path(os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw"))
-    static_dir = settings.STATICFILES_DIRS[0]
+    static_dir = os.path.join(BASE_DIR, 'static') #settings.STATICFILES_DIRS[0]
     base_path = str(Path(os.path.join(static_dir,"model_idf",file_uuid,"base","model.idf")))
     proposed_path = str(Path(os.path.join(static_dir,"model_idf",file_uuid,"proposed","model.idf")))
 
@@ -887,7 +887,7 @@ def run_simulation_parametric(pk):
     file_uuid = form_detailed_data.file_uuid
     Location = form_detailed_data.Location
     weather_file = str(Path(os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw"))
-    static_dir = settings.STATICFILES_DIRS[0]
+    static_dir = os.path.join(BASE_DIR, 'static')#settings.STATICFILES_DIRS[0]
     base_path = str(Path(os.path.join(static_dir,"model_idf",file_uuid,"base","model.idf")))
     proposed_path = str(Path(os.path.join(static_dir,"model_idf",file_uuid,"proposed","model.idf")))
 
