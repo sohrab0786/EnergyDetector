@@ -27,7 +27,7 @@ from django.template import Context
 #from exceptions import Exception
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Thes task is shared to view.py
-#@shared_task
+@shared_task
 def run_simulation_simple(pk):
         # Or handle gracefully
     form_detailed_data = Simple.objects.filter(pk=pk).first()  # Returns None if not found
@@ -472,7 +472,7 @@ def run_simulation_simple(pk):
             print("❌ Email sending failed:", e)
         
 
-#@shared_task
+@shared_task
 def run_simulation(pk):
     
     try:
@@ -876,7 +876,7 @@ def run_simulation(pk):
         except Exception as e:
             print("❌ Email sending failed:", e)
 
-#@shared_task
+@shared_task
 def run_simulation_parametric(pk):
     
     try:
