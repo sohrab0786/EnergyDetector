@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Calculator',
     'EPlus',
+    'django_celery_results'
     'django_q',  # Django-Q instead of Celery
 ]
 
@@ -100,6 +101,10 @@ STATICFILES_DIRS = (
 )
 #for collectstatic command make staticfiles_dirs = templates/static only
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#celery settings
+CELERY_BROKER_URL = 'amqp://myuser:mypassword@localhost:5672/myvhost'
+CELERY_RESULT_BACKEND = 'django-db'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
