@@ -1268,8 +1268,32 @@ def simple(request):
         print(f'django-q_task {task_id}')
         sleep(80)
         # Save the results in db.
-        #form_detailed_data.save()
+        form_detailed_data.save()
         print('done')
+        print(f"Task submitted: {task_id}")
+        
+        # Poll for task completion
+        timeout = 120  # max wait time in seconds
+        poll_interval = 2  # how often to check
+        waited = 0
+        result = None
+    
+        while waited < timeout:
+            task_result = Task.objects.filter(id=task_id, success=True).first()
+            if task_result:
+                result = task_result.result
+                print(f"Task result: {result}")
+                break
+            time.sleep(poll_interval)
+            waited += poll_interval
+    
+        if not result:
+            print("Timeout or task failed.")
+            # Optionally, handle timeout/failure (redirect to error page or show message)
+    
+        return redirect('display_results_simple/' + str(form_detailed_data.pk) + "/")
+
+        
         #print(celery_task.id)
         #print(celery_task.ready())
         #start django-q server like below in separate terminal
@@ -1277,8 +1301,8 @@ def simple(request):
         #then run server
         #python manage.py ruserver
         pk = form_detailed_data.id
-        print(f'pk : {pk}')
-        return redirect('display_results_simple/' + str(form_detailed_data.id) + "/") 
+        #print(f'pk : {pk}')
+        #return redirect('display_results_simple/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
