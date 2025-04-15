@@ -93,8 +93,9 @@ USE_TZ = True
 #STATIC_ROOT = ""
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    
     os.path.join(BASE_DIR, 'templates/static'),
+    os.path.join(BASE_DIR, 'static'),
     #os.path.join(BASE_DIR, 'CoolRoof/static'),
 )
 #for collectstatic command make staticfiles_dirs = templates/static only
