@@ -1265,12 +1265,12 @@ def simple(request):
         #print(f'celery_task {celery_task.id}')
         # Celery task id is stored in db.
         form_detailed_data.task_id =task_id
-        print(f'django-q_task {task_id}')
-        sleep(80)
+        #print(f'django-q_task {task_id}')
+        #sleep(80)
         # Save the results in db.
         form_detailed_data.save()
-        print('done')
-        print(f"Task submitted: {task_id}")
+        #print('done')
+        #print(f"Task submitted: {task_id}")
         
         # Poll for task completion
         timeout = 120  # max wait time in seconds
