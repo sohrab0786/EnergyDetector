@@ -32,6 +32,10 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
+from django.http import  JsonResponse
+from django_q.models import Task
+
+
 # from django.contrib.auth import logout
 SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -3033,24 +3037,27 @@ def parametric(request):
 
 ############################ SIMPLE ########################################
 def getCompletionStatusSimple(request, pk):
-    try: 
-        form_detailed_data = Simple.objects.filter(pk = pk).first()
-    except Simple.DoesNotExist:
+    try:
+        form_detailed_data = Simple.objects.filter(pk=pk).first()
+        if not form_detailed_data:
+            return HttpResponse('Invalid ID')
+
+        task_id = form_detailed_data.task_id
+        task = Task.objects.filter(task_id=task_id).first()
+
+        if task and task.success:
+            form_detailed_data.result_status = "SUCCESS"
+            form_detailed_data.save()
+            return HttpResponse('true')
+        else:
+            form_detailed_data.result_status = "PENDING"
+            form_detailed_data.save()
+            return HttpResponse('false')
+
+    except Exception as e:
+        print("Error in getCompletionStatusSimple:", e)
         return HttpResponse('Error in Simulation. Contact SysAdmin')
-        # raise Exception('invalid pk')
-    task_id = form_detailed_data.task_id
-    result = AsyncResult(task_id)
-    status = result.status
-    form_detailed_data.result_status = status
-    form_detailed_data.save()
-    
-    if result.ready():
-
-        return HttpResponse('true')
-    else:
-        return  HttpResponse('false')    
-
-
+        
 import json
 from django.http import HttpResponse
 
