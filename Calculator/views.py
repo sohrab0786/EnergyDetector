@@ -1271,7 +1271,7 @@ def simple(request):
         form_detailed_data.save()
         #print('done')
         #print(f"Task submitted: {task_id}")
-        
+        pk = form_detailed_data.id
         # Poll for task completion
         timeout = 120  # max wait time in seconds
         poll_interval = 2  # how often to check
@@ -1300,7 +1300,7 @@ def simple(request):
         #python manage.py qcluster
         #then run server
         #python manage.py ruserver
-        pk = form_detailed_data.id
+        #pk = form_detailed_data.id
         #print(f'pk : {pk}')
         #return redirect('display_results_simple/' + str(form_detailed_data.id) + "/") 
     except Exception as e:
