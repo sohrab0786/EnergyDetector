@@ -116,13 +116,15 @@ LOGOUT_REDIRECT_URL = '/CoolRoof'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django-Q settings
-
 Q_CLUSTER = {
     'name': 'DjangoQ',
-    'workers': 4,  # Adjust based on your CPU cores
-    'timeout': 60,  # Timeout for each task
-    'retry': 120,  # Retry failed tasks after 120 seconds
-    'queue_limit': 500,  # Maximum number of tasks in queue
-    'bulk': 10,  # Number of tasks to process at once
-    'orm': 'default',  # Using Django ORM for Django-Q
+    'workers': 4,
+    'timeout': 60,
+    'retry': 120,
+    'queue_limit': 500,
+    'bulk': 10,
+    'orm': 'default',
+    'save_limit': 250,  # keep the latest 250 results in DB
+    'sync': False,      # async execution; required for DB result saving
 }
+
