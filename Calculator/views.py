@@ -1257,7 +1257,7 @@ def simple(request):
         else:
             input_dict['file_uuid'] = file_uuid
             input_dict['username'] = user_name
-            form_detailed_data = Detailed_Data.objects.create(**input_dict)
+            form_detailed_data = Simple.objects.create(**input_dict)
             print("New entry created.")
         celery_task = run_simulation_simple.delay(form_detailed_data.pk) 
         from_detailed_data.task_id = celery_task.id
