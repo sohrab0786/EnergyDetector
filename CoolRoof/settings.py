@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'Calculator',
     'EPlus',
     'django_celery_results'
-    'django_q',  # Django-Q instead of Celery
+   
 ]
 
 MIDDLEWARE = [
