@@ -1264,6 +1264,8 @@ def simple(request):
         form_detailed_data.save()
         print('done')
         print(celery_task.id)
+        result = AsyncResult(celery_task.id)
+        print(f'Current Status: {result.status}')
         print(celery_task.ready())
         pk = from_detailed_data.id
         return postdata_loader_simple(request, pk)
