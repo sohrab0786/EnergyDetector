@@ -1267,7 +1267,7 @@ def simple(request):
         result = AsyncResult(celery_task.id)
         print(f'Current Status: {result.status}')
         print(celery_task.ready())
-        pk = from_detailed_data.id
+        pk = form_detailed_data.id
         return postdata_loader_simple(request, pk)
     except Exception as e:
         print(f"Error occurred: {e}")
