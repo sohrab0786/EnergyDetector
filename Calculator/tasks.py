@@ -329,7 +329,7 @@ def run_simulation_simple(pk):
     output['heat_save_cost'] = round((float(output['heat_save'])*float(output['Electricity'])),2)
     output['cool_save_cost'] = round((float(output['cool_save'])*float(output['Electricity'])),2)
     output['total_save_cost'] = output['heat_save_cost'] + output['cool_save_cost']
-    output['Annual_Savings'] = output['Total_Savings']) * output['Electricity']
+    output['Annual_Savings'] = output['Total_Savings'] * output['Electricity']
     print(output)
     file = open(html_file_base, "r") 
     page = file.read()
