@@ -780,7 +780,7 @@ def run_simulation_simple(pk):
             #print(row)
             x.append(row)
 
-    print len(x)
+    #print len(x)
 
     months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -831,7 +831,7 @@ def run_simulation_simple(pk):
         
             x.append(row)
 
-    print len(x)
+    #print len(x)
 
     months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
