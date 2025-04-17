@@ -446,6 +446,8 @@ def run_simulation_simple(pk):
       else:
         print(f"Warning: '{value}' not found in output.") 
     print('set attr done!')
+    form_detailed_data.total_save_area = round(float(output['heat_save_area']) + float(output['cool_save_area']), 2)
+    print("Sanity check - total_save_area:", form_detailed_data.total_save_area)
     form_detailed_data.heating_compare = json.dumps(heating_compare)
     form_detailed_data.cooling_compare = json.dumps(cooling_compare)
     form_detailed_data.save()
