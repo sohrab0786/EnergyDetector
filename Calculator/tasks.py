@@ -439,13 +439,14 @@ def run_simulation_simple(pk):
         "Interior_Lighting_Savings",'Fans_Base','Fans_Proposed','Fans_Savings',
         "Pumps_Base","Pumps_Proposed","Pumps_Savings","Heat_Rejection_Base",
         "Heat_Rejection_Proposed","Heat_Rejection_Savings","Total_Base","Total_Proposed","Total_Savings_Percent","heat_save","cool_save","total_save",
-        "heat_save_area","cool_save_area","total_save_area","heat_save_cost","cool_save_cost","total_save_cost"]    
+        "heat_save_area","cool_save_area","heat_save_cost","cool_save_cost","total_save_cost"]    
     for value in db_list:
       if value in output:
         setattr(form_detailed_data, value, output[value])
       else:
         print(f"Warning: '{value}' not found in output.") 
     print('set attr done!')
+    form_detailed_data.total_save_area = str(round(float(output['heat_save_area']) + float(output['cool_save_area']), 2))
     #form_detailed_data.total_save_area = round(float(output['heat_save_area']) + float(output['cool_save_area']), 2)
     print("Sanity check - total_save_area:", form_detailed_data.total_save_area)
     form_detailed_data.heating_compare = json.dumps(heating_compare)
