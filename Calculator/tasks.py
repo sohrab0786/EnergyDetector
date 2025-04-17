@@ -442,7 +442,7 @@ def run_simulation_simple(pk):
         "heat_save_area","cool_save_area","total_save_area","heat_save_cost","cool_save_cost","total_save_cost"]    
     for value in db_list:
       if value in output:
-      setattr(form_detailed_data, value, output[value])
+        setattr(form_detailed_data, value, output[value])
       else:
         print(f"Warning: '{value}' not found in output.") 
     print('set attr done!')
