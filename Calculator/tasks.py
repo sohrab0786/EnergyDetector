@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Thes task is shared to view.py
 @shared_task
 def run_simulation_simple(pk):
-        # Or handle gracefully
+   """     # Or handle gracefully
     form_detailed_data = Simple.objects.filter(pk=pk).first()  # Returns None if not found
     if not form_detailed_data:
         print(f"No record found for pk={pk}")
@@ -449,7 +449,432 @@ def run_simulation_simple(pk):
     form_detailed_data.cooling_compare = json.dumps(cooling_compare)
     form_detailed_data.save()
     emailid = form_detailed_data.emailid
-    print('data saved')
+    print('data saved')"""
+
+    try:
+        form_detailed_data = Simple.objects.get(pk = pk)
+    except Simple.DoesNotExist:
+        raise Exception('invalid pk')
+
+    file_uuid = form_detailed_data.file_uuid
+    Location = form_detailed_data.Location
+    weather_file = os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw"
+    static_dir = settings.STATICFILES_DIRS[1]
+    base_path = os.path.join(static_dir,"model_idf",file_uuid,"base","model.idf")
+    proposed_path = os.path.join(static_dir,"model_idf",file_uuid,"proposed","model.idf")
+
+    #print 'running base'
+    template_folder_path_base = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base") 
+
+    command_line_base = ["energyplus","-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,base_path]
+    print("command_line after")
+    print(command_line_base)
+    # Running energy plus
+    base_process = subprocess.Popen(command_line_base)
+    # Wait till process ends
+    base_process.wait()
+    base_process_pid = base_process.pid
+    print(base_process_pid)
+
+    template_folder_path_proposed = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"proposed") 
+
+  
+    command_line_proposed = ["energyplus","-w", weather_file ,"-d",  template_folder_path_proposed ,"-p" , Location + "proposed" ,"-s" ,"C" ,"-x" ,"-m" ,"-r" ,proposed_path]
+    print(command_line_proposed)
+    proposed_process = subprocess.Popen(command_line_proposed)
+  
+    proposed_process_pid =  proposed_process.pid
+    print(proposed_process_pid)
+    proposed_process.wait()
+
+    #base output processing
+    html_location_table = Location + "baseTable.htm"
+    html_file_base = os.path.join(template_folder_path_base,html_location_table)
+    print(html_file_base)
+
+    try:
+        file = open(html_file_base,"r")
+        page = file.read()
+        file.close()
+    except IOError:
+        form_detailed_data.delete()
+        return HttpResponse('Error in IDF File. Contact SysAdmin')
+
+    soup = BeautifulSoup(page, 'html.parser')
+
+    data = []
+
+    base_csv_file = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base.csv")
+
+    for comment in soup.find_all(string=lambda text:isinstance(text, Comment)):
+        
+        if comment.strip() == 'FullName:Annual Building Utility Performance Summary_Entire Facility_End Uses':
+          next_node = comment.next_sibling
+
+          while next_node and next_node.next_sibling:
+              data.append(next_node)
+              next_node = next_node.next_sibling
+
+              if not next_node.name and next_node.strip() == 'FullName:Annual Building Utility Performance Summary_Entire Facility_End Uses By Subcategory': break;
+    end = data[1]
+
+    rows = [tr.text.encode("utf-8") for tr in end.select("tr td")]
+    with open(base_csv_file, "w") as f:
+          wr = csv.writer(f)
+          wr.writerow(rows)
+          wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+
+    x = []
+    with open(base_csv_file,"r") as f:
+          data = csv.reader(f)
+          for row in data:
+              #print(row)
+              x.append(row)
+
+    output = {};               
+    output['Heating_Base'] = x[1][1]
+    output['Cooling_Base'] = x[2][1]
+    output['Interior_Lighting_Base'] = x[3][1]
+    output['Interior_Equipment_Base'] = x[5][1]
+    output['Fans_Base'] = x[7][1]
+    output['Pumps_Base'] = x[8][1]
+    output['Heat_Rejection_Base'] = x[9][1]
+    output['Total_Base'] = float(x[1][1]) + float(x[2][1]) + float(x[3][1]) + float(x[5][1]) + float(x[7][1]) + float(x[8][1]) + float(x[9][1]) 
+    output['basecase'] = form_detailed_data.Normal_Roof
+    output['proposedcase'] = form_detailed_data.Cool_roof
+    basecasee = "0.87"
+    proposedcasee = "0.87"
+    
+    if (output['basecase'] == "0.23"):
+        basecasee = "0.87"
+
+    elif (output['basecase'] == "0.22"):
+        basecasee = "0.91"
+
+    elif (output['basecase'] == "0.25"):
+        basecasee = "0.90"
+
+    elif (output['basecase'] == "0.33"):
+        basecasee = "0.90"
+
+    elif (output['basecase'] == "0.34"):
+        basecasee = "0.90"
+
+    elif (output['basecase'] == "0.61"):
+        basecasee = "0.25"
+
+    elif (output['basecase'] == "0.65"):
+        basecasee = "0.90"
+
+    elif (output['basecase'] == "0.67"):
+        basecasee = "0.85"
+
+    elif (output['basecase'] == "0.69"):
+        basecasee = "0.87"
+
+    elif (output['basecase'] == "0.73"):
+        basecasee = "0.90"
+
+    elif (output['basecase'] == "0.80"):
+        basecasee = "0.91"
+
+    elif (output['basecase'] == "0.83"):
+        basecasee = "0.92"
+
+    elif (output['basecase'] == "0.85"):
+        basecasee = "0.91"
+    
+    if (output["proposedcase"] == "0.23"):
+            proposedcasee = "0.87"
+
+    elif (output["proposedcase"] == "0.22"):
+        proposedcasee = "0.91"
+
+    elif (output["proposedcase"] == "0.25"):
+        proposedcasee = "0.90"
+
+    elif (output["proposedcase"] == "0.33"):
+        proposedcasee = "0.90"
+
+    elif (output["proposedcase"] == "0.34"):
+        proposedcasee = "0.90"
+
+    elif (output["proposedcase"] == "0.61"):
+        proposedcasee = "0.25"
+
+    elif (output["proposedcase"] == "0.65"):
+        proposedcasee = "0.90"
+
+    elif (output["proposedcase"] == "0.67"):
+        proposedcasee = "0.85"
+
+    elif (output["proposedcase"] == "0.69"):
+        proposedcasee = "0.87"
+
+    elif (output["proposedcase"] == "0.73"):
+        proposedcasee = "0.90"
+
+    elif (output["proposedcase"] == "0.80"):
+        proposedcasee = "0.91"
+
+    elif (output["proposedcase"] == "0.83"):
+        proposedcasee = "0.92"
+
+    elif (output["proposedcase"] == "0.85"):
+        proposedcasee = "0.91"        
+
+    output['basecasee'] = basecasee
+    output['proposedcasee'] = proposedcasee
+    #processing proposed output
+
+    html_location_table = Location + "proposedTable.htm"
+    html_file_proposed = os.path.join(template_folder_path_proposed,html_location_table)
+    print(html_file_proposed)
+
+    #p1= subprocess.Popen(args1)
+    #print(p1)
+    file = open(html_file_proposed,"r")
+    page = file.read()
+    file.close()
+    #print(page)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    data = []
+
+    proposed_csv_file = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"proposed.csv")
+
+    for comment in soup.find_all(string=lambda text:isinstance(text, Comment)):
+        
+        if comment.strip() == 'FullName:Annual Building Utility Performance Summary_Entire Facility_End Uses':
+          next_node = comment.next_sibling
+
+          while next_node and next_node.next_sibling:
+              data.append(next_node)
+              next_node = next_node.next_sibling
+
+              if not next_node.name and next_node.strip() == 'FullName:Annual Building Utility Performance Summary_Entire Facility_End Uses By Subcategory': break;
+    end = data[1]
+
+    rows = [tr.text.encode("utf-8") for tr in end.select("tr td")]
+    with open(proposed_csv_file, "w") as f:
+          wr = csv.writer(f)
+          wr.writerow(rows)
+          wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+
+    x = []
+    with open(proposed_csv_file,"r") as f:
+          data = csv.reader(f)
+          for row in data:
+              #print(row)
+              x.append(row)
+           
+    output['Heating_Proposed'] = x[1][1]
+    output['Cooling_Proposed'] = x[2][1]
+    output['Interior_Lighting_Proposed'] = x[3][1]
+    output['Interior_Equipment_Proposed'] = x[5][1]
+    output['Fans_Proposed'] = x[7][1]
+    output['Pumps_Proposed'] = x[8][1]
+    output['Heat_Rejection_Proposed'] = x[9][1]
+    output['Total_Proposed'] = float(x[1][1]) + float(x[2][1]) + float(x[3][1]) + float(x[5][1]) + float(x[7][1]) + float(x[8][1]) + float(x[9][1]) 
+    
+    
+
+
+    if(float(output['Heating_Base']) == 0):
+        output['Heating_Savings'] = "0"
+    else:
+        output['Heating_Savings'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed']))/float(output['Heating_Base'])*100,2)
+
+    if(float(output['Cooling_Base']) == 0):
+        output['Cooling_Savings'] = "0"
+    else:
+        output['Cooling_Savings'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed']))/float(output['Cooling_Base'])*100,2)                
+
+    if(float(output['Interior_Lighting_Base']) == 0):
+        output['Interior_Lighting_Savings'] = "0"
+    else:
+        output['Interior_Lighting_Savings'] = round((float(output['Interior_Lighting_Base']) - float(output['Interior_Lighting_Proposed']))/float(output['Interior_Lighting_Base'])*100,2)
+
+    if(float(output['Interior_Equipment_Base']) == 0):
+        output['Interior_Equipment_Savings'] = "0"
+    else:
+        output['Interior_Equipment_Savings'] = round((float(output['Interior_Equipment_Base']) - float(output['Interior_Equipment_Proposed']))/float(output['Interior_Equipment_Base'])*100,2)
+
+
+    if (float(output['Pumps_Base']) == 0):
+        output['Pumps_Savings'] = "0"
+    else:
+        output['Pumps_Savings'] = round((float(output['Pumps_Base']) - float(output['Pumps_Proposed']))/float(output['Pumps_Base'])*100,2)
+            
+    if (float(output['Heat_Rejection_Base']) == 0):
+        output['Heat_Rejection_Savings'] = "0"
+    else:
+        output['Heat_Rejection_Savings'] = round((float(output['Heat_Rejection_Base']) - float(output['Heat_Rejection_Proposed']))/float(output['Heat_Rejection_Base'])*100,2)
+
+    if (float(output['Fans_Base']) == 0):
+        output['Fans_Savings'] = "0"
+    else:
+        output['Fans_Savings'] = round((float(output['Fans_Base']) - float(output['Fans_Proposed']))/float(output['Fans_Base'])*100,2)
+
+    if (float(output['Total_Base']) == 0):
+        output['Total_Base'] = "0"
+    else:
+        output['Total_Savings'] = round((float(output['Total_Base']) - float(output['Total_Proposed'])),2)
+
+    if (float(output['Total_Base']) == 0):
+        output['Total_Savings_Percent'] = "0"
+    else:
+        output['Total_Savings_Percent'] = round((float(output['Total_Base']) - float(output['Total_Proposed']))/float(output['Total_Base'])*100,2)
+
+    Roof_area = float(form_detailed_data.Roof_area)
+    Electricity = form_detailed_data.Electricity
+    output['Electricity'] = float(Electricity)
+
+    output['heat_save'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed'])),2)
+    output['cool_save'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed'])),2)
+    output['total_save'] = output['heat_save'] + output['cool_save']
+
+    output['heat_save_area'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed']))/float(Roof_area),2)
+    output['cool_save_area'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed']))/float(Roof_area),2)
+    output['total_save_area'] = output['heat_save_area'] + output['cool_save_area']
+    
+    
+    output['heat_save_cost'] = round((float(output['heat_save'])*float(output['Electricity'])),2)
+    output['cool_save_cost'] = round((float(output['cool_save'])*float(output['Electricity'])),2)
+    output['total_save_cost'] = output['heat_save_cost'] + output['cool_save_cost']
+    
+    output['Annual_Savings'] = output['Total_Savings'] * output['Electricity']
+    print(output)
+
+
+    file = open(html_file_base, "r") 
+    page = file.read()
+    file.close()
+
+    soup = BeautifulSoup(page, 'html.parser')
+
+    data = []
+
+    for comment in soup.find_all(string=lambda text:isinstance(text, Comment)):
+        if comment.strip() == 'FullName:EndUseEnergyConsumptionElectricityMonthly_Meter_Custom Monthly Report':
+            next_node = comment.next_sibling
+
+            while next_node and next_node.next_sibling:
+                data.append(next_node)
+                next_node = next_node.next_sibling
+
+                if not next_node.name and next_node.strip() == 'FullName:PeakEnergyEndUseElectricityPart1Monthly_Meter_Custom Monthly Report': break;
+
+    end = data[1]
+    
+    rows = [tr.text.encode("utf-8") for tr in end.select("tr td")]
+    with open("out.csv", "w") as f:
+        wr = csv.writer(f)
+        wr.writerow(rows)
+        wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+
+    x = []
+    with open("out.csv","r") as f:
+        data = csv.reader(f)
+        for row in data:
+            #print(row)
+            x.append(row)
+
+    print len(x)
+
+    months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    heating_base = []
+    cooling_base = []
+    for i in range(1,13):
+        heating_base.append(float(x[i][7]))
+        cooling_base.append(float(x[i][8]))
+
+    mylist_base = zip(months, heating_base,cooling_base)
+
+
+
+
+    output['mylist_base'] = mylist_base
+
+
+    file = open(html_file_proposed, "r") 
+    page = file.read()
+    file.close()
+
+    soup = BeautifulSoup(page, 'html.parser')
+
+    data = []
+
+    for comment in soup.find_all(string=lambda text:isinstance(text, Comment)):
+        if comment.strip() == 'FullName:EndUseEnergyConsumptionElectricityMonthly_Meter_Custom Monthly Report':
+            next_node = comment.next_sibling
+
+            while next_node and next_node.next_sibling:
+                data.append(next_node)
+                next_node = next_node.next_sibling
+
+                if not next_node.name and next_node.strip() == 'FullName:PeakEnergyEndUseElectricityPart1Monthly_Meter_Custom Monthly Report': break;
+
+    end = data[1]
+   
+    rows = [tr.text.encode("utf-8") for tr in end.select("tr td")]
+    with open("out.csv", "w") as f:
+        wr = csv.writer(f)
+        wr.writerow(rows)
+        wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+
+    x = []
+    with open("out.csv","r") as f:
+        data = csv.reader(f)
+        for row in data:
+        
+            x.append(row)
+
+    print len(x)
+
+    months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    heating_proposed = []
+    cooling_proposed = []
+    for i in range(1,13):
+        heating_proposed.append(float(x[i][7]))
+        cooling_proposed.append(float(x[i][8]))
+
+    mylist_proposed = zip(months, heating_proposed,cooling_proposed)
+
+
+    
+    heating_compare = zip(months,heating_base,heating_proposed)
+    cooling_compare = zip(months,cooling_base,cooling_proposed)
+ 
+
+    heating_compare = [[key,value1,value2] for key,value1,value2 in heating_compare]
+    cooling_compare = [[key,value1,value2] for key,value1,value2 in cooling_compare]
+    output['mylist_proposed'] = mylist_proposed
+    output['heating_compare'] = heating_compare
+    output['cooling_compare'] = cooling_compare
+
+  
+    #print 'done processing results'
+    
+    
+
+    db_list = ['cooling_compare','heating_compare','Total_Savings','Annual_Savings','Heating_Base','Heating_Proposed','Heating_Savings','Cooling_Base','Cooling_Proposed','Cooling_Savings','Interior_Equipment_Base','Interior_Equipment_Proposed','Interior_Equipment_Savings',"Interior_Lighting_Base","Interior_Lighting_Proposed",
+        "Interior_Lighting_Savings",'Fans_Base','Fans_Proposed','Fans_Savings',
+        "Pumps_Base","Pumps_Proposed","Pumps_Savings","Heat_Rejection_Base",
+        "Heat_Rejection_Proposed","Heat_Rejection_Savings","Total_Base","Total_Proposed","Total_Savings_Percent","heat_save","cool_save","total_save",
+        "heat_save_area","cool_save_area","total_save_area","heat_save_cost","cool_save_cost","total_save_cost"]    
+
+
+    for value in db_list:
+        setattr(form_detailed_data,value,output[value])
+ 
+    form_detailed_data.heating_compare = json.dumps(heating_compare)
+    form_detailed_data.cooling_compare = json.dumps(cooling_compare)
+    form_detailed_data.save()
+    emailid = form_detailed_data.emailid
+    
     if emailid:
         subject = 'Cool Roof Calculator results'
         message = 'http://13.126.206.17:8000/display_results_simple/' + str(pk) + "/"
