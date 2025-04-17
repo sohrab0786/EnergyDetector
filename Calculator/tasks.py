@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Thes task is shared to view.py
 @shared_task
 def run_simulation_simple(pk):
-   """     # Or handle gracefully
+    """     # Or handle gracefully
     form_detailed_data = Simple.objects.filter(pk=pk).first()  # Returns None if not found
     if not form_detailed_data:
         print(f"No record found for pk={pk}")
@@ -449,8 +449,8 @@ def run_simulation_simple(pk):
     form_detailed_data.cooling_compare = json.dumps(cooling_compare)
     form_detailed_data.save()
     emailid = form_detailed_data.emailid
-    print('data saved')"""
-
+    print('data saved')
+    """
     try:
         form_detailed_data = Simple.objects.get(pk = pk)
     except Simple.DoesNotExist:
