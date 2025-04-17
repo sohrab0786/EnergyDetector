@@ -2985,6 +2985,8 @@ def redirectResultsSimple(request, pk):
     # Debugging: Print only if 'Total_Savings' exists
     if 'Total_Savings' in output:
         print(output['Total_Savings'])
+        print(f"total save area: {output['total_save_area']}")
+        print(f"heat save area and cool save area {output['heat_save_area']} and {output['cool_save_area']}")
 
     return postdata_simple(request, output)
 
