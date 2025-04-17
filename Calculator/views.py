@@ -2981,7 +2981,7 @@ def redirectResultsSimple(request, pk):
     # Convert to tuple format if necessary
     output['heating_compare'] = [tuple(value) for value in output['heating_compare']]
     output['cooling_compare'] = [tuple(value) for value in output['cooling_compare']]
-    output['total_save_area'] = round(float(output['heat_save_area']) + float(output['cool_save_area']), 2)
+    #output['total_save_area'] = round(float(output['heat_save_area']) + float(output['cool_save_area']), 2)
     # Debugging: Print only if 'Total_Savings' exists
     if 'Total_Savings' in output:
         print(output['Total_Savings'])
