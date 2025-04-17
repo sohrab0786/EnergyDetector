@@ -729,7 +729,7 @@ def run_simulation(pk):
 
     output['heat_save_area'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed']))/float(Roof_area),2)
     output['cool_save_area'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed']))/float(Roof_area),2)
-    output['total_save_area'] = output['heat_save_area'] + output['cool_save_area']
+    output['total_save_area'] = round((float(output['heat_save_area']) + float(output['cool_save_area'])))
     
     
     output['heat_save_cost'] = round((float(output['heat_save'])*float(output['Electricity'])),2)
