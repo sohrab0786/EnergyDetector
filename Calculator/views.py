@@ -1261,7 +1261,7 @@ def simple(request):
             print("New entry created.")
         celery_task = run_simulation_simple.delay(form_detailed_data.pk) 
         form_detailed_data.task_id = celery_task.id
-        form_detailed_data.save()
+        #form_detailed_data.save()
         print('done')
         print(celery_task.id)
         result = AsyncResult(celery_task.id)
