@@ -321,14 +321,15 @@ def run_simulation_simple(pk):
     output['Electricity'] = float(Electricity)
     output['heat_save'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed'])),2)
     output['cool_save'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed'])),2)
-    output['total_save'] = output['heat_save'] + output['cool_save']
+    output['total_save'] = round((float(output['heat_save']) + float(output['cool_save'])),2)
     output['heat_save_area'] = round((float(output['Heating_Base']) - float(output['Heating_Proposed']))/float(Roof_area),2)
     output['cool_save_area'] = round((float(output['Cooling_Base']) - float(output['Cooling_Proposed']))/float(Roof_area),2)
-    output['total_save_area'] = output['heat_save_area'] + output['cool_save_area']
+    output['total_save_area'] = round((float(output['heat_save_area']) + float(output['cool_save_area'])),2)
+
     output['heat_save_cost'] = round((float(output['heat_save'])*float(output['Electricity'])),2)
     output['cool_save_cost'] = round((float(output['cool_save'])*float(output['Electricity'])),2)
-    output['total_save_cost'] = output['heat_save_cost'] + output['cool_save_cost']
-    output['Annual_Savings'] = output['Total_Savings'] * output['Electricity']
+    output['total_save_cost'] = round((float(output['heat_save_cost']) + float(output['cool_save_cost'])),2)
+    output['Annual_Savings'] = round((float(output['Total_Savings']) * float(output['Electricity'])),2)
     print(output)
     file = open(html_file_base, "r") 
     page = file.read()
