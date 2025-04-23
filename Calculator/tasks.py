@@ -54,7 +54,7 @@ def run_simulation_simple(pk):
     template_folder_path_base = os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"base")
     template_folder_path_base = str(Path(template_folder_path_base))
     print(f'template_folder_path_base: {template_folder_path_base}')
-    # "-s" ,"C" ,"-x" ,"-m" ,"-r", 
+    # "-s" ,"C" ,"-x" ,"-m" ,"-r"
     command_line_base = ["energyplus","-w", weather_file ,"-d",  template_folder_path_base ,"-p" , Location + "base",base_path]
     
         
