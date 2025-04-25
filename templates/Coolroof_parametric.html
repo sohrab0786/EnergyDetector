@@ -23,18 +23,33 @@ document.addEventListener("DOMContentLoaded", function () {
         'coolroof_parametric': 'parametric-tab'
     };
 
+    // Helper function to set the active tab
+    function setActiveTab(tabId) {
+        document.querySelectorAll('.input-pill').forEach(tab => {
+            tab.classList.remove('active-tab');  // Remove active class from all tabs
+        });
+        const activeTab = document.getElementById(tabId);
+        if (activeTab) {
+            activeTab.classList.add('active-tab');  // Add active class to the clicked tab
+        }
+    }
+
+    // Set active tab based on the current URL
     const path = window.location.pathname;
     for (const [key, tabId] of Object.entries(tabs)) {
         if (path.includes(key)) {
-            const activeTab = document.getElementById(tabId);
-            if (activeTab) {
-                activeTab.classList.add('active-tab');
-            }
+            setActiveTab(tabId);
         }
     }
+
+    // Attach click event listeners to all tabs
+    document.querySelectorAll('.input-pill').forEach(tab => {
+        tab.addEventListener('click', function () {
+            setActiveTab(this.id);  // Update active tab when clicked
+        });
+    });
 });
 </script>
-
 <style>
 .input-pill {
     padding: 6px 14px;
@@ -62,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
     box-shadow: 0 3px 6px rgba(0, 121, 121, 0.3);
 }
 </style>
-	  
-
   </head>
   <body>
 <div style="background-color: #007979; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; width: 100%;">
