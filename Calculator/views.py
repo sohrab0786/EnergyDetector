@@ -61,7 +61,7 @@ def simple(request):
         basecase = request.POST["basecase"]
         proposedcase = request.POST["proposedcase"]
         HVAC_details = request.POST["HVAC_details"]
-        Electricity = request.POST["Electricity"]
+        Electricity = float(request.POST["Electricity"])
         print("Electricity",Electricity, "Roof_area",Roof_area)
         user_name = request.POST["user_name"]
         print("user_name",user_name)
@@ -1317,7 +1317,7 @@ def detailed(request):
         win_area_east = request.POST["win_area_east"]
         win_area_west = request.POST["win_area_west"]
         
-        Electricity = request.POST["Electricity"]
+        Electricity = float(request.POST["Electricity"])
         emailid = request.POST["emailid1"]
         user_name = request.POST["user_name"]
 
@@ -2117,7 +2117,7 @@ def parametric(request):
         win_area_east = request.POST["win_area_east"]
         win_area_west = request.POST["win_area_west"]
         
-        Electricity = request.POST["Electricity"]
+        Electricity = float(request.POST["Electricity"])
         emailid = request.POST["emailid2"]
         user_name = request.POST["user_name"]
         kvalue = request.POST["kvalue"]
