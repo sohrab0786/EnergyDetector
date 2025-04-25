@@ -17,10 +17,11 @@
     <link href="{% static 'assets/css/material-kit.css' %}" rel="stylesheet" type="text/css" />
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    // Define the possible paths and their corresponding tab IDs
     const tabs = {
-        'CoolRoof': 'simple-tab',
-        'coolroof_detailed': 'detailed-tab',
-        'coolroof_parametric': 'parametric-tab'
+        '/CoolRoof/': 'simple-tab',
+        '/coolroof_detailed/': 'detailed-tab',
+        '/coolroof_parametric/': 'parametric-tab'
     };
 
     // Helper function to set the active tab
@@ -34,11 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Set active tab based on the current URL
+    // Get the current URL path
     const path = window.location.pathname;
-    for (const [key, tabId] of Object.entries(tabs)) {
-        if (path.includes(key)) {
-            setActiveTab(tabId);
+
+    // Iterate through tabs and check if the current URL matches any path
+    for (const [urlPath, tabId] of Object.entries(tabs)) {
+        if (path.includes(urlPath)) {
+            setActiveTab(tabId);  // Set the active tab based on the path
+            break; // Stop once we find the matching path
         }
     }
 
@@ -50,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 <style>
 .input-pill {
     padding: 6px 14px;
