@@ -19,28 +19,31 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Define the possible paths and their corresponding tab IDs
     const tabs = {
-        '/CoolRoof/': 'simple-tab',
-        '/coolroof_detailed/': 'detailed-tab',
-        '/coolroof_parametric/': 'parametric-tab'
+        '/CoolRoof/': 'simple-tab',             // For Simple Inputs
+        '/coolroof/detailed/': 'detailed-tab',  // For Detailed Inputs
+        '/coolroof/parametric/': 'parametric-tab'  // For Parametric Inputs
     };
 
     // Helper function to set the active tab
     function setActiveTab(tabId) {
+        // Remove active class from all tabs
         document.querySelectorAll('.input-pill').forEach(tab => {
-            tab.classList.remove('active-tab');  // Remove active class from all tabs
+            tab.classList.remove('active-tab');
         });
+
+        // Add active class to the clicked tab
         const activeTab = document.getElementById(tabId);
         if (activeTab) {
-            activeTab.classList.add('active-tab');  // Add active class to the clicked tab
+            activeTab.classList.add('active-tab');
         }
     }
 
     // Get the current URL path
     const path = window.location.pathname;
 
-    // Iterate through tabs and check if the current URL matches any path
+    // Check the path and activate the appropriate tab
     for (const [urlPath, tabId] of Object.entries(tabs)) {
-        if (path.includes(urlPath)) {
+        if (path.includes(urlPath)) {  // Use `includes()` for partial matching
             setActiveTab(tabId);  // Set the active tab based on the path
             break; // Stop once we find the matching path
         }
