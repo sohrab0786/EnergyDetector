@@ -15,6 +15,46 @@
     <!-- Material Kit CSS -->
   <!--  <link href="/static/assets/css/material-kit.css?v=2.0.4" rel="stylesheet" type="text/css" />-->
     <link href="{% static 'assets/css/material-kit.css' %}" rel="stylesheet" type="text/css" />
+	  <script>
+function setActiveTab(tabId) {
+    document.querySelectorAll('.input-pill').forEach(tab => {
+        tab.classList.remove('active-tab');
+    });
+    document.getElementById(tabId).classList.add('active-tab');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let path = window.location.pathname;
+    if (path.includes('coolroof')) {
+        if (path.includes('detailed')) {
+            setActiveTab('detailed-tab');
+        } else if (path.includes('parametric')) {
+            setActiveTab('parametric-tab');
+        } else {
+            setActiveTab('simple-tab');
+        }
+    }
+});
+</script>
+<style>
+.input-pill {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.input-pill:hover {
+    background-color: #f0f0f0;
+}
+.active-tab {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+</style>
+
   </head>
   <body>
 
@@ -29,10 +69,15 @@
   <div class="container">
     <div class="section col-md-4 ml-auto mr-auto">
 	    <!-- Logo -->
-  <div class="text-center mb-4">
-   <!-- <img src="/static/assets/img/Plaksha-logo.jpeg" alt="Plaksha Logo" style="max-width: 200px; height: auto;">-->
-<img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" class="plaksha-logo" style="max-width: 150px; height: auto;">
-  </div>
+  <div class="logo-nav-wrapper text-center" style="margin-bottom: 20px;">
+    <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" style="max-width: 150px; height: auto; margin-bottom: 20px;">
+
+    <div class="nav-tabs-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <a href="{% url 'CoolRoof' %}" id="simple-tab" class="input-pill">Simple Inputs</a>
+        <a href="{% url 'coolroof_detailed' %}" id="detailed-tab" class="input-pill">Detailed Inputs</a>
+        <a href="{% url 'coolroof_parametric' %}" id="parametric-tab" class="input-pill">Parametric Inputs</a>
+    </div>
+</div>
 
         <div class="text-center">
             <h3 class="title">Detailed Inputs</h3>
