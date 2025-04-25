@@ -16,44 +16,53 @@
 	  <link rel="stylesheet" href="{% static 'assets/css/material-kit.css' %}">
 <!--Script -->
 <script>
-function setActiveTab(tabId) {
-    document.querySelectorAll('.input-pill').forEach(tab => {
-        tab.classList.remove('active-tab');
-    });
-    document.getElementById(tabId).classList.add('active-tab');
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = {
+        'CoolRoof': 'simple-tab',
+        'coolroof_detailed': 'detailed-tab',
+        'coolroof_parametric': 'parametric-tab'
+    };
 
-document.addEventListener("DOMContentLoaded", function() {
-    let path = window.location.pathname;
-    if (path.includes('coolroof')) {
-        if (path.includes('detailed')) {
-            setActiveTab('detailed-tab');
-        } else if (path.includes('parametric')) {
-            setActiveTab('parametric-tab');
-        } else {
-            setActiveTab('simple-tab');
+    const path = window.location.pathname;
+    for (const [key, tabId] of Object.entries(tabs)) {
+        if (path.includes(key)) {
+            const activeTab = document.getElementById(tabId);
+            if (activeTab) {
+                activeTab.classList.add('active-tab');
+            }
         }
     }
 });
 </script>
+
 <style>
 .input-pill {
-    padding: 10px 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
     text-decoration: none;
-    color: #000;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    background-color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .input-pill:hover {
-    background-color: #f0f0f0;
+    background-color: #f2f2f2;
+    border-color: #007979;
+    color: #007979;
 }
-.active-tab {
-    background-color: #007bff;
+
+.input-pill.active-tab {
+    background-color: #007979;
     color: white;
-    border-color: #0056b3;
+    border-color: #007979;
+    box-shadow: 0 3px 6px rgba(0, 121, 121, 0.3);
 }
-</style>	  
+</style>
+	  
   </head>
   <body>
 
@@ -86,13 +95,14 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="logo-nav-wrapper text-center" style="margin-bottom: 20px;">
        <img src="{% static 'assets/img/Plaksha-logo.jpeg' %}" alt="Plaksha Logo" style="max-width: 150px; height: auto; margin-bottom: 20px;">
 
-       <div class="nav-tabs-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-        <a href="{% url 'CoolRoof' %}" id="simple-tab" class="input-pill">Simple Inputs</a>
-        <a href="{% url 'coolroof_detailed' %}" id="detailed-tab" class="input-pill">Detailed Inputs</a>
-        <a href="{% url 'coolroof_parametric' %}" id="parametric-tab" class="input-pill">Parametric Inputs</a>
+       <div class="nav-tabs-wrapper" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+    <a href="{% url 'CoolRoof' %}" id="simple-tab" class="input-pill">Simple Inputs</a>
+    <a href="{% url 'coolroof_detailed' %}" id="detailed-tab" class="input-pill">Detailed Inputs</a>
+    <a href="{% url 'coolroof_parametric' %}" id="parametric-tab" class="input-pill">Parametric Inputs</a>
+</div>
     </div>
-    </div>
-        
+
+	    
 	    <!--no new -->
         <div class="text-center">
             <h3 class="title">Simple Inputs</h3>
