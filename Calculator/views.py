@@ -65,7 +65,12 @@ def simple(request):
         print("Electricity",Electricity, "Roof_area",Roof_area)
         user_name = request.POST["user_name"]
         print("user_name",user_name)
-        emailid = request.POST["emailid"]
+        #emailid = request.POST["emailid"]
+        emailid = request.POST.get("emailid")
+        if not emailid:
+           emailid = "aviruch2@gmail.com"
+        if not user_name:
+            user_name= "Aviruch"
         # Weather file Location for the E+ Simulation
         
         weather_file = os.path.join(BASE_DIR,"static/WeatherData/")+Location+".epw" 
@@ -1318,8 +1323,12 @@ def detailed(request):
         win_area_west = request.POST["win_area_west"]
         
         Electricity = float(request.POST["Electricity"])
-        emailid = request.POST["emailid1"]
-        user_name = request.POST["user_name"]
+        emailid = request.POST.get("emailid1")
+        user_name = request.POST.get("user_name")
+        if not emailid:
+           emailid = "aviruch2@gmail.com"
+        if not user_name:
+            user_name= "Aviruch"
 
         if (Electricity == ""):
             Electricity = 6
@@ -2118,11 +2127,13 @@ def parametric(request):
         win_area_west = request.POST["win_area_west"]
         
         Electricity = float(request.POST["Electricity"])
-        emailid = request.POST["emailid2"]
-        user_name = request.POST["user_name"]
+        emailid = request.POST.get("emailid2")
+        user_name = request.POST.get("user_name")
+        if not emailid:
+           emailid = "aviruch2@gmail.com"
+        if not user_name:
+            user_name= "Aviruch"
         kvalue = request.POST["kvalue"]
-
-
         if (Electricity == ""):
             Electricity = 6
         building_desc = "Coolroof_IDF"
