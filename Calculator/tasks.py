@@ -344,37 +344,45 @@ def run_simulation_simple(pk):
             break  # Stop after finding the first relevant table
     if not data:
         print("Electricity Monthly Report table not found.")
-        exit()
-    end = data[0]
-    # Extract table rows
-    rows = []
-    for row in end.find_all("tr"):
-        cols = [td.text.strip() for td in row.find_all("td")]
-        if cols:  # Skip empty rows
-            rows.append(cols)
-    # Save to CSV
-    output_csv_file = "out.csv"
-    with open(output_csv_file, "w", newline="", encoding="utf-8") as f:
-        wr = csv.writer(f)
-        wr.writerows(rows)
-    print(f"File Exists: {os.path.exists(output_csv_file)}")
-    print(f"File Size: {os.path.getsize(output_csv_file)} bytes")  
-    # Read CSV and process
-    x = []
-    with open(output_csv_file, "r", encoding="utf-8") as f:
-        data = csv.reader(f)
-        for row in data:
-            if row:  # Skip empty rows
-                x.append(row)
-    print(f"Total valid rows collected: {len(x)}")
+        heating_base = [0.0]*12
+        cooling_base = [0.0]*12
+    else:
+        end = data[0]
+        # Extract table rows
+        rows = []
+        for row in end.find_all("tr"):
+            cols = [td.text.strip() for td in row.find_all("td")]
+            if cols:  # Skip empty rows
+                rows.append(cols)
+        # Save to CSV
+        output_csv_file = "out.csv"
+        with open(output_csv_file, "w", newline="", encoding="utf-8") as f:
+            wr = csv.writer(f)
+            wr.writerows(rows)
+        print(f"File Exists: {os.path.exists(output_csv_file)}")
+        print(f"File Size: {os.path.getsize(output_csv_file)} bytes")  
+        # Read CSV and process
+        x = []
+        with open(output_csv_file, "r", encoding="utf-8") as f:
+            data = csv.reader(f)
+            for row in data:
+                if row:  # Skip empty rows
+                    x.append(row)
+        print(f"Total valid rows collected: {len(x)}")
+      
+        # Extract heating and cooling values safely
+        heating_base = []
+        cooling_base = []
+        try:
+            for i in range(1,13):
+                heating_base.append(float(x[i][7]))
+                cooling_base.append(float(x[i][8]))
+        except:
+            print("Error parsing base heating/cooling data:", e)
+            heating_base = [0.0] * 12
+            cooling_base = [0.0] * 12
     # Define months
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    # Extract heating and cooling values safely
-    heating_base = []
-    cooling_base = []
-    for i in range(1,13):
-        heating_base.append(float(x[i][7]))
-        cooling_base.append(float(x[i][8]))
     # Create the final list of tuples
     mylist_base = list(zip(months, heating_base, cooling_base))
     # Store in output dictionary
@@ -393,37 +401,44 @@ def run_simulation_simple(pk):
             break  # Stop after finding the first relevant table
     if not data:
         print("Electricity Monthly Report table not found.")
-        exit()
-    end = data[0]
-    # Extract table rows
-    rows = []
-    for row in end.find_all("tr"):
-        cols = [td.text.strip() for td in row.find_all("td")]
-        if cols:  # Skip empty rows
-            rows.append(cols)
-    # Save to CSV
-    output_csv_file = "out.csv"
-    with open(output_csv_file, "w", newline="", encoding="utf-8") as f:
-        wr = csv.writer(f)
-        wr.writerows(rows)
-    print(f"File Exists: {os.path.exists(output_csv_file)}")
-    print(f"File Size: {os.path.getsize(output_csv_file)} bytes")  
-    # Read CSV and process
-    x = []
-    with open(output_csv_file, "r", encoding="utf-8") as f:
-        data = csv.reader(f)
-        for row in data:
-            if row:  # Skip empty rows
-                x.append(row)
-    print(f"Total valid rows collected: {len(x)}")
+        heating_proposed = [0.0]*12
+        cooling_proposed = [0.0]*12
+    else:
+        end = data[0]
+        # Extract table rows
+        rows = []
+        for row in end.find_all("tr"):
+            cols = [td.text.strip() for td in row.find_all("td")]
+            if cols:  # Skip empty rows
+                rows.append(cols)
+        # Save to CSV
+        output_csv_file = "out.csv"
+        with open(output_csv_file, "w", newline="", encoding="utf-8") as f:
+            wr = csv.writer(f)
+            wr.writerows(rows)
+        print(f"File Exists: {os.path.exists(output_csv_file)}")
+        print(f"File Size: {os.path.getsize(output_csv_file)} bytes")  
+        # Read CSV and process
+        x = []
+        with open(output_csv_file, "r", encoding="utf-8") as f:
+            data = csv.reader(f)
+            for row in data:
+                if row:  # Skip empty rows
+                    x.append(row)
+        print(f"Total valid rows collected: {len(x)}")
+      
+        # Extract heating and cooling values safely
+        heating_proposed = []
+        cooling_proposed = []
+        try:
+            for i in range(1,13):
+                heating_proposed.append(float(x[i][7]))
+                cooling_proposed.append(float(x[i][8]))
+        except:
+            heating_proposed = [0.0]*12
+            cooling_proposed = [0.0]*12
     # Define months
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    # Extract heating and cooling values safely
-    heating_proposed = []
-    cooling_proposed = []
-    for i in range(1,13):
-        heating_proposed.append(float(x[i][7]))
-        cooling_proposed.append(float(x[i][8]))
     mylist_proposed = zip(months, heating_proposed,cooling_proposed)
     heating_compare = zip(months,heating_base,heating_proposed)
     cooling_compare = zip(months,cooling_base,cooling_proposed)
@@ -756,36 +771,43 @@ def run_simulation(pk):
             break  # Stop after finding the first relevant table
     if not data:
         print("Electricity Monthly Report table not found.")
-        exit()
-    end = data[0]
-    # Extract table rows
-    rows = []
-    for row in end.find_all("tr"):
-        cols = [td.text.strip() for td in row.find_all("td")]
-        if cols:  # Skip empty rows
-            rows.append(cols)
-    template_folder_path_csv =  str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"out.csv")))
-    with open(template_folder_path_csv, "w", newline="", encoding="utf-8") as f:
-        wr = csv.writer(f)
-        wr.writerows(rows)
-        #wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
-    
-    x = []
-    with open(template_folder_path_csv,"r", encoding="utf-8") as f:
-        data = csv.reader(f)
-        for row in data:
-            print('row: ',row)
-            if row:
-              x.append(row)
-    print('valid rows len of x : ',len(x))
-    months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    heating_base = []
-    cooling_base = []
-    print('starting for loop!')
-    for i in range(1,13):
-        heating_base.append(float(x[i][7]))
-        cooling_base.append(float(x[i][8]))
+        heating_base = [0.0] * 12
+        cooling_base = [0.0] * 12
+    else:
+        end = data[0]
+        # Extract table rows
+        rows = []
+        for row in end.find_all("tr"):
+            cols = [td.text.strip() for td in row.find_all("td")]
+            if cols:  # Skip empty rows
+                rows.append(cols)
+        template_folder_path_csv =  str(Path(os.path.join(BASE_DIR,"templates","html_dir",file_uuid,"out.csv")))
+        with open(template_folder_path_csv, "w", newline="", encoding="utf-8") as f:
+            wr = csv.writer(f)
+            wr.writerows(rows)
+            #wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+        
+        x = []
+        with open(template_folder_path_csv,"r", encoding="utf-8") as f:
+            data = csv.reader(f)
+            for row in data:
+                print('row: ',row)
+                if row:
+                  x.append(row)
+        print('valid rows len of x : ',len(x))
+        heating_base = []
+        cooling_base = []
+        try:
+            print('starting for loop!')
+            for i in range(1,13):
+                heating_base.append(float(x[i][7]))
+                cooling_base.append(float(x[i][8]))
+        except:
+            print("Error parsing base heating/cooling data:", e)
+            heating_base = [0.0] * 12
+            cooling_base = [0.0] * 12
     print('done for loop')
+    months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     mylist_base = zip(months, heating_base,cooling_base) 
     output['mylist_base'] = mylist_base
     file = open(html_file_proposed, "r") 
@@ -803,38 +825,38 @@ def run_simulation(pk):
             break  # Stop after finding the first relevant table
     if not data:
         print("Electricity Monthly Report table not found.")
-        exit()
-    end = data[0]
-    # Extract table rows
-    rows = []
-    for row in end.find_all("tr"):
-        cols = [td.text.strip() for td in row.find_all("td")]
-        if cols:  # Skip empty rows
-            rows.append(cols)
-    with open(template_folder_path_csv, "w", newline="", encoding="utf-8") as f:
-        wr = csv.writer(f)
-        wr.writerows(rows)
-        #wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
-
-    x = []
-    with open(template_folder_path_csv,"r", encoding="utf-8") as f:
-        data = csv.reader(f)
-        for row in data:
-            x.append(row)
-
-    print(f"Total valid rows collected: {len(x)}")
-
+        #raise ValueError("Electricity Monthly Report table not found.")
+        heating_proposed = [0.0]*12
+        cooling_proposed = [0.0]*12
+    else:
+        end = data[0]
+        # Extract table rows
+        rows = []
+        for row in end.find_all("tr"):
+            cols = [td.text.strip() for td in row.find_all("td")]
+            if cols:  # Skip empty rows
+                rows.append(cols)
+        with open(template_folder_path_csv, "w", newline="", encoding="utf-8") as f:
+            wr = csv.writer(f)
+            wr.writerows(rows)
+            #wr.writerows([[td.text.encode("utf-8") for td in row.find_all("td")] for row in end.select("tr + tr")])
+        x = []
+        with open(template_folder_path_csv,"r", encoding="utf-8") as f:
+            data = csv.reader(f)
+            for row in data:
+                x.append(row)
+        print(f"Total valid rows collected: {len(x)}")
+        heating_proposed = []
+        cooling_proposed = []
+        try:
+            for i in range(1,13):
+                heating_proposed.append(float(x[i][7]))
+                cooling_proposed.append(float(x[i][8]))
+        except:
+            heating_proposed = [0.0]*12
+            cooling_proposed = [0.0]*12
     months = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
-    heating_proposed = []
-    cooling_proposed = []
-    for i in range(1,13):
-        heating_proposed.append(float(x[i][7]))
-        cooling_proposed.append(float(x[i][8]))
-
     mylist_proposed = zip(months, heating_proposed,cooling_proposed)
-
-
     heating_compare = zip(months,heating_base,heating_proposed)
     cooling_compare = zip(months,cooling_base,cooling_proposed)
     heating_compare = [[key,value1,value2] for key,value1,value2 in heating_compare]
