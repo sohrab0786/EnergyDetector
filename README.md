@@ -26,7 +26,7 @@ Before setting up, make sure you have:
 
 1️⃣ **Clone the repository**
 ```bash
-git clone <repo_url>
+git clone https://github.com/sohrab0786/EnergyDetector.git
 cd EnergyDetector
 
 2️⃣ Create and activate a virtual environment
