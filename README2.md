@@ -158,5 +158,20 @@ sudo systemctl enable energydetector-celery
 # Check service status
 sudo systemctl status energydetector-gunicorn
 sudo systemctl status energydetector-celery
+
+##Later if stops then stop and start instance Cool Roof Calculator
+sudo systemctl daemon-reload
+sudo systemctl enable energydetector-gunicorn
+sudo systemctl enable energydetector-celery
+sudo systemctl start energydetector-gunicorn
+sudo systemctl start energydetector-celery
+enable → ensures services start automatically after EC2 reboot.
+start → starts them immediately.
+
+4. Verify
+
+sudo systemctl status energydetector-gunicorn
+sudo systemctl status energydetector-celery
+
 Author: Md Sohrab Emam
 Project: EnergyDetector - Cool Roof Calculator
