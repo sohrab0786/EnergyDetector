@@ -29,6 +29,14 @@ Before setting up, make sure you have:
 git clone https://github.com/sohrab0786/EnergyDetector.git
 cd EnergyDetector
 
+#install energyplus
+wget https://github.com/NREL/EnergyPlus/releases/download/v8.9.0/EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
+chmod +x EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
+sudo ./EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
+echo 'export PATH=$PATH:/usr/local/EnergyPlus-8-9-0' >> ~/.bashrc
+source ~/.bashrc
+energyplus --version
+
 2️⃣ Create and activate a virtual environment
 python -m venv venv
 # Activate on Windows
