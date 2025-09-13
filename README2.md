@@ -160,6 +160,7 @@ sudo systemctl status energydetector-gunicorn
 sudo systemctl status energydetector-celery
 
 ##Later if stops then stop and start instance Cool Roof Calculator
+##then connect the instance it will give terminal then run below commands
 sudo systemctl daemon-reload
 sudo systemctl enable energydetector-gunicorn
 sudo systemctl enable energydetector-celery
