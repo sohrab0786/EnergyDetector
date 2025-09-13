@@ -173,6 +173,6 @@ start → starts them immediately.
 
 sudo systemctl status energydetector-gunicorn
 sudo systemctl status energydetector-celery
-
+#check the public address then ex- 35.154.18.185  then search this url on web - http://35.154.18.185:8000/CoolRoof/
 Author: Md Sohrab Emam
 Project: EnergyDetector - Cool Roof Calculator
