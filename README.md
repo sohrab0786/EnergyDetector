@@ -1,3 +1,5 @@
+## Note: this instructions for local system setup for AWS setup refer README2.md file 
+
 # 🔋 EnergyDetector
 
 EnergyDetector is a Django-based application that simulates home energy usage based on user-provided parameters.  
@@ -21,6 +23,7 @@ Before setting up, make sure you have:
 - Git installed
 
 ---
+## Note: this instructions for local system setup for AWS setup refer README2.md file 
 
 ## ⚙️ Installation & Setup
 
@@ -72,3 +75,5 @@ Submit to see your simulated energy usage.
 🛠 Development Notes
 The EnergyPlus executable must be correctly set for simulations to work.
 Compatible only with EnergyPlus v8.9.0 unless adjusted in code.
+
+## Note: this instructions for local system setup for AWS setup refer README2.md file 
