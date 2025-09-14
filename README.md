@@ -32,6 +32,9 @@ Before setting up, make sure you have:
 git clone https://github.com/sohrab0786/EnergyDetector.git
 cd EnergyDetector
 
+sudo apt update
+sudo apt install python3.12-venv -y
+
 #install energyplus
 wget https://github.com/NREL/EnergyPlus/releases/download/v8.9.0/EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
 chmod +x EnergyPlus-8.9.0-40101eaafd-Linux-x86_64.sh
