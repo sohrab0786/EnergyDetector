@@ -59,6 +59,7 @@ This guide explains how to deploy, run, and maintain the **CoolRoof** Django pro
 ssh -i path/to/your-key.pem ubuntu@your-ec2-ip or select instance then click connect button to connect using aws terminal.
 cd ~/EnergyDetector
 source venv310/bin/activate
+pip install -r requirements_new.txt
 2. Database migrations
 Make sure your database and Django apps are migrated properly.
 
