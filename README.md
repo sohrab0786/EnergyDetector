@@ -47,6 +47,7 @@ python -m venv venv
 venv\Scripts\activate
 # Activate on macOS/Linux
 source venv/bin/activate
+pip install -r requirements_new.txt
 
 # CoolRoof Django Project Deployment Guide
 
